@@ -1,0 +1,118 @@
+
+#inter-pageNavBar {
+	position: fixed;
+	display: block;
+	width: 100%;
+	height: auto;
+	bottom: 0%;
+	margin: 0%;
+	padding: 0%;
+	left: 0px;
+	background-color: black;
+	z-index: 50;
+	float: left;
+}
+
+#inter-pageNavBar > a, #inter-pageNavBar > div {
+	margin: 0px;
+	padding: 0px;
+	color: white;
+	text-decoration: none;
+	height: 100%;
+	position: relative;
+}
+
+.bottomNavTab {
+	display: inline-block;
+	position: relative;
+	width: 24%;
+	left: 0px;
+	height: 6%;
+	margin: 0%;
+	padding: 0%;
+	border-left: 2px solid white;
+	font-family: "Allerta Stencil";
+	text-transform: uppercase;
+	float: left;
+	text-align: center;
+}
+
+	.bottomNavTab:hover, .bottomNavTab:hover > .navTabText {
+		background-color: #7efcef;
+		color: black;
+		height: 100%;
+	}
+
+
+.navTabText {
+	font-family: "Allerta Stencil";
+	font-size: 30px;
+	text-align: center;
+	color: white;
+	display: inline;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.popup {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: auto;
+	line-height: 30px;
+	border-radius: 30px 0px 30px 0px;
+	border: 2px solid white;
+	background-color: white;
+	box-shadow: -2px -2px 2px dimgray;
+	z-index: 50;
+}
+
+.popup > a {
+	display: block;
+	position: relative;
+	left: 5px;
+	right: 10px;
+	color: black;
+	font-family: Roboto;
+	font-size: 30px;
+	text-align: left;
+	text-transform: none;
+	font-weight: bolder;
+	padding: 4px;
+}
+
+.bottomNavTab:hover > .popup {
+	display: block;
+	bottom: 100%;
+}
+
+.bottomNavTab:hover > .popup > a:hover {
+	background-color: silver;
+	border-radius: 25px 0px 25px 0px;
+	width: 98%;
+	left: 0px;
+}
+
+.submenuHR {
+	border: 0px;
+	height: 2px;
+	width: 100%;
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+	background: linear-gradient(to left, white, black, white);
+}
+
+.popup a, .popup a:active, .popup a:visited, .popup a:focus {
+	text-decoration: none;
+	color: black;
+}
+
+.dropupGlyph {
+	font-family: Rockwell;
+	float: left;
+	padding: 0px;
+	margin: 0px;
+	font-size: 30px;
+}
