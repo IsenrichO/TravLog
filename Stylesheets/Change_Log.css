@@ -1,0 +1,91 @@
+p, h5, h6, li, span, article {
+	font-family: Play;
+	font-size: 20px;
+	line-height: 26px;
+	text-align: justify;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	background-color: silver;
+}
+
+main {
+	position: relative;
+	width: 65%;
+	margin: 0 auto;
+	background-color: rgb(255, 255, 255);
+	box-shadow: -4px -4px 3px 1px dimgray;
+	background-color: rgba(250, 250, 250, 0.95);
+	bottom: 0;
+	top: 120px;
+	height: 100%;
+}
+
+article {
+	padding: 0 10%;
+	clear: both;
+}
+
+h2 {
+	font-family: ;
+}
+
+
+#titleText {
+	color: black;
+	font-size: 50px;
+	font-family: "Allerta Stencil";
+	font-weight: bold;
+	font-variant: small-caps;
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+}
+
+h3 {
+	margin-top: 30px;
+}
+
+p, ul, li {
+	font-family: Roboto;
+	font-size: 16px;
+	text-align: justify;
+}
+
+ul {
+	list-style-type: square;
+}
+
+li {
+	padding-top: 5px;
+	color: #444444;
+}
+
+
+.date {
+	font-family: Magneto;
+	color: rgb(40, 169, 255);
+	font-weight: bolder;
+	text-decoration: underline;
+}
+
+.sub-list > li {
+	list-style-type: circle;
+	font-size: 14px;
+	margin-right: 5%;
+	color: #888888;
+}
+
+pre {
+	display: inline;
+	background-color: rgb(201, 201, 201);
+	font-family: Courier, monospace;
+	border: 1px solid dimgray;
+	border-radius: 5px;
+	padding: 1px 3px;
+}
