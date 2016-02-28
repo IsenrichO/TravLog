@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html>	
+<head>	
+	<meta charset="UTF-8">
+
+	<title>World Travel Log</title>	
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />								<!-- Import 'Roboto' font from Google Fonts. -->
+	<link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet" type="text/css" />					<!-- Import 'Allerta Stencil' font from Google Fonts. -->
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css" />							<!-- Import 'Lobster' font from Google Fonts. -->
+	
+	<link rel="stylesheet" type="text/css" href="../Stylesheets/Main.css" />
+	<link rel="stylesheet" type="text/css" href="../Stylesheets/Nav-Bar.css" />
+
+	<noscript>Sorry. It appears your browser does not support JavaScript! Alternatively, if you have disabled JavaScript, try (re-)enabling to view this project as it was intended.</noscript>
+</head>
+
+<body>
+	<div id="modalWindow">
+		<button class="btn" id="XButton" onclick="document.getElementById('modalWindow').style.display='none'">&times;</button>
+		<form id="modalForm">
+			<fieldset id="logType">
+				<input type="radio" id="itineraryType" name="recordType" value="Travel Itinerary" />
+					<label for="itineraryType">Travel Itinerary</label>	
+				<input type="radio" id="recordType" name="recordType" value="Travel Log" />
+					<label for="recordType">Travel Log</label>				
+			</fieldset>
+
+			<fieldset>
+				<legend>Trip Details</legend>	
+
+				<div style="position: relative; display: block; text-align: left;">
+					<label for="select_country" style="position: relative; display: inline;">Country</label> 
+					<select id="select_country" name="select_country" size="1" style="display: inline;">
+					
+					<option value="Afghanistan">Afghanistan</option>
+					<option value="Albania">Albania</option> 
+					<option value="Algeria">Algeria</option> 
+					<option value="Andorra">Andorra</option> 
+					<option value="Angola">Angola</option> 
+					<option value="Antarctica">Antarctica</option>
+					<option value="Antigua & Barbuda">Antigua & Barbuda</option> 
+					<option value="Arctic Circle">Arctic Circle, The</option>
+					<option value="Argentina">Argentina</option> 
+					<option value="Armenia">Armenia</option> 
+					<option value="Asia">Asia</option>
+					<option value="Australia">Australia</option> 
+					<option value="Austria">Austria</option> 
+					<option value="Azerbaijan">Azerbaijan</option> 
+					<option value="Bahamas">Bahamas, The</option> 
+					<option value="Bahrain">Bahrain</option> 
+					<option value="Bangladesh">Bangladesh</option> 
+					<option value="Barbados">Barbados</option> 
+					<option value="Belarus">Belarus</option> 
+					<option value="Belgium">Belgium</option> 
+					<option value="Belize">Belize</option> 
+					<option value="Benin">Benin</option> 
+					<option value="Bermuda">Bermuda</option>
+					<option value="Bhutan">Bhutan</option> 
+					<option value="Bolivia">Bolivia</option> 
+					<option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option> 
+					<option value="Botswana">Botswana</option> 
+					<option value="Brazil">Brazil</option> 
+					<option value="Brunei">Brunei</option> 
+					<option value="Bulgaria">Bulgaria</option> 
+					<option value="Burkina Faso">Burkina Faso</option> 
+					<option value="Burundi">Burundi</option> 
+					<option value="Cambodia">Cambodia</option> 
+					<option value="Cameroon">Cameroon</option> 
+					<option value="Canada">Canada</option> 
+					<option value="Cape Verde">Cape Verde</option> 
+					<option value="Central African Republic">Central African Republic</option> 
+					<option value="Chad">Chad</option> 
+					<option value="Chile">Chile</option> 
+					<option value="China">China</option> 
+					<option value="Colombia">Colombia</option> 
+					<option value="Comoros">Comoros</option> 
+					<option value="Congo">Congo, Democratic Republic of The</option> 
+					<option value="Costa Rica">Costa Rica</option> 
+					<option value="Croatia">Croatia</option> 
+					<option value="Cuba">Cuba</option> 
+					<option value="Cyprus">Cyprus</option> 
+					<option value="Czech Republic">Czech Republic</option> 
+					<option value="Denmark">Denmark</option> 
+					<option value="Djibouti">Djibouti</option> 
+					<option value="Dominica">Dominica</option> 
+					<option value="Dominican Republic">Dominican Republic</option> 
+					<option value="East Timor">East Timor</option> 
+					<option value="Ecuador">Ecuador</option> 
+					<option value="Egypt">Egypt</option> 
+					<option value="El Salvador">El Salvador</option> 
+					<option value="Equatorial Guinea">Equatorial Guinea</option> 
+					<option value="Eritrea">Eritrea</option> 
+					<option value="Estonia">Estonia</option> 
+					<option value="Ethiopia">Ethiopia</option> 
+					<option value="Europe">Europe</option>
+					<option value="Falkland Islands">Falkland Islands (Islas Malvinas)</option>
+					<option value="Faroe Islands">Faroe Islands</option>
+					<option value="Fiji">Fiji</option> 
+					<option value="Finland">Finland</option> 
+					<option value="France">France</option> 
+					<option value="French Guiana">French Guiana</option>
+					<option value="French Polynesia">French Polynesia</option>
+					<option value="Gabon">Gabon</option> 
+					<option value="Gambia">Gambia, The</option> 
+					<option value="Gaza Strip">Gaza Strip</option>
+					<option value="Georgia">Georgia</option> 
+					<option value="Germany">Germany</option> 
+					<option value="Ghana">Ghana</option> 
+					<option value="Greece">Greece</option> 
+					<option value="Greenland">Greenland</option>
+					<option value="Grenada">Grenada</option> 
+					<option value="Guadeloupe">Guadeloupe</option>
+					<option value="Guatemala">Guatemala</option> 
+					<option value="Guinea">Guinea</option> 
+					<option value="Guinea-Bissau">Guinea-Bissau</option> 
+					<option value="Guyana">Guyana</option> 
+					<option value="Haiti">Haiti</option> 
+					<option value="Honduras">Honduras</option> 
+					<option value="Hong Kong">Hong Kong, Special Administrative Region (S.A.R.)</option> 
+					<option value="Hungary">Hungary</option> 
+					<option value="Iceland">Iceland</option> 
+					<option value="India">India</option> 
+					<option value="Indonesia">Indonesia</option> 
+					<option value="Iran">Iran</option> 
+					<option value="Iraq">Iraq</option> 
+					<option value="Ireland">Ireland, Republic of</option> 
+					<option value="Isle of Man">Isle of Man</option>
+					<option value="Israel">Israel</option> 
+					<option value="Italy">Italy</option> 
+					<option value="Ivory Coast">Ivory Coast (Côte d'Ivoire)</option> 
+					<option value="Jamaica">Jamaica</option> 
+					<option value="Jan Mayen">Jan Mayen</option>
+					<option value="Japan">Japan</option> 
+					<option value="Jordan">Jordan</option> 
+					<option value="Kazakhstan">Kazakhstan</option> 
+					<option value="Kenya">Kenya</option> 
+					<option value="Kiribati">Kiribati</option> 
+					<option value="North Korea">Korea, Peoples Republic of (North Korea)</option>
+					<option value="South Korea">Korea, Republic of (South Korea)</option>
+					<option value="Kosovo">Kosovo</option> 
+					<option value="Kuwait">Kuwait</option> 
+					<option value="Kyrgyzstan">Kyrgyzstan</option> 
+					<option value="Laos">Laos</option> 
+					<option value="Latvia">Latvia</option> 
+					<option value="Lebanon">Lebanon</option> 
+					<option value="Lesotho">Lesotho</option> 
+					<option value="Liberia">Liberia</option> 
+					<option value="Libya">Libya</option> 
+					<option value="Liechtenstein">Liechtenstein</option> 
+					<option value="Lithuania">Lithuania</option> 
+					<option value="Luxembourg">Luxembourg</option> 
+					<option value="Macau">Macau, Special Administrative Region (S.A.R.)</option>
+					<option value="Macedonia">Macedonia</option> 
+					<option value="Madagascar">Madagascar</option> 
+					<option value="Malawi">Malawi</option> 
+					<option value="Malaysia">Malaysia</option> 
+					<option value="Maldives">Maldives</option>  
+					<option value="Mali">Mali</option>  
+					<option value="Malta">Malta</option>  
+					<option value="Martinique">Martinique</option>
+					<option value="Marshall Islands">Marshall Islands</option>  
+					<option value="Mauritania">Mauritania</option>  
+					<option value="Mauritius">Mauritius</option>  
+					<option value="Mexico">Mexico</option>  
+					<option value="Micronesia">Micronesia, Federated States of</option>  
+					<option value="Middle East">Middle East</option>
+					<option value="Moldova">Moldova</option>  
+					<option value="Monaco">Monaco</option>  
+					<option value="Mongolia">Mongolia</option>  
+					<option value="Montenegro">Montenegro</option>  
+					<option value="Morocco">Morocco</option>  
+					<option value="Mozambique">Mozambique</option>  
+					<option value="Myanmar">Myanmar (Burma)</option>  
+					<option value="Namibia">Namibia</option>  
+					<option value="Nauru">Nauru</option>  
+					<option value="Nepal">Nepal</option>  
+					<option value="Netherlands">Netherlands (Holland)</option>  
+					<option value="New Caledonia">New Caledonia</option>
+					<option value="New Zealand">New Zealand</option>  
+					<option value="Nicaragua">Nicaragua</option>  
+					<option value="Niger">Niger</option>  
+					<option value="Nigeria">Nigeria</option>  
+					<option value="Northern Mariana Islands">Northern Mariana Islands</option>
+					<option value="Norway">Norway</option>  
+					<option value="Oman">Oman</option>  
+					<option value="Pakistan">Pakistan</option>  
+					<option value="Palau">Palau</option>  
+					<option value="Panama">Panama</option>  
+					<option value="Papua New Guinea">Papua New Guinea</option>  
+					<option value="Paraguay">Paraguay</option>  
+					<option value="Peru">Peru</option>  
+					<option value="Philippines">Philippines</option>  
+					<option value="Poland">Poland</option>  
+					<option value="Portugal">Portugal</option>  
+					<option value="Puerto Rico">Puerto Rico</option>
+					<option value="Qatar">Qatar</option>  
+					<option value="Reunion">Reunion</option>
+					<option value="Romania">Romania</option>  
+					<option value="Russia">Russian Federation</option>  
+					<option value="Rwanda">Rwanda</option>  
+					<option value="St. Kitts & Nevis">Saint Kitts & Nevis</option>  
+					<option value="St. Lucia">Saint Lucia</option>  
+					<option value="St. Vincent & The Grenadines">Saint Vincent & The Grenadines</option>  
+					<option value="Samoa">Samoa</option>  
+					<option value="San Marino">San Marino</option>  
+					<option value="Sao Tome & Principe">Sao Tome & Principe</option>  
+					<option value="Saudi Arabia">Saudi Arabia</option>  
+					<option value="Senegal">Senegal</option>  
+					<option value="Serbia">Serbia</option>  
+					<option value="Seychelles">Seychelles</option>  
+					<option value="Sierra Leone">Sierra Leone</option>  
+					<option value="Singapore">Singapore</option>  
+					<option value="Slovakia">Slovakia</option>  
+					<option value="Slovenia">Slovenia</option>  
+					<option value="Solomon Islands">Solomon Islands</option>  
+					<option value="Somalia">Somalia</option>  
+					<option value="South Africa">South Africa</option>  
+					<option value="South Sudan">South Sudan</option>  
+					<option value="Spain">Spain</option>  
+					<option value="Sri Lanka">Sri Lanka</option>  
+					<option value="Sudan">Sudan</option>  
+					<option value="Suriname">Suriname</option>  
+					<option value="Svalbard">Svalbard</option>
+					<option value="Swaziland">Swaziland</option>  
+					<option value="Sweden">Sweden</option>  
+					<option value="Switzerland">Switzerland</option>  
+					<option value="Syria">Syria</option>  
+					<option value="Taiwan">Taiwan</option>  
+					<option value="Tajikistan">Tajikistan</option>  
+					<option value="Tanzania">Tanzania, United Republic of</option>  
+					<option value="Thailand">Thailand</option>  
+					<option value="Timor Leste">Timor Leste</option>
+					<option value="Togo">Togo</option> 
+					<option value="Tonga">Tonga</option> 
+					<option value="Trinidad & Tobago">Trinidad & Tobago</option> 
+					<option value="Tunisia">Tunisia</option> 
+					<option value="Turkey">Turkey</option> 
+					<option value="Turkmenistan">Turkmenistan</option> 
+					<option value="Turks & Caicos">Turks & Caicos</option>
+					<option value="Tuvalu">Tuvalu</option> 
+					<option value="Uganda">Uganda</option> 
+					<option value="Ukraine">Ukraine</option> 
+					<option value="United Arab Emirates">United Arab Emirates (UAE)</option> 
+					<option value="United Kingdom">United Kingdom (UK)</option> 
+					<option value="United States" selected>United States of America (USA)</option> 
+					<option value="Uruguay">Uruguay</option> 
+					<option value="Uzbekistan">Uzbekistan</option> 
+					<option value="Vanuatu">Vanuatu</option> 
+					<option value="Vatican City">Vatican City</option> 
+					<option value="Venezuela">Venezuela</option> 
+					<option value="Vietnam">Vietnam</option> 
+					<option value="Western Sahara">Western Sahara</option>
+					<option value="Western Samoa">Western Samoa</option>
+					<option value="Yemen">Yemen</option> 
+					<option value="Yugoslavia">Yugoslavia (formerly)</option>
+					<option value="Zaire">Zaire</option>
+					<option value="Zambia">Zambia</option> 
+					<option value="Zimbabwe">Zimbabwe</option>
+					</select>
+				</div>
+				<br />
+				
+				<textarea id="tripDescrip" placeholder="Record your trip experience. Plan an itinerary. The world is your oyster."></textarea>
+			</fieldset> 
+			<br />
+			
+			<div id="modalBtns">
+				<input type="button" id="submitBtn" class="btn" value="ADD" onclick="addTrip()"></button>					
+			</div>
+		</form>
+	</div>
+
+	
+	<div id="btnsBar">
+		<div id="dropRightMenu">
+			<button id="dropRightBtn" class="btn" onclick="toggleAnimation('glyphOne'), toggleDisplay('toolsNavBar')"><div id="glyphOne">&#x2630;</div></button>
+				<nav id="toolsNavBar">
+					<button class="btn" onclick="toggleDisplay('modalWindow')" value="Add"><span class="glyph">+</span></button>
+					<hr class="tripMenuHR" />
+					<button class="btn" value="Google">
+						<a href="https://www.google.com/" style="height: 70px; width: 70px; position: relative; top: 5px;">
+							<img src="../Graphics/Google_Logo.png" alt="Google" />
+						</a>
+					</button>				
+				</nav>
+			</div>
+		</button>
+	</div>
+
+	<div id="leftPane">
+		<div id="headDiv">
+			<h1 id="titleHeader">World Travel Log</h1>
+			
+			<div id="mainHeadingHR">
+				<hr id="mainHeadingHR1" class="mainHeadingHR" />
+				<hr id="mainHeadingHR2" class="mainHeadingHR" />
+				<hr id="mainHeadingHR3" class="mainHeadingHR" />
+			</div>
+		</div>
+
+		<div id="tripsContainer"></div>
+	</div>
+
+
+	<div id="mapContainer"></div>
+
+
+	<nav id="inter-pageNavBar">
+		<a class="bottomNavTab" style="border-left: none;" href="../index.html" target="_self"><h2 class="navTabText">Home</h2></a>
+
+		<a class="bottomNavTab" href="Change_Log.html" target="_blank"><h2 class="navTabText">Change Log</h2></a>
+
+		<div class="bottomNavTab"><h2 class="navTabText"><span class="dropupGlyph">&nbsp;&nbsp; &#x2630;</span>About . . .</h2>
+			<div class="popup">
+				<a href="Myself.html" target="_blank">&nbsp;
+					<img src="../Graphics/Profile_Picture.jpg" 
+						 style="border-radius: 50%; vertical-align: middle;" height="40px;" width="40px;" alt="Personal Contact Chip" />&nbsp;&nbsp;&nbsp;&nbsp; Myself
+				</a>
+				<hr class="submenuHR" />
+				<a href="This_Project.html" target="_blank"><span class="dropupGlyph" style="font-size: 40px; margin-left: -5px;">&nbsp; &#x1f310;</span>&nbsp;&nbsp;&nbsp;&nbsp; This Project</a>
+			</div>
+		</div>
+
+		<div class="bottomNavTab"><h2 class="navTabText"><span class="dropupGlyph">&nbsp;&nbsp; &#x2630;</span>Connect</h2>
+			<div class="popup">
+				<a href="https://www.facebook.com/rE.vilO.I.13" target="_blank">&nbsp;
+					<img src="../Graphics/Facebook.jpg" 
+						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp;&nbsp;&nbsp;&nbsp; Facebook
+				</a>
+				<hr class="submenuHR" />
+				<a href="https://github.com/IsenrichO" target="_blank">&nbsp;
+					<img src="../Graphics/octocat.svg" 
+						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp;&nbsp;&nbsp;&nbsp; GitHub
+				</a>
+				<hr class="submenuHR" />
+				<a href="https://plus.google.com/+OliverIsenrich" target="_blank">&nbsp;
+					<img src="../Graphics/GooglePlus.png" 
+						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp;&nbsp;&nbsp;&nbsp; Google+
+				</a>
+				<hr class="submenuHR" />
+				<a href="https://www.quora.com/profile/Oliver-Isenrich" target="_blank">&nbsp;
+					<img src="../Graphics/Quora.png" 
+						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp;&nbsp;&nbsp;&nbsp; Quora
+				</a>
+				<hr class="submenuHR" />
+				<a href="https://twitter.com/IsenrichO" target="_blank">&nbsp;
+					<img src="../Graphics/Twitter.png" 
+						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp;&nbsp;&nbsp;&nbsp; Twitter
+				</a>
+			</div>
+		</div>
+
+	</nav>
+
+	
+	<script>
+	    function toggleDisplay(elemId) {
+	    	(function(style) {
+	        	style.display = style.display !== "block" ? "block" : "none";
+	        })(document.getElementById(elemId).style);
+	    }
+
+	    function toggleAnimation(elemId) {
+	    	(function(style) {
+	    		style.transform = style.transform !== "rotate(90deg)" ? "rotate(90deg)" : "rotate(0deg)";
+	    	})(document.getElementById(elemId).style);
+	    }
+
+
+
+		var listArr = [];
+
+		var countryObject = {
+			Afghanistan: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/1/19/Afghanistan_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Afghanistan"
+			},
+			Albania: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Albania_%28orthographic_projection%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/3/36/Flag_of_Albania"
+			},
+			Algeria: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/2/25/Algeria_%28orthographic_projection%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_Algeria"
+			},
+			Andorra: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/8/83/Andorra_on_the_globe_%28Europe_centered%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/d/dc/Flag_of_Andorra%281934%29"
+			},
+			Angola: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/d/dc/Angola_on_the_globe_%28Zambia_centered%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola"
+			},
+			Antarctica: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Antarctica_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/6/68/Flag_of_the_Antarctic_Treaty"
+			},
+			"Antigua & Barbuda": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/2/21/ATG_orthographic", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/8/89/Flag_of_Antigua_and_Barbuda"
+			},
+			"Arctic Circle": {
+				map: "https://commons.wikimedia.org/wiki/File:Arctic_(orthographic_projection)",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Worldmap_northern"
+			},
+			Argentina: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Argentina_%28orthographic_projection%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina"
+			},
+			Armenia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/9/96/Armenia_%28orthographic_projection%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_Armenia"
+			},
+			Asia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/8/80/Asia_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/en/8/87/Flag_of_ASEAN"
+			},
+			Australia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/d/da/Australia_with_AAT_%28orthographic_projection%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29"
+			},
+			Austria: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/6/62/Austria_on_the_globe_%28Europe_centered%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_Austria"
+			},
+			Azerbaijan: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/0/01/Azerbaijan_%28orthographic_projection%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Azerbaijan"
+			},
+			Bahamas: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/d/de/The_Bahamas_on_the_globe_%28Americas_centered%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/9/93/Flag_of_the_Bahamas"
+			},
+			Bahrain: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/6/62/Bahrain_on_the_globe_%28Afro-Eurasia_centered%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_Bahrain"
+			},
+			Bangladesh: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Bangladesh_%28orthographic_projection%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Flag_of_Bangladesh"
+			},
+			Barbados: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/a/a1/BRB_orthographic", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/e/ef/Flag_of_Barbados"
+			},
+			Belarus: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/6/68/Belarus_on_the_globe_%28Europe_centered%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/8/85/Flag_of_Belarus"
+			},
+			Belgium: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/b/b4/Belgium_on_the_globe_%28Europe_centered%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/f/fe/Government_Ensign_of_Belgium"
+			},
+			Belize: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/4/43/BLZ_orthographic", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Flag_of_Belize"
+			},
+			Benin: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Benin_on_the_globe_%28Africa_centered%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Flag_of_Benin"
+			},
+			Bhutan: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Bhutan_%28orthographic_projection%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/9/91/Flag_of_Bhutan"
+			},
+			Bolivia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Bolivia_%28orthographic_projection%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/d/de/Flag_of_Bolivia_%28state%29"
+			},
+			"Bosnia & Herzegovina": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/1/1c/Bosnia_and_Herzegovina_on_the_globe_%28Europe_centered%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Flag_of_Bosnia_and_Herzegovina"
+			},
+			Botswana: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Botswana_on_the_globe_%28Africa_centered%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_Botswana"
+			},
+			Brazil: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/9/90/Brazil_on_the_globe_%28South_America_centered%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil"
+			},
+			Brunei: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/d/d8/Brunei_on_the_globe_%28Brunei_centered%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Brunei"
+			},
+			Bulgaria: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Bulgaria_on_the_globe_%28Europe_centered%29", 
+				flag: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Bulgaria"
+			},
+			"Burkina Faso": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Burkina_Faso_on_the_globe_%28Africa_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/3/31/Flag_of_Burkina_Faso"
+			},
+			Burundi: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/2/27/Burundi_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/5/50/Flag_of_Burundi"
+			},
+			Cambodia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Cambodia_on_the_globe_%28Southeast_Asia_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_Cambodia"
+			},
+			Cameroon: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/b/b4/Cameroon_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Cameroon"
+			},
+			Canada: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/c/c7/Canada_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/en/c/cf/Flag_of_Canada"
+			},
+			"Cape Verde": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/4/47/Cape_Verde_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/3/38/Flag_of_Cape_Verde"
+			},
+			"Central African Republic": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Central_African_Republic_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Flag_of_the_Central_African_Republic"
+			},
+			Chad: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/4/46/Chad_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Flag_of_Chad"
+			},
+			Chile: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Chile_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/7/78/Flag_of_Chile"
+			},
+			China: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/7/78/People%27s_Republic_of_China_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China"
+			},
+			Colombia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/c/ca/COL_orthographic_%28San_Andr%C3%A9s_and_Providencia_special%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia"
+			},
+			Comoros: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Comoros_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/9/94/Flag_of_the_Comoros"
+			},
+			Congo: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Democratic_Republic_of_the_Congo_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/9/92/Flag_of_the_Republic_of_the_Congo"
+			},
+			"Costa Rica": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Costa_Rica_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Costa_Rica_%28state%29"
+			},
+			Croatia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/1/15/EU-Croatia",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Flag_of_Croatia"
+			},
+			Cuba: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/0/01/Cuba_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Flag_of_Cuba"
+			},
+			Cyprus: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/4/4f/EU-Cyprus",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Cyprus"
+			},
+			"Czech Republic": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/2/20/Czech_Republic_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_Czech_Republic"
+			},
+			Denmark: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Denmark_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Denmark"
+			},
+			Djibouti: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/b/b7/Djibouti_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/3/34/Flag_of_Djibouti"
+			},
+			Dominica: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/7/78/Dominica_on_the_globe_%28Americas_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Flag_of_Dominica"
+			},
+			"Dominican Republic": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/9/95/Dominican_Republic_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_the_Dominican_Republic"
+			},
+			"East Timor": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Timor_Leste_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/2/26/Flag_of_East_Timor"
+			},
+			Ecuador: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/c/c8/Ecuador_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Flag_of_Ecuador"
+			},
+			Egypt: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/a/a1/EGY_orthographic",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt"
+			},
+			"El Salvador": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/e/e3/El_Salvador_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/3/34/Flag_of_El_Salvador"
+			},
+			"Equatorial Guinea": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Location_Equatorial_Guinea_AU_Africa",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/3/31/Flag_of_Equatorial_Guinea"
+			},
+			Eritrea: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/4/43/Eritrea_%28Africa_orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/2/29/Flag_of_Eritrea"
+			},
+			Estonia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/b/b1/Estonia_on_the_globe_%28Europe_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_Estonia_%28bordered%29"
+			},
+			Ethiopia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Ethiopia_%28Africa_orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/7/71/Flag_of_Ethiopia"
+			},
+			Europe: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Europe_%28orthographic_projection%29",
+				flag: ""
+			},
+			"Falkland Islands": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Falkland_Islands_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_Falkland_Islands"
+			},
+			"Faroe Islands": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/3/38/Kingdom_of_Denmark_on_the_globe_%28Faroer_special%29_%28Europe_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Flag_of_the_Faroe_Islands"
+			},
+			Fiji: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Fiji_on_the_globe_%28small_islands_magnified%29_%28Polynesia_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Fiji"
+			},
+			Finland: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/7/7a/Finland_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Finland"
+			},
+			France: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/e/e1/France_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France"
+			},
+			"French Polynesia": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/b/ba/French_Polynesia_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/d/db/Flag_of_French_Polynesia"
+			},
+			Gabon: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Gabon_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Gabon_%283-2%29"
+			},
+			"Gambia, The": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/1/16/Gambia_%28orthographic_projection_with_inset%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_The_Gambia"
+			},
+			Georgia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/6/67/Georgia_%28orthographic_projection_with_inset%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Flag_of_Georgia"
+			},
+			Germany: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/9/95/Germany_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany"
+			},
+			Ghana: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/3/30/Ghana_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Ghana"
+			},
+			Greece: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/2/21/EU-Greece",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece"
+			},
+			Grenada: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/5/53/Grenada_in_its_region",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Grenada"
+			},
+			Guatemala: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/7/70/Guatemala_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/e/ec/Flag_of_Guatemala"
+			},
+			Guinea: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/e/e4/Guinea_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/e/ed/Flag_of_Guinea"
+			},
+			"Guinea-Bissau": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/9/9e/Guinea-Bissau_on_the_globe_%28Cape_Verde_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_Guinea-Bissau"
+			},
+			Guyana: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/2/20/Guyana_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_Guyana"
+			},
+			Haiti: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/f/fe/Haiti_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/5/56/Flag_of_Haiti"
+			},
+			Honduras: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Honduras_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/8/82/Flag_of_Honduras"
+			},
+			Hungary: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/6/60/EU-Hungary",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Flag_of_Hungary"
+			},
+			Iceland: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/7/7a/Iceland_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Iceland"
+			},
+			India: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/b/bb/India_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India"
+			},
+			Indonesia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/0/05/Indonesia_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia"
+			},
+			Iran: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Iran_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/c/ca/Flag_of_Iran"
+			},
+			Iraq: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/5/59/Iraq_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Flag_of_Iraq"
+			},
+			"Ireland, Republic of": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/2/25/Locator_map_of_Ireland",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland"
+			},
+			Israel: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/4/42/Israel_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Israel"
+			},
+			Italy: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Italy_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy"
+			},
+			"Ivory Coast": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/9/9b/C%C3%B4te_d%27Ivoire_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_C%C3%B4te_d%27Ivoire"
+			},
+			Jamaica: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Jamaica_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Flag_of_Jamaica"
+			},
+			Japan: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/6/62/Japan_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan"
+			},
+			Jordan: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Jordan_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/c/c0/Flag_of_Jordan"
+			},
+			Kazakhstan: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/3/3e/Kazakhstan_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Flag_of_Kazakhstan"
+			},
+			Kenya: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Kenya_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Kenya"
+			},
+			Kiribati: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Kiribati_on_the_globe_%28Polynesia_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Flag_of_Kiribati"
+			},
+			"Korea, North": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/7/7b/North_Korea_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea"
+			},
+			"Korea, South": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/9/95/South_Korea_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea"
+			},
+			Kosovo: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/1/18/Europe-Republic_of_Kosovo",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Flag_of_Kosovo"
+			},
+			Kuwait: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Kuwait_on_the_globe_%28Afro-Eurasia_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Flag_of_Kuwait"
+			},
+			Kyrgyzstan: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Kyrgyzstan_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/c/c7/Flag_of_Kyrgyzstan"
+			},
+			Laos: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/4/49/Laos_on_the_globe_%28Southeast_Asia_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/5/56/Flag_of_Laos"
+			},
+			"Latin America": {
+				map: "Latin_America_(orthographic_projection)",
+				flag: ""
+			},
+			Latvia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/3/32/EU-Latvia",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/8/84/Flag_of_Latvia"
+			},
+			Lebanon: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/9/96/Lebanon_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/5/59/Flag_of_Lebanon"
+			},
+			Lesotho: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Lesotho_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Flag_of_Lesotho"
+			},
+			Liberia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/9/91/Liberia_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/b/b8/Flag_of_Liberia"
+			},
+			Libya: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/0/07/Libya_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Libya"
+			},
+			Liechtenstein: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/8/87/Liechtenstein_on_the_globe_%28Europe_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/5/52/Flag_of_Liechtenstein_%28state%29"
+			},
+			Lithuania: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/e/ec/EU-Lithuania",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/1/11/Flag_of_Lithuania"
+			},
+			Luxembourg: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/c/c3/EU-Luxembourg",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/d/da/Flag_of_Luxembourg"
+			},
+			Macedonia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/6/62/Macedonia_on_the_globe_%28Europe_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Flag_of_Macedonia"
+			},
+			Madagascar: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/9/99/Madagascar_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Madagascar"
+			},
+			Malawi: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Malawi_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Malawi"
+			},
+			Malaysia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/2/23/Malaysia_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/6/66/Flag_of_Malaysia"
+			},
+			Maldives: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Maldives_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Flag_of_Maldives"
+			},
+			Mali: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/8/8b/Mali_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/9/92/Flag_of_Mali"
+			},
+			Malta: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/6/63/EU-Malta",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/7/73/Flag_of_Malta"
+			},
+			"Marshall Islands": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/1/18/Marshall_Islands_on_the_globe_%28small_islands_magnified%29_%28Polynesia_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Flag_of_the_Marshall_Islands"
+			},
+			Mauritania: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Mauritania_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/4/43/Flag_of_Mauritania"
+			},
+			Mauritius: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Mauritius_%28orthographic_projection_with_inset%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_Mauritius"
+			},
+			Mexico: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/0/06/MEX_orthographic",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico"
+			},
+			Micronesia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Micronesia_in_Oceania_%28-mini_map_-rivers%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/e/e4/Flag_of_the_Federated_States_of_Micronesia"
+			},
+			"Middle East": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Middle_East_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Flag_of_the_Arab_League"
+			},
+			Moldova: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Moldova_on_the_globe_%28Europe_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/2/27/Flag_of_Moldova"
+			},
+			Monaco: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Monaco_on_the_globe_%28Europe_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/6/69/Flag_of_Monaco_%28state%29"
+			},
+			Mongolia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Mongolia_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Mongolia"
+			},
+			Montenegro: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/3/38/Montenegro_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Montenegro"
+			},
+			Morocco: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/7/78/Morocco_%28orthographic_projection%2C_WS_claimed%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_Morocco"
+			},
+			Mozambique: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/8/84/Mozambique_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/d/d0/Flag_of_Mozambique"
+			},
+			"Myanmar": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Myanmar_on_the_globe_%28Myanmar_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Flag_of_Myanmar"
+			},
+			Namibia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Namibia_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Namibia"
+			},
+			Nauru: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/2/25/Nauru_on_the_globe_%28Polynesia_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/1/14/Flag_of_Nauru_%283-2%29"
+			},
+			Nepal: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Nepal_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal"
+			},
+			Netherlands: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/4/41/Kingdom_of_the_Netherlands_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands"
+			},
+			"New Caledonia": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/0/0e/New_Caledonia_on_the_globe_%28small_islands_magnified%29_%28Polynesia_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/8/88/Pro-Independence_Flag_of_New_Caledonia"
+			},
+			"New Zealand": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/2/29/NZL_orthographic_NaturalEarth",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/3/3e/Flag_of_New_Zealand"
+			},
+			Nicaragua: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/3/38/Nicaragua_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Nicaragua"
+			},
+			Niger: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/8/88/Niger_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Flag_of_Niger"
+			},
+			Nigeria: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Nigeria_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria"
+			},
+			"Northern Ireland": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Northern_Ireland_in_the_UK_and_Europe",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Flag_of_Northern_Ireland"
+			},
+			"Northern Mariana Islands": {
+				map: "Northern_Mariana_Islands_on_the_globe_(Southeast_Asia_centered)_(small_islands_magnified)",
+				flag: "Flag_of_the_Northern_Mariana_Islands"
+			},
+			Norway: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/2/28/Norway_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway"
+			},
+			Oceania: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Oceania_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/2/25/Flag_of_Oceania_%28Proposal%29"
+			},
+			Oman: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Oman_%28better%29_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Oman"
+			},
+			Pakistan: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Pakistan_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/3/32/Flag_of_Pakistan"
+			},
+			Palau: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/5/57/Palau_on_the_globe_%28Southeast_Asia_centered%29_%28small_islands_magnified%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/4/48/Flag_of_Palau"
+			},
+			Palestine: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/a/ad/State_of_Palestine_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Flag_of_Palestine_%28State%29"
+			},
+			Panama: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/e/e1/Panama_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Flag_of_Panama"
+			},
+			"Papua New Guinea": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/7/79/Papua_New_Guinea_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Flag_of_Papua_New_Guinea"
+			},
+			Paraguay: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/8/80/Paraguay_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/2/27/Flag_of_Paraguay"
+			},
+			Peru: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/8/84/Peru_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/d/df/Flag_of_Peru_%28state%29"
+			},
+			Philippines: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/5/50/Philippines_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines"
+			},
+			Poland: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/f/fe/Poland_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/1/12/Flag_of_Poland"
+			},
+			Portugal: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Portugal_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal"
+			},
+			Qatar: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/d/d4/QAT_orthographic",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Qatar"
+			},
+			Reunion: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Reunion_on_the_globe_%28Africa_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Proposed_flag_of_R%C3%A9union_%28VAR%29"
+			},
+			Romania: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/8/87/Romania_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/7/73/Flag_of_Romania"
+			},
+			Russia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/6/65/Russian_Federation_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia"
+			},
+			Rwanda: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/0/06/Rwanda_on_the_globe_%28Africa_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Rwanda"
+			},
+			"St. Kitts & Nevis": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/5/5d/KNA_orthographic",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Saint_Kitts_and_Nevis"
+			},
+			"St. Lucia": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/9/97/Saint_Lucia_on_the_globe_%28Americas_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Saint_Lucia"
+			},
+			"St. Vincent & The Grenadines": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/7/70/VCT_orthographic",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Flag_of_Saint_Vincent_and_the_Grenadines"
+			},
+			Samoa: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/7/74/Samoa_on_the_globe_%28Polynesia_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/3/31/Flag_of_Samoa"
+			},
+			"San Marino": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/4/49/San_Marino_on_the_globe_%28Europe_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/b/b1/Flag_of_San_Marino"
+			},
+			"Sao Tome & Principe": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/3/35/Location_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe_AU_Africa",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Sao_Tome_and_Principe"
+			},
+			"Saudi Arabia": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/4/47/Saudi_Arabia_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia"
+			},
+			Scottland: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/8/82/Scotland_in_the_UK_and_Europe",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/1/10/Flag_of_Scotland"
+			},
+			Senegal: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Senegal_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Flag_of_Senegal"
+			},
+			Serbia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/5/54/Serbia_on_the_globe_%28claimed%29_%28Europe_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Flag_of_Serbia"
+			},
+			Seychelles: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/4/47/Seychelles_on_the_globe_%28Africa_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Seychelles"
+			},
+			"Sierra Leone": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/3/38/Sierra_Leone_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Sierra_Leone"
+			},
+			Singapore: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/3/35/Singapore_on_the_globe_%28Southeast_Asia_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/4/48/Flag_of_Singapore"
+			},
+			Slovakia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Slovakia_on_the_globe_%28Europe_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Flag_of_Slovakia"
+			},
+			Slovenia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Slovenia_%28orthographic_projection%29_gray_and_green_scheme_globe",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Flag_of_Slovenia"
+			},
+			"Solomon Islands": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Solomon_Islands_on_the_globe_%28Oceania_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/7/74/Flag_of_the_Solomon_Islands"
+			},
+			Somalia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Somalia_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Flag_of_Somalia"
+			},
+			"South Africa": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/6/6e/South_Africa_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa"
+			},
+			"South Sudan": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/f/fe/South_Sudan_hd_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/7/7a/Flag_of_South_Sudan"
+			},
+			Spain: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/4/49/Spain_WS-included_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain"
+			},
+			"Sri Lanka": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/9/96/Sri_Lanka_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/1/11/Flag_of_Sri_Lanka"
+			},
+			Sudan: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Sudan_%28orthographic_projection%29_highlighted",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_Sudan"
+			},
+			Suriname: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/8/87/Suriname_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/6/60/Flag_of_Suriname"
+			},
+			Svalbard: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/b/be/Norway_on_the_globe_%28Svalbard_special%29_%28Europe_centered%29",
+				flag: "http://vignette2.wikia.nocookie.net/cybernations/images/1/1c/Flag_of_the_Union_of_Svalbard"
+			},
+			Swaziland: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Swaziland_on_the_globe_%28Africa_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Flag_of_Swaziland"
+			},
+			Sweden: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/3/30/Sweden_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/en/4/4c/Flag_of_Sweden"
+			},
+			Switzerland: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/6/63/Switzerland_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland"
+			},
+			Syria: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/1/11/Syria_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/5/53/Flag_of_Syria"
+			},
+			Taiwan: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Taiwan_%28orthographic_projection%3B_southeast_Asia_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/7/72/Flag_of_the_Republic_of_China"
+			},
+			Tajikistan: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Tajikistan_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/d/d0/Flag_of_Tajikistan"
+			},
+			Tanzania: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Tanzania_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/3/38/Flag_of_Tanzania"
+			},
+			Thailand: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Thailand_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_Thailand"
+			},
+			Togo: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Togo_on_the_globe_%28Africa_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/6/68/Flag_of_Togo"
+			},
+			Tonga: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Tonga_on_the_globe_%28Polynesia_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Tonga_%283-2%29"
+			},
+			"Trinidad & Tobago": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/e/ed/Trinidad_and_Tobago_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Trinidad_and_Tobago"
+			},
+			Tunisia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/d/da/Tunisia_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Tunisia"
+			},
+			Turkey: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Turkey_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey"
+			},
+			Turkmenistan: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/5/59/Turkmenistan_on_the_globe_%28Eurasia_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Flag_of_Turkmenistan"
+			},
+			Tuvalu: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Tuvalu_on_the_globe_%28Polynesia_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/3/38/Flag_of_Tuvalu"
+			},
+			Uganda: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Uganda_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Flag_of_Uganda"
+			},
+			Ukraine: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/4/44/Ukraine_on_the_globe_%28Europe_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Ukraine"
+			},
+			"United Arab Emirates": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/c/cd/United_Arab_Emirates_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates"
+			},
+			"United Kingdom": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/5/58/British_Isles_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom"
+			},
+			"United States": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/7/70/United_States_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States"
+			},
+			Uruguay: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/8/8d/Uruguay_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Uruguay"
+			},
+			Uzbekistan: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/7/76/%D0%A3%D0%B7%D0%B1%D0%B5%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD_%D0%BD%D0%B0_%D0%B3%D0%BB%D0%BE%D0%B1%D1%83%D1%81%D0%B5",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/8/84/Flag_of_Uzbekistan"
+			},
+			Vanuatu: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Vanuatu_on_the_globe_%28Polynesia_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Flag_of_Vanuatu_%28official%29"
+			},
+			"Vatican City": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/d/dc/Vatican_on_the_globe_%28Europe_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_the_Vatican_City"
+			},
+			Venezuela: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Venezuela_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/0/06/Flag_of_Venezuela"
+			},
+			Vietnam: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/9/94/Vietnam_on_the_globe_%28Southeast_Asia_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam"
+			},
+			Wales: {
+				map: "http://vignette1.wikia.nocookie.net/future/images/2/25/Wales_in_the_UK_and_Europe",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/5/59/Flag_of_Wales_2"
+			},
+			Yemen: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Yemen_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/8/89/Flag_of_Yemen"
+			},
+			Zambia: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/2/26/Zambia_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/0/06/Flag_of_Zambia"
+			},
+			Zimbabwe: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/5/50/Zimbabwe_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Flag_of_Zimbabwe"
+			}
+						
+		};		// ^^NEVER AGAIN.
+
+
+		function addTrip() {
+			document.getElementById("modalWindow").style.display = "none";								// Turn #modalWindow display off following click event.
+
+
+			// Declare variables with values equal to id's of fetched HTML elements:
+			var tripsCont = document.getElementById("tripsContainer");
+			var countryName = document.getElementById("select_country").value;
+			var descrip = document.getElementById("tripDescrip").value;
+
+				listArr.push("'" + countryName + "'");
+				//countryName.className = "countryTxt";
+
+
+			// Invocations of the .createElement() method to trigger production of needed HTML entities for created trips:
+			var newTrip = document.createElement("DIV");
+			var bannerCont = document.createElement("DIV");
+			var headerRule = document.createElement("HR");
+			var bodyCont = document.createElement("DIV");
+			var flagImg = document.createElement("IMG");
+			var mapImg = document.createElement("IMG");
+			var arrowGlyph = document.createElement("P");
+			var titleHolder = document.createElement("P");
+			var mapCont = document.createElement("FIGURE");
+			var figCapt = document.createElement("FIGCAPTION");
+			// var flexChild1 = document.createElement("DIV");
+			// var flexChild2 = document.createElement("DIV");
+			var bodyTxt = document.createElement("P");
+
+
+			// Invocations of the .createTextNode() method to trigger production of embedded HTML text strings:
+			var cardTitle = document.createTextNode(countryName);
+				// cardTitle.className = "countryTxt";
+			var bodyMsg = document.createTextNode(descrip);
+
+
+			// Define the country map and flag getters:
+			var map = countryObject[countryName].map;
+			var mapFilePath = map + ".svg";
+			mapImg.setAttribute("src", mapFilePath);
+			mapImg.setAttribute("style", "position: relative; width: 96%; margin: auto; display: block; vertical-align: middle;");
+			figCapt.innerHTML = "<br /> <span class='figNum' style='color: black; font-style: normal; font-size: 12px; font-weight: bolder;'> <b>Fig.</b></span> Orthographic projection. <br /> <span style='float: right; font-style: normal; font-size: 9px;'> <br /> <strong><em>—</em> [Natural Earth OS-Data]</strong></span>";
+			figCapt.setAttribute("style", "display: block; text-align: center; position: relative; width: 90%; color: #555555; font-style: italic; font-size: 12px; line-height: 8px; margin: auto;");
+
+			var flag = countryObject[countryName].flag;
+			var flagFilePath = flag + ".svg";
+			flagImg.setAttribute("src", flagFilePath);
+			flagImg.setAttribute("style", "max-height: 90px; max-width: 130px; top: 15px; right: 30px; display: inline-block; float: right; position: relative; vertical-align: middle;");
+
+
+			// Declare preliminary stylistic scheme for pursuant content:
+			//newTrip.setAttribute("style", "background: silver; box-shadow: 2px 2px 2px dimgray; position: relative; left: 7%; top: 10%; width: 90%; height: 100px;");
+			newTrip.className = "trip";
+			// newTrip.id = "yo";
+			bodyCont.setAttribute("style", "display: flex; flex-direction: row; justify-content: center; align-items: baseline; position: relative; width: 98%; padding: 5px 0 0 5px; overflow-x: hidden; margin-bottom: 2%; min-height: 180px;");
+			bannerCont.setAttribute("style", "display: block; position: relative; padding: 0 0 10px 10px; top 25px; width: 98%; height: 120px; vertical-align: middle; margin-bottom: 0;");
+			headerRule.setAttribute("style", "display: block; top: 0; left: 15px; right: -2px; position: relative; margin: 0 0 2% 0; width: auto; overflow: hidden; height: 4px; background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 45%, rgba(255, 255, 255, 1) 92%, rgba(255, 255, 255, 0.9) 99%); border: none; outline: none; box-shadow: none;");
+			headerRule.className = "tripCardHR";
+
+
+			// Define nested contents of the 'bannerCont' variable:
+			arrowGlyph.innerHTML = "❱❱";
+			//arrowGlyph.setAttribute("style", "vertical-align: middle; ");
+			arrowGlyph.setAttribute("style", "display: inline; position: relative; margin-right: 20px; color: dimgray; font-weight: bolder; font-size: 35px; display: inline;");
+			arrowGlyph.id = "doubleChevron";
+			
+
+
+			
+			titleHolder.appendChild(cardTitle);
+			titleHolder.setAttribute("style", "position: relative; display: inline-block; font-size: 40px; color: #FFFFFF; text-shadow: -2px -2px 1px dimgray, 2px 2px 1px #7efcef; font-variant: small-caps; font-family: Allerta Stencil; float: left; max-width: 75%; font-weight: bold; bottom: 0px; line-height: 25px;");
+			titleHolder.insertBefore(arrowGlyph, titleHolder.childNodes[0]);
+
+
+			// Define nested contents of the 'bodyCont' variable:
+			mapCont.appendChild(figCapt);
+			mapCont.insertBefore(mapImg, mapCont.childNodes[0]);
+			mapCont.setAttribute("style", "display: inline-block; order: -1; vertical-align: middle; float: left; width: 29%; height: auto; position: relative; left: 0; padding: auto; margin: auto;"); 
+				// background: radial-gradient(rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0) 95%);");
+
+			bodyTxt.appendChild(bodyMsg);
+			bodyTxt.setAttribute("style", "display: inline-block; position: relative; float: right; width: 65%; background: white; text-align: justify; word-wrap: break-word; font-family: Roboto; font-size: 16px; color: #111111; margin: 0 15px; padding: 10px; vertical-align: middle; min-height: 200px; overflow: auto; box-shadow: -3px 3px 2px dimgray;");
+
+
+			// Set relevant items to be "children" of their respective "parent" elements:
+			// bannerCont.appendChild(arrowGlyph).appendChild(titleHolder).appendChild(flagImg);
+			bannerCont.appendChild(flagImg);
+			bannerCont.insertBefore(titleHolder, bannerCont.childNodes[0]);
+			// bannerCont.insertBefore(arrowGlyph, bannerCont.childNodes[0]);
+
+			bodyCont.appendChild(bodyTxt);
+			bodyCont.insertBefore(mapCont, bodyCont.childNodes[0]);
+			newTrip.appendChild(headerRule);
+			newTrip.insertBefore(bannerCont, newTrip.childNodes[0]);
+			newTrip.appendChild(bodyCont);
+			tripsCont.appendChild(newTrip);
+
+			
+			/*var nw = document.getElementById("yo");
+			nw.addEventListener("click", function() {
+				// nw.className = "tripClicked";
+				nw.setAttribute("style", "height: auto; display: block; width: 95%; position: relative;");
+			}); */
+
+			//alert(listArr);
+
+			newTrip.onclick = function() {
+				var currClass = newTrip.className;
+
+				if (newTrip.className === "trip") {
+					newTrip.className = "tripClicked";
+				} else {
+					newTrip.className = "trip";
+				}
+				
+			}
+
+		}
+
+		
+
+
+
+		/*function hoverRotate() {
+			var glyph = document.getElementsByClassName("doubleChevron");
+			var tripCards = document.getElementsByClassName("trip");
+
+			// tripCards.onmouseover = function() {		}; //
+
+			tripCards.addEventListener("mouseover", function() {
+				glyph.setAttribute("style", "transform: rotate(90deg);");
+			});
+
+		}*/
+
+
+
+
+
+		/* function addTri() {
+			document.getElementById("modalWindow").style.display = "none";
+
+			var newTrip = document.createElement("DIV");
+			var	bannerDiv = document.createElement("DIV");
+			var bodyCont = document.createElement("DIV");
+			var nationalFlag = document.createElement("IMG");
+
+			// var desc = document.createTextNode("This is a paragraph!");
+			var parCont = document.createElement("DIV");
+			var para = document.createElement("P");
+			var descrip = document.createTextNode(document.getElementById("tripDescrip").value);
+
+					
+			var arrowGlyph = document.createElement("P");
+			var	arrowText = document.createTextNode("❱❱");
+			
+			var tripTitle = document.createElement("H1");
+			var countryName = document.getElementById("select_country").value;
+			var titleText = document.createTextNode(countryName);
+
+			var fig = document.createElement("FIGURE");
+			var figPic = document.createElement("IMG");
+
+			arrowGlyph.appendChild(arrowText);
+			arrowGlyph.className = "hexArrow";
+			var arrows = document.getElementsByClassName("hexArrow");
+			arrowGlyph.setAttribute("style", "position: absolute; display: inline; color: dimgray; font-size: 40px; font-weight: bolder; line-height: 35px; margin: 0px 0px 0px 10px; vertical-align: middle;");
+
+			
+			tripTitle.appendChild(titleText);
+			tripTitle.setAttribute("style", "position: relative; left: 10%; display: inline; line-height: 35px; font-family: Allerta Stencil; font-size: 35px; font-variant: small-caps; color: white; text-shadow: -2px -2px 1px dimgray, 2px 2px 2px #7efcef; margin: 0px 0px 0px 10px; vertical-align: middle;");
+
+			
+
+		//	var orthographicMap = document.createElement("img"); //
+
+			var map = countryObj[countryName][0];
+			var flag = countryObj[countryName][1];
+
+			var mapFilePath = "../Graphics/Orthographic Maps/" + map + ".svg";
+			var flagFilePath = "../Graphics/National Flags/" + flag + ".svg";
+						
+			nationalFlag.setAttribute("src", flagFilePath);
+			nationalFlag.setAttribute("style", "display: inline; position: relative; float: right; height: auto; width: 100px; padding: 0; background: #3a3a3a; margin: 10px 10px 0px 0px; border: 2px solid dimgray; vertical-align: middle;");
+			
+
+			// orthographicMap.setAttribute("src", "../Graphics/ATG_orthographic.svg"); //
+			orthographicMap.setAttribute("src", mapFilePath);
+			orthographicMap.className = "earthProjection";
+			orthographicMap.setAttribute("style", "display: inline; position: relative; float: right; height: 75px; width: 75px; padding: 0; background-color: #3a3a3a; border-radius: 50%; margin: 10px 10px 0 0; border: 2px solid dimgray; vertical-align: bottom;");
+
+
+
+			bannerDiv.appendChild(nationalFlag);
+			bannerDiv.insertBefore(tripTitle, bannerDiv.childNodes[0]);
+			bannerDiv.insertBefore(arrowGlyph, bannerDiv.childNodes[0]);
+			bannerDiv.setAttribute("style", "position: absolute; height: 125px; display: block; width: 100%; margin: auto; padding: 0px;");
+
+			
+			// newTrip.setAttribute("style", "background-image: url('flagFilePath');"); //
+			
+
+			
+			
+			
+
+			para.appendChild(descrip);
+			parCont.appendChild(para);
+			para.setAttribute("style", "font-family: Roboto; font-size: 18px; color: dimgray; text-align: justify; position: relative; margin: 10px;");
+			parCont.setAttribute("style", "position: relative; background: aliceblue; min-height: 20px; margin-right: 20px; padding: 0px; display: inline-block; float: right; width: 70%; vertical-align: middle;");
+			
+
+			
+
+
+
+			figPic.setAttribute("src", mapFilePath);
+			figPic.setAttribute("style", "width: 100%; height: auto; padding: 0; background: #FFFFFF; border-radius: 50%; border: 3px solid dimgray; vertical-align: middle; display: inline; margin: auto; position: relative; top: 50%; transform: translateY(-50%);");
+			fig.appendChild(figPic);
+			fig.setAttribute("style", "display: inline-block; width: 20%; height: auto; float: left; margin: 0 2% 0 2%; padding: 0; text-align: center; vertical-align: middle;");
+			
+			bodyCont.setAttribute("style", "height: auto; display: block; position: absolute; width: 100%; margin: 0; padding: 0; top: 100px; bottom: 10px;");
+			bodyCont.appendChild(parCont);
+			bodyCont.insertBefore(fig, bodyCont.childNodes[0]);
+			
+
+			// newTrip.className = "trip"; //
+			newTrip.appendChild(bannerDiv).appendChild(bodyCont);
+			// newTrip.setAttribute("style", "height: 100%;"); //
+
+
+			// newTrip.appendChild(tripTitle).appendChild(arrowGlyph).appendChild(para); //
+			
+			
+			
+
+			
+
+			document.getElementById("tripsContainer").appendChild(newTrip);
+		} */
+
+
+		/* function escapeKeyFunc(keyEvt) {
+			if (keyEvt.keyCode = 27) {
+				document.getElementById("modalWindow").style.display = "none";
+			}
+			
+		} */
+
+
+		/* function removeLastTrip() {
+			var china = document.getElementById("ChinaTrip");
+			var cont = document.getElementById("tripsContainer");
+
+			cont.removeChild(china);
+		} */
+	
+	</script>
+
+
+	<!--<script>
+		var closeModal = document.getElementById("XButton");
+		var modalWin = document.getElementById("modalWindow");
+
+		closeModal.addEventListener("click", function() {
+			modalWin.style.display="none";
+		});
+
+
+		var newTrip = function() {
+			var newDiv = document.createElement("div");
+			document.getElementById("addTripBtn").addEventListener("click", function());
+		};
+	</script>-->
+
+	<script src="../Scripts/Maps_API.js"></script>																	 
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnwZpP42ez8-YrsBydN4tITV3TWFrdqHA&callback=initMap"></script>
+	
+
+
+
+
+</body>
+</html>
