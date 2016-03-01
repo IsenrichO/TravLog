@@ -1,9 +1,4 @@
 body {
-	/*background-image: url("{Animated .GIF} Frame Animation... 'World Travel Log Project Landing Background,' Edit... (14 Feb. 2016, 1534) [Isenrich, Oliver].gif");
-	// url("IMG_7285.JPG"), url("20131227_114122.jpg"), url("20131227_085629-1.jpg"), url("20131222_080543.jpg"), url("20130811_133021_HDR.jpg"); //
-	background-position: center 30%;
-	background-repeat: no-repeat;
-	background-size: 100% auto; */
 	text-align: center;
 	width: 100%;
 	height: 100%;
@@ -19,22 +14,10 @@ h1 {
 	text-shadow: 2px 2px 1px #00ffe6, -2px -2px 1px dimgray;
 }
 
-/*#layer {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	opacity: 0.5;
-	background-color: white;
-	z-index: -1;
-	margin: 0 0 0 0;
-	padding: 0px;
-} */
-
 #hero {
 	display: block;
 	position: relative;
 	background-image: url("../Graphics/bg-Animation.gif");
-	/* url("IMG_7285.JPG"), url("20131227_114122.jpg"), url("20131227_085629-1.jpg"), url("20131222_080543.jpg"), url("20130811_133021_HDR.jpg"); */
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
@@ -183,16 +166,7 @@ h1 {
 	font-variant: small-caps;
 	transform: rotate(-25deg);
 	padding: 0;
-	/* opacity: 0%;
-	visibility: hidden;
-	transition: opacity 1s, visibility 1.5s; */
 }
-
-	/* .intro_Third:hover > .thirds_Head {
-		opacity: 100%;
-		visibility: visible;
-	} */
-
 
 #cards_View {
 	background: url("../Graphics/Interactive_Cards.png") center center no-repeat;
@@ -253,7 +227,6 @@ h1 {
 	}
 
 #indoPic {
-	/*width: 20%;*/
 	margin: 0;
 	padding: 0;
 }
