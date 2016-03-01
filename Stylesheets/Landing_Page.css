@@ -94,21 +94,105 @@ h1 {
 	padding: 0;
 	height: 100%;
 	border-left: 2px solid dimgray;
+	position: relative;
+
 }
 
- .thirds_Head {
+	.intro_Third:after {
+		content: "";
+		position: absolute;
+		background: rgba(255, 255, 255, 0.4);
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		margin: 0;
+		left: 0;
+		top: 0;
+		transition: background 1.5s ease;
+	}
+
+	.intro_Third:hover:after {
+		background: rgba(255, 255, 255, 0.9);
+	}
+
+
+
+.ctnt {
+	position: absolute;
+	transition: top 1s 0.2s ease-in-out;
+}
+
+.list {
+	position: absolute;
+	transition: top 1s 0.2s ease-in-out, transform 1s 0.2s ease-in-out;
+	list-style: outside none;
+	top: 0px;
+	text-align: justify;
+	margin: 0% 10px;
+	font: 25px Helvetica;
+
+}	
+	
+	.list > li {
+		padding: 0 5px 10px 10px;
+	}
+
+	.list > li:nth-child(odd) {
+		background: rgba(192, 192, 192, 0.5);
+	}
+
+	.list > li:before {
+		content: " » ";
+		color: dimgray;
+		text-shadow: 2px 2px 1px #7efcef;
+		font-size: 40px;
+		font-family: Rockwell;
+		font-weight: bolder;
+	}
+
+
+.top {
+	top: 0px;
+}
+	
+	.intro_Third:hover .top {
+		top: -400px;
+	}
+
+
+.bottom {
+	top: 400px;
+	z-index: 20;
+}
+
+	.intro_Third:hover .bottom {
+		top: 200px;
+		transform: translateY(-50%);
+	}
+
+
+.thirds_Head {
  	position: absolute; 
  	z-index: 20; 
  	width: 33%; 
  	margin: 25% 15%;
  	color: MediumSeaGreen;
 	font-family: Helvetica, Arial, sans-serif;
-	font-size: 60px;
+	font-size: 70px;
 	text-shadow: -2px -2px 2px dimgray, 1px 1px 1px white;
 	font-variant: small-caps;
 	transform: rotate(-25deg);
 	padding: 0;
- }
+	/* opacity: 0%;
+	visibility: hidden;
+	transition: opacity 1s, visibility 1.5s; */
+}
+
+	/* .intro_Third:hover > .thirds_Head {
+		opacity: 100%;
+		visibility: visible;
+	} */
+
 
 #cards_View {
 	background: url("../Graphics/Interactive_Cards.png") center center no-repeat;
@@ -133,18 +217,6 @@ h1 {
 	position: relative;
 	background-size: cover;
 }
-
-	.intro_Third:after {
-		content: "";
-		position: absolute;
-		background: rgba(255, 255, 255, 0.65);
-		width: 100%;
-		height: 100%;
-		padding: 0;
-		margin: 0;
-		left: 0;
-		top: 0;
-	}
 
 
 .interfacePanel {
