@@ -379,7 +379,7 @@ legend {
 	display: block;
 	width: 50%;
 	margin: 0 auto;
-	z-index: 7;
+	z-index: 5;
 }
 
 .btn {
