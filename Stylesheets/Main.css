@@ -17,12 +17,23 @@ body {
 	padding: 0px;
 	background-image: url("../Graphics/Black_Block.png");	
 	z-index: 16;
+	animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		visibility: hidden;
+	}
+	to {
+		opacity: 1;
+		visibility: visible;
+	}
 }
 
 #modalForm {
 	display: block;
 	position: absolute;
-	left: 25%;
 	top: 47%;
 	transform: translateY(-50%);
 	height: auto;
@@ -31,8 +42,17 @@ body {
 	border: 8px ridge white;
 	border-radius: 15% 0% 15% 0%;
 	background-color: aliceblue;
-	
 	z-index: 100;
+	animation: slideIn 1s ease-in forwards;
+}
+
+@keyframes slideIn {
+	from {
+		right: 100%;
+	}
+	to {
+		right: 25%;
+	}
 }
 
 #modalWindow input[type="button"] {
