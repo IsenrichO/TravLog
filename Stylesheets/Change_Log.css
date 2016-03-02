@@ -1,8 +1,17 @@
-p, h5, h6, li, span, article {
+article, p {
 	font-family: Play;
 	font-size: 20px;
 	line-height: 26px;
 	text-align: justify;
+}
+
+article {
+	padding: 15px 25% 15px 5%;
+}
+
+article > p {
+	padding-left: 20px;
+	border-left: 5px double dimgray;
 }
 
 body {
@@ -11,30 +20,25 @@ body {
 	position: relative;
 	margin: 0;
 	padding: 0;
-	background-color: silver;
+	background: aliceblue url("../Graphics/Suitcase_Tags.png") repeat;
 }
 
 main {
 	position: relative;
-	width: 65%;
-	margin: 0 auto;
-	background-color: rgb(255, 255, 255);
+	width: auto;
+	margin: 20px 0 0 20%;
 	box-shadow: -4px -4px 3px 1px dimgray;
 	background-color: rgba(250, 250, 250, 0.95);
-	bottom: 0;
-	top: 120px;
-	height: 100%;
+	bottom: 0; 
+	height: auto;
 }
 
-article {
-	padding: 0 10%;
-	clear: both;
+h1 {
+	font-family: "Allerta Stencil";
+	font-size: 35px;
+	color: white;
+	text-shadow: -1px -1px 1px dimgray, 1px 1px 1px #7efcef;
 }
-
-h2 {
-	font-family: ;
-}
-
 
 #titleText {
 	color: black;
@@ -49,12 +53,6 @@ h2 {
 
 h3 {
 	margin-top: 30px;
-}
-
-p, ul, li {
-	font-family: Roboto;
-	font-size: 16px;
-	text-align: justify;
 }
 
 ul {
