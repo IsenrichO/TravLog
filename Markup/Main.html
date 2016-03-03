@@ -34,6 +34,7 @@
 					<select id="select_country" name="select_country" size="1" style="margin: 20px; display: inline;">
 					
 					<option value="Afghanistan">Afghanistan</option>
+					<option value="Africa">Africa</option>
 					<option value="Albania">Albania</option> 
 					<option value="Algeria">Algeria</option> 
 					<option value="Andorra">Andorra</option> 
@@ -181,6 +182,7 @@
 					<option value="Nicaragua">Nicaragua</option>  
 					<option value="Niger">Niger</option>  
 					<option value="Nigeria">Nigeria</option>  
+					<option value="North America">North America</option>
 					<option value="Northern Mariana Islands">Northern Mariana Islands</option>
 					<option value="Norway">Norway</option>  
 					<option value="Oman">Oman</option>  
@@ -216,6 +218,7 @@
 					<option value="Solomon Islands">Solomon Islands</option>  
 					<option value="Somalia">Somalia</option>  
 					<option value="South Africa">South Africa</option>  
+					<option value="South America">South America</option>
 					<option value="South Sudan">South Sudan</option>  
 					<option value="Spain">Spain</option>  
 					<option value="Sri Lanka">Sri Lanka</option>  
@@ -230,7 +233,6 @@
 					<option value="Tajikistan">Tajikistan</option>  
 					<option value="Tanzania">Tanzania, United Republic of</option>  
 					<option value="Thailand">Thailand</option>  
-					<option value="Timor Leste">Timor Leste</option>
 					<option value="Togo">Togo</option> 
 					<option value="Tonga">Tonga</option> 
 					<option value="Trinidad & Tobago">Trinidad & Tobago</option> 
@@ -376,6 +378,10 @@
 				map: "https://upload.wikimedia.org/wikipedia/commons/1/19/Afghanistan_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Afghanistan"
 			},
+			Africa: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/8/86/Africa_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/en/0/0c/African_Union_flag"
+			},
 			Albania: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Albania_%28orthographic_projection%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/3/36/Flag_of_Albania"
@@ -389,7 +395,7 @@
 				flag: "https://upload.wikimedia.org/wikipedia/commons/d/dc/Flag_of_Andorra%281934%29"
 			},
 			Angola: {
-				map: "https://upload.wikimedia.org/wikipedia/commons/d/dc/Angola_on_the_globe_%28Zambia_centered%29", 
+				map: "https://upload.wikimedia.org/wikipedia/commons/8/89/Angola_%28orthographic_projection%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola"
 			},
 			Antarctica: {
@@ -401,7 +407,7 @@
 				flag: "https://upload.wikimedia.org/wikipedia/commons/8/89/Flag_of_Antigua_and_Barbuda"
 			},
 			"Arctic Circle": {
-				map: "https://commons.wikimedia.org/wiki/File:Arctic_(orthographic_projection)",
+				map: "https://upload.wikimedia.org/wikipedia/commons/9/92/Arctic_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Worldmap_northern"
 			},
 			Argentina: {
@@ -610,7 +616,7 @@
 			},
 			Europe: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Europe_%28orthographic_projection%29",
-				flag: ""
+				flag: "https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe"
 			},
 			"Falkland Islands": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Falkland_Islands_%28orthographic_projection%29",
@@ -643,6 +649,10 @@
 			"Gambia, The": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/1/16/Gambia_%28orthographic_projection_with_inset%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_The_Gambia"
+			},
+			"Gaza Strip": {
+				map: "",
+				flag: ""
 			},
 			Georgia: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/6/67/Georgia_%28orthographic_projection_with_inset%29",
@@ -932,6 +942,10 @@
 				map: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Nigeria_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria"
 			},
+			"North America": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/1/1a/North_America_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_the_North_American_Free_Trade_Agreement_%28standard_version%29"
+			},
 			"Northern Ireland": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Northern_Ireland_in_the_UK_and_Europe",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Flag_of_Northern_Ireland"
@@ -1083,6 +1097,10 @@
 			"South Africa": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/6/6e/South_Africa_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa"
+			},
+			"South America": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/0/0f/South_America_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_South_America_%28proposal%29"
 			},
 			"South Sudan": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/f/fe/South_Sudan_hd_%28orthographic_projection%29",
@@ -1340,15 +1358,6 @@
 			newTrip.appendChild(bodyCont);
 			tripsCont.appendChild(newTrip);
 
-			
-			/*var nw = document.getElementById("yo");
-			nw.addEventListener("click", function() {
-				// nw.className = "tripClicked";
-				nw.setAttribute("style", "height: auto; display: block; width: 95%; position: relative;");
-			}); */
-
-			//alert(listArr);
-
 			newTrip.onclick = function() {
 				var currClass = newTrip.className;
 
@@ -1361,169 +1370,12 @@
 			}
 
 		}
-
-		
-
-
-
-		/*function hoverRotate() {
-			var glyph = document.getElementsByClassName("doubleChevron");
-			var tripCards = document.getElementsByClassName("trip");
-
-			// tripCards.onmouseover = function() {		}; //
-
-			tripCards.addEventListener("mouseover", function() {
-				glyph.setAttribute("style", "transform: rotate(90deg);");
-			});
-
-		}*/
-
-
-
-
-
-		/* function addTri() {
-			document.getElementById("modalWindow").style.display = "none";
-
-			var newTrip = document.createElement("DIV");
-			var	bannerDiv = document.createElement("DIV");
-			var bodyCont = document.createElement("DIV");
-			var nationalFlag = document.createElement("IMG");
-
-			// var desc = document.createTextNode("This is a paragraph!");
-			var parCont = document.createElement("DIV");
-			var para = document.createElement("P");
-			var descrip = document.createTextNode(document.getElementById("tripDescrip").value);
-
-					
-			var arrowGlyph = document.createElement("P");
-			var	arrowText = document.createTextNode("❱❱");
-			
-			var tripTitle = document.createElement("H1");
-			var countryName = document.getElementById("select_country").value;
-			var titleText = document.createTextNode(countryName);
-
-			var fig = document.createElement("FIGURE");
-			var figPic = document.createElement("IMG");
-
-			arrowGlyph.appendChild(arrowText);
-			arrowGlyph.className = "hexArrow";
-			var arrows = document.getElementsByClassName("hexArrow");
-			arrowGlyph.setAttribute("style", "position: absolute; display: inline; color: dimgray; font-size: 40px; font-weight: bolder; line-height: 35px; margin: 0px 0px 0px 10px; vertical-align: middle;");
-
-			
-			tripTitle.appendChild(titleText);
-			tripTitle.setAttribute("style", "position: relative; left: 10%; display: inline; line-height: 35px; font-family: Allerta Stencil; font-size: 35px; font-variant: small-caps; color: white; text-shadow: -2px -2px 1px dimgray, 2px 2px 2px #7efcef; margin: 0px 0px 0px 10px; vertical-align: middle;");
-
-			
-
-		//	var orthographicMap = document.createElement("img"); //
-
-			var map = countryObj[countryName][0];
-			var flag = countryObj[countryName][1];
-
-			var mapFilePath = "../Graphics/Orthographic Maps/" + map + ".svg";
-			var flagFilePath = "../Graphics/National Flags/" + flag + ".svg";
-						
-			nationalFlag.setAttribute("src", flagFilePath);
-			nationalFlag.setAttribute("style", "display: inline; position: relative; float: right; height: auto; width: 100px; padding: 0; background: #3a3a3a; margin: 10px 10px 0px 0px; border: 2px solid dimgray; vertical-align: middle;");
-			
-
-			// orthographicMap.setAttribute("src", "../Graphics/ATG_orthographic.svg"); //
-			orthographicMap.setAttribute("src", mapFilePath);
-			orthographicMap.className = "earthProjection";
-			orthographicMap.setAttribute("style", "display: inline; position: relative; float: right; height: 75px; width: 75px; padding: 0; background-color: #3a3a3a; border-radius: 50%; margin: 10px 10px 0 0; border: 2px solid dimgray; vertical-align: bottom;");
-
-
-
-			bannerDiv.appendChild(nationalFlag);
-			bannerDiv.insertBefore(tripTitle, bannerDiv.childNodes[0]);
-			bannerDiv.insertBefore(arrowGlyph, bannerDiv.childNodes[0]);
-			bannerDiv.setAttribute("style", "position: absolute; height: 125px; display: block; width: 100%; margin: auto; padding: 0px;");
-
-			
-			// newTrip.setAttribute("style", "background-image: url('flagFilePath');"); //
-			
-
-			
-			
-			
-
-			para.appendChild(descrip);
-			parCont.appendChild(para);
-			para.setAttribute("style", "font-family: Roboto; font-size: 18px; color: dimgray; text-align: justify; position: relative; margin: 10px;");
-			parCont.setAttribute("style", "position: relative; background: aliceblue; min-height: 20px; margin-right: 20px; padding: 0px; display: inline-block; float: right; width: 70%; vertical-align: middle;");
-			
-
-			
-
-
-
-			figPic.setAttribute("src", mapFilePath);
-			figPic.setAttribute("style", "width: 100%; height: auto; padding: 0; background: #FFFFFF; border-radius: 50%; border: 3px solid dimgray; vertical-align: middle; display: inline; margin: auto; position: relative; top: 50%; transform: translateY(-50%);");
-			fig.appendChild(figPic);
-			fig.setAttribute("style", "display: inline-block; width: 20%; height: auto; float: left; margin: 0 2% 0 2%; padding: 0; text-align: center; vertical-align: middle;");
-			
-			bodyCont.setAttribute("style", "height: auto; display: block; position: absolute; width: 100%; margin: 0; padding: 0; top: 100px; bottom: 10px;");
-			bodyCont.appendChild(parCont);
-			bodyCont.insertBefore(fig, bodyCont.childNodes[0]);
-			
-
-			// newTrip.className = "trip"; //
-			newTrip.appendChild(bannerDiv).appendChild(bodyCont);
-			// newTrip.setAttribute("style", "height: 100%;"); //
-
-
-			// newTrip.appendChild(tripTitle).appendChild(arrowGlyph).appendChild(para); //
-			
-			
-			
-
-			
-
-			document.getElementById("tripsContainer").appendChild(newTrip);
-		} */
-
-
-		/* function escapeKeyFunc(keyEvt) {
-			if (keyEvt.keyCode = 27) {
-				document.getElementById("modalWindow").style.display = "none";
-			}
-			
-		} */
-
-
-		/* function removeLastTrip() {
-			var china = document.getElementById("ChinaTrip");
-			var cont = document.getElementById("tripsContainer");
-
-			cont.removeChild(china);
-		} */
 	
 	</script>
 
-
-	<!--<script>
-		var closeModal = document.getElementById("XButton");
-		var modalWin = document.getElementById("modalWindow");
-
-		closeModal.addEventListener("click", function() {
-			modalWin.style.display="none";
-		});
-
-
-		var newTrip = function() {
-			var newDiv = document.createElement("div");
-			document.getElementById("addTripBtn").addEventListener("click", function());
-		};
-	</script>-->
-
 	<script src="../Scripts/Maps_API.js"></script>																	 
+	
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnwZpP42ez8-YrsBydN4tITV3TWFrdqHA&callback=initMap"></script>
 	
-
-
-
-
 </body>
 </html>
