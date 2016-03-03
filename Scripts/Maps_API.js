@@ -108,23 +108,6 @@ function initMap() {
 
 	var layer = new google.maps.FusionTablesLayer();
 	layer.setMap(map);
-	/*{
-		query: {
-			select: "geometry",
-			from: "1atL7oaDB6nSPSQ6inNg5lZwHjTfHbPXIidWZ_5f3"
-		},
-		styles: [{
-			polygonOptions: {
-				fillColor: "#151918",		// rgb(21, 25, 24);
-				fillOpacity: 0.28,
-				strokeColor: "#ffffff",
-				strokeWeight: 1
-			}
-		}]
-	}); */
-
-	
-
 
 	google.maps.event.addDomListener(
 		document.getElementById("submitBtn"),
@@ -142,15 +125,19 @@ function initMap() {
 		position: {lat: 38.889931, lng: -77.009003}
 	})
 
-	/* function pinIt() {
-		setTimeout(function() {
-			var marker = new google.maps.Marker({
-				map: map,
-				position: {lat: 38.905, lng: 77.016},
-				draggable: true,
-				animation: google.maps.Animation.DROP
-			}, 2000);
-		});
+	/* function pinIt(nation) {
+		var latitude = nation["latitude"],
+		    longitude = nation["longitude"];
+	
+		var marker = new google.maps.Marker({
+			map: map,
+			position: {
+				lat: latitude, 
+				lng: longitude
+			},
+			draggable: true,
+			animation: google.maps.Animation.DROP
+		}, 2000);
 	} */
 
 }
@@ -181,5 +168,18 @@ function filterMap(layer, fusionTablesId, map) {
 }
 
 
+/* To be implemented after having expanded country Object for latitude/longitude coordinate data:
+
+	function forEach(array, callback) {
+		for (var i = 0; i < array.length; i++) {
+			callback(array[i]);
+		}
+	}
+
+	forEach(listArr, function() {
+		pinIt(nation);
+	})
+	
+*/
 
 
