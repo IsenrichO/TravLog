@@ -17,7 +17,7 @@ body {
 	padding: 0px;
 	background-image: url("../Graphics/Black_Block.png");	
 	z-index: 16;
-	animation: fadeIn 0.5s ease-in forwards;
+	animation: fadeIn 1s ease-in forwards;
 }
 
 @keyframes fadeIn {
@@ -37,21 +37,25 @@ body {
 	top: 47%;
 	transform: translateY(-50%);
 	height: auto;
-	min-height: 500px;
+	min-height: 450px;
 	width: 50%;
-	border: 8px ridge white;
+	/* border: 8px ridge white; */
 	border-radius: 15% 0% 15% 0%;
-	background-color: aliceblue;
+	box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.9);
+	background-color: silver;
 	z-index: 100;
-	animation: slideIn 1s ease-in forwards;
+	animation: slideIn 1.75s 0.2s ease forwards;
 }
 
 @keyframes slideIn {
-	from {
-		right: 100%;
+	0% {
+		left: 100%;
 	}
-	to {
-		right: 25%;
+	40% {
+		left: -10%;
+	}
+	100% {
+		left: 25%;
 	}
 }
 
@@ -108,18 +112,24 @@ fieldset {
 	text-align: center;
 }
 
-
-.textInput {
-	position: relative;
-	display: block;
-	width: 90%;
-	height: 100px;
-	border: 2px white;
-	margin: 20px auto;
-	overflow: hidden;
-	resize: vertical;
-	background-color: aliceblue;
+label[for="select_country"] {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 20px;
 }
+
+select {
+	line-height: 16px;
+	font-size: 16px;
+	font-family: Helvetica;
+	font-weight: bold;
+	color: dimgray;
+}
+
+select:focus, select:hover, select:active {
+	outline: MediumSeaGreen solid 2px;
+	background-color: AliceBlue;
+}
+
 
 #tripDescrip {
 	display: block;
@@ -133,6 +143,12 @@ fieldset {
 	vertical-align: text-top;
 	resize: vertical;
 }
+	
+	#tripDescrip:hover, #tripDescrip:focus, #tripDescrip:active {
+		outline: MediumSeaGreen solid 2px;
+		background-color: AliceBlue;
+	}
+
 
 #modalBtns {
 	position: absolute;
@@ -288,7 +304,7 @@ fieldset {
 
 #glyphOne {
 	transform: rotate(0deg);
-	transition: transform ease-out 1s;
+	transition: transform ease-out 0.5s;
 }
 
 
@@ -411,7 +427,8 @@ legend {
 	background: none;
 	font-weight: bolder;
 	font-size: 75px;
-	margin: 0px;
+	line-height: 55px;
+	margin: 10px 0 0 0;
 	padding: 0px;
 }
 
