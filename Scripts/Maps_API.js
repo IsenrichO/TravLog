@@ -134,7 +134,15 @@ function initMap() {
 		}
 	);
 
-	function pinIt() {
+	// On-app-load pin marker for Washington, D.C.
+	var marker = new google.maps.Marker({
+		map: map,
+		draggable: false,
+		animation: google.maps.Animation.BOUNCE,
+		position: {lat: 38.889931, lng: -77.009003}
+	})
+
+	/* function pinIt() {
 		setTimeout(function() {
 			var marker = new google.maps.Marker({
 				map: map,
@@ -143,7 +151,7 @@ function initMap() {
 				animation: google.maps.Animation.DROP
 			}, 2000);
 		});
-	}
+	} */
 
 }
 
