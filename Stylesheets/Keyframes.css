@@ -1,0 +1,72 @@
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		visibility: hidden;
+	}
+	to {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+
+@keyframes slideIn {
+	0% {
+		left: 100%;
+	}
+	40% {
+		left: -10%;
+	}
+	100% {
+		left: 25%;
+	}
+}
+
+
+@keyframes slideUp {
+	0% {
+		top: 120%;
+	}
+	100% {
+		top: 3%;
+	}
+}
+
+
+@keyframes rightCollapse {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+
+@keyframes expandFromCenter {
+	0% {
+		
+		width: 0;
+		opacity: 0;
+		visibility: hidden;
+	}
+	100% {
+		
+		width: 90%;
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		visibility: hidden;
+	}
+	to {
+		opacity: 1;
+		visibility: visible;
+	}
+}
