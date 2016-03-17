@@ -35,7 +35,7 @@ function filter(collection, predicate) {
 }
 
 
-// Underscore.js 'reject' implementation (conceptually, the opposite of the 'filter' function):
+// Underscore.js 'reject' implementation (conceptually, the antithesis to the 'filter' function):
 function reject(collection, predicate) {
 	var outputArr = [];
 	forEach(collection, function(val) {
@@ -47,18 +47,6 @@ function reject(collection, predicate) {
 
 
 // Underscore.js 'reduce' implementation:
-/* function reduce(collection, callback, initial) {
-	if (initial === undefined) {
-		initial = collection[0];
-	} 
-	var iterant = initial;
-	forEach(collection, function(val) {
-		iterant = callback(iterant, val);
-	});
-	return iterant;
-} */
-
-
 function reduce(collection, accumulator, memo) {
 	var running = memo;
 	forEach(collection, function(el) {
@@ -102,9 +90,13 @@ function max(collection) {
 }
 
 
-// Underscore.js 'sort' implementation:
-function sort(collection) {
-
+// Custom higher-order function, 'DOM_ElCreator':
+function DOM_ElCreator(ElType, parentNode, action) {
+	var new = document.createElement(ElType);
+	if (action !== undefined) {
+		action();	// * Optional *
+	}
+	var parentNode.appendChild(new);
 }
 
 
