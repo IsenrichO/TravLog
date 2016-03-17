@@ -90,13 +90,10 @@ function max(collection) {
 }
 
 
-// Custom higher-order function, 'DOM_ElCreator':
-function DOM_ElCreator(ElType, parentNode, action) {
-	var new = document.createElement(ElType);
-	if (action !== undefined) {
-		action();	// * Optional *
-	}
-	var parentNode.appendChild(new);
+// Custom higher-order function, 'listen':
+function listen(elemID, action) {
+	var el = document.getElementById(elemID);
+	el.addEventListener("click", action);
 }
 
 
