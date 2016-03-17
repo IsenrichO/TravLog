@@ -20,46 +20,28 @@ body {
 	animation: fadeIn 1s ease-in forwards;
 }
 
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-		visibility: hidden;
-	}
-	to {
-		opacity: 1;
-		visibility: visible;
-	}
-}
 
 #modalForm {
 	display: block;
 	position: absolute;
-	top: 47%;
-	transform: translateY(-50%);
+	top: 120%;
+	/* transform: translateY(-50%); */
 	height: auto;
-	min-height: 450px;
+	min-height: 50%;
+	max-height: 90%;
 	width: 50%;
 	/* border: 8px ridge white; */
 	border-radius: 15% 0% 15% 0%;
-	box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.9);
-	background-color: silver;
+	box-shadow: -2px -2px 15px 5px white;
+	background-color: LightGray;
 	z-index: 100;
-	animation: slideIn 1.75s 0.2s ease forwards;
+	left: 25%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	animation: slideUp 1.0s 0.1s ease forwards; */
 }
 
-@keyframes slideIn {
-	0% {
-		left: 100%;
-	}
-	40% {
-		left: -10%;
-	}
-	100% {
-		left: 25%;
-	}
-}
-
-#modalWindow input[type="button"] {
+#modalForm input[type="button"] {
 	font-family: Roboto;
 	font-size: 16px;
 	font-weight: bolder;
@@ -72,88 +54,306 @@ body {
 	margin: 5% 10%;
 }
 
-#modalWindow input[type="radio"] {
-	font-family: Arial; 
-	font-weight: bold;
-	font-size: 14px;
-	color: black;
-	margin-left: 20px;
+#eventAdd_Btn, #eventRemove_Btn {
+	position: relative;
+	width: 60px;
+	height: 60px;
+	padding: 0;
+	display: block;
+	border-radius: 15% 0 15% 0;
+	left: 50%;
+	top: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	margin: 25px auto;
 }
+
+
+#eventAdd_Btn img, #eventRemove_Btn img {
+	width: 40px;
+	height: auto;
+	margin: auto;
+	padding: 0;
+	transition: width 0.5s ease-out;
+}
+
+	#eventAdd_Btn:hover img, #eventRemove_Btn:hover img {
+		width: 50px;
+		height: auto;
+	}
+
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    border: 1px solid DarkGray;
+    border-radius: 50%;
+    outline: none;
+    padding: 0;
+    margin: auto;
+    box-shadow: inset 0 0 5px 0 gray;
+    -moz-box-shadow: inset 0 0 5px 0 gray;
+    -webkit-appearance: none;
+}
+
+	input[type="radio"]:hover {
+	    box-shadow: inset 0 0 5px 0 MediumSeaGreen;
+	     -moz-box-shadow: inset 0 0 5px 0 MediumSeaGreen;
+	}
+
+	input[type="radio"]:before {
+	    content: "";
+	    display: block;
+	    width: 100%;
+	    height: 100%;
+	    margin: 0 auto 20% auto;    
+	    border-radius: 50%;
+	}
+
+	input[type="radio"]:checked:before {
+	    background: MediumSeaGreen;
+	    width: 70%;
+	    height: 70%;
+	    margin: 15%;
+	    padding: 0;
+	}
+
 
 #logType {
 	border: none;
 	display: block;
 	position: relative;
-}
-
-#logType input {
-	position: relative;
-	margin-left: 20px;
-	padding-left: 10px;
-	cursor: pointer;
-	border: 1px 1px white;
-	border-radius: 50%;
+	background: none;
+	width: 100%;
+	margin: auto;
 }
 
 #logType label {
 	display: inline-block;
-	font-family: Arial;
-	font-weight: bold;
-	font-size: 24px;
+	font: bold 24px/24px Play, Helvetica, sans-serif;
+	color: DimGray;
 	position: relative;
-	margin-right: 30px;
+	margin: auto;
+	width: auto;
 }
-	
+
+.logType_Div {
+	display: inline-block;
+	width: 48%;
+	margin: auto;
+	padding: 0;
+	position: relative;
+}
 
 fieldset {
 	position: relative;
-	top: 20px;
-	margin: 20px;
+	width: 90%;
+	margin: 0 auto;
 	text-align: center;
+	border: 2px groove DimGray;
+	background: rgb(181, 181, 181);					/*	Gray71	*/
 }
 
-label[for="select_country"] {
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 20px;
+.date_Field {
+	border: 2px dashed Gray;
+	padding: 0;
+	width: 100%;
+	height: auto;
+	margin: 15px 0;
+	background: rgba(255, 255, 255, 0.4);
 }
+
+label[for="select_Country"] {
+	font: 20px/16px Helvetica, Arial, sans-serif;
+	margin-right: 30px;
+	position: relative;
+	display: inline-block;
+}
+
+.trip_Dates {
+	text-align: center;
+	display: inline;
+	margin: 0;
+	padding: 0 auto 0 10px;
+	position: relative;
+	width: auto;
+	min-width: 200px;
+	height: 25px;
+	font: 14px/12px Courier, Arial, sans-serif;
+}
+
+#tripDates_Field {
+	min-height: 100px;
+	height: auto;
+	position: relative;
+	vertical-align: middle;
+}
+
+#submit_Btn {
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+
+.date_Label {
+	/* font: bold 16px/14px Helvetica, Arial, sans-serif; */
+	font: bold 18px/16px Helvetica, Arial, sans-serif;
+	text-align: left;
+	margin: 0 30px 0 auto;
+	display: inline;
+	position: relative;
+	padding: 5px 0;
+	width: 150px;
+	vertical-align: middle;
+} 
+
+.date_Msg {
+	width: 90%;
+	position: relative;
+	text-align: center;
+	display: block;
+	clear: both;
+	margin: auto;
+	resize: vertical;
+	max-height: 60px;
+}
+
+input[type="text"], textarea {
+	text-align: justify;
+	font: 18px/18px Helvetica, Arial, sans-serif;
+}
+
+input[type="date"] {
+	text-align: center;
+	content: "";
+	vertical-align: middle;
+}
+
+
+input[type="date"]:before {
+	content: attr(placeholder);
+}
+	
+
+#datesContainer {
+	height: auto;
+	width: 85%;
+	position: relative;
+	display: inline-block;
+	float: left;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+	vertical-align: middle;
+}
+
 
 select {
-	line-height: 16px;
-	font-size: 16px;
-	font-family: Helvetica;
-	font-weight: bold;
-	color: dimgray;
+	font: bold 16px/16px Helvetica, Arial, sans-serif;
+	color: DimGray;
+	text-align: center;
+	display: block;
+	margin: 10px auto;
+	width: 50%;
+	height: 30px;
+	display: inline;
 }
 
-select:focus, select:hover, select:active {
+select:focus, select:hover, select:active, .trip_Dates:focus, .trip_Dates:hover, .trip_Dates:active {
 	outline: MediumSeaGreen solid 2px;
 	background-color: AliceBlue;
 }
 
+#addDate_Div {
+	display: inline-block;
+	position: relative;
+	width: 15%;
+	float: right;
+	margin: 0 auto;
+	padding: 0;
+	height: auto;
+	min-height: 100px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.newEntry {
+	position: relative;
+	display: block;
+	margin: 5px auto;
+	padding: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.newRow {
+	width: 100%;
+	height: 20px;
+	display: block;
+	margin: 0 auto 20px auto;
+	padding: 0;
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+}
+
 
 #tripDescrip {
-	display: block;
-	width: 90%;
 	min-height: 100px;
-	margin: auto;
+	max-height: 200px;
+}
+
+textarea {
+	position: relative;
+	width: 90%;
+	text-align: center;
+	margin: 10px auto;
 	background-color: white;
 	font-family: Roboto;
 	font-size: 20px;
 	color: black;
 	vertical-align: text-top;
 	resize: vertical;
+	text-overflow: ellipsis;
+	overflow: auto;
+	padding: 10px;
 }
 	
-	#tripDescrip:hover, #tripDescrip:focus, #tripDescrip:active {
+	textarea:hover, textarea:focus, textarea:active {
 		outline: MediumSeaGreen solid 2px;
 		background-color: AliceBlue;
 	}
 
+	
+.dates_UL {
+	height: auto;
+}
+
+.dates_UL li {
+	height: auto;
+	display: block;
+}
+
+
+	.dates_UL > li:nth-child(odd) {
+		background-color: rgba(192, 192, 192, 0.25);
+	}
+
+	.dates_UL > li:nth-child(even) {
+		background-color: rgba(255, 255, 255, 0.0);
+	}
+	.dates_UL > li:hover {
+		background-color: rgba(192, 192, 192, 0.75);
+		cursor: pointer;
+	}
+
+
 
 #modalBtns {
-	position: absolute;
+	position: relative;
 	text-align: center;
 	width: 100%;
+
 	display: block;
 	margin: auto;
 	left: 0;
@@ -161,7 +361,7 @@ select:focus, select:hover, select:active {
 
 #leftPane {
 	background: rgba(240, 248, 255, 0.8) url("../Graphics/Suitcase_Tags.png") repeat;
-	background-size: 25%;
+	background-size: 12%;
 	background-position: center;
 	left: 0;
 	width: 50%;
@@ -230,7 +430,7 @@ select:focus, select:hover, select:active {
 	position: relative;
 	margin: 0px;
 	padding: 0px;
-	background: linear-gradient(to left, white, black, white);
+	background: linear-gradient(to left, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 75%);
 }
 
 #tripsContainer {
@@ -239,28 +439,29 @@ select:focus, select:hover, select:active {
 	width: 95%;
 	min-height: 100%;
 	background-image: url("../Graphics/White_Block.png");
-	top: 100px;
+	top: 15px;
 	padding: 0 20px 10% 0;
 	bottom: -50px;
 	left: 5%;
-	border-radius: 15% 0 0 0;
-	box-shadow: -4px -4px 15px dimgray;
+	border-radius: 25px 0 0 0;
+	box-shadow: -4px -4px 15px DimGray;
 	overflow-y: auto;
 	overflow-x: hidden;
 	z-index: 6;
 }
 
 .trip {
-	background: lightgray;
-	box-shadow: -2px 2px 2px dimgray; 
+	/* background: lightgray; */
+	/* background: linear-gradient(to bottom, rgba(255, 255, 255, 1), DimGray); */
+	box-shadow: -2px -2px 2px DimGray; 
 	position: relative; 
-	left: 10%; 
-	top: 40px;
-	margin-top: 40px;
+	left: 3.5%; 
+	top: 20px;
 	overflow-x: hidden; 
 	width: 90%;
-	height: 80px;
-	padding-bottom: 5%; 	
+	height: 115px;
+	
+	margin: 5% auto;
 	display: block;
 	overflow: hidden;
 }
@@ -270,17 +471,27 @@ select:focus, select:hover, select:active {
 		display: block;
 		width: 90%;
 		position: relative;
-		background: lightgray;
-		box-shadow: -2px 2px 2px dimgray; 
-		left: 10%; 
-		top: 40px;
-		padding-bottom: 5%;
+		/* background: lightgray; */
+		box-shadow: -2px -2px 2px DimGray, 0.2px 0.2px 1px DimGray; 
+		left: 3.5%; 
+		top: 20px;
+		
+		margin: 5% auto;
 		overflow: hidden;
-		margin-top: 40px;
+		
 	}
 
-	.trip:hover, .tripClicked:hover {
+	.BannerContainer {
+		background: linear-gradient(140deg, rgba(126, 252, 239, 0.75) 15%, rgba(192, 192, 192, 0.75) 65%);		
 		cursor: pointer;
+		transition: box-shadow 1s ease-out, left 0.25s ease;
+		box-shadow: inset 0 0 0 0 rgba(255, 255, 255, 0);
+		left: 0;
+	}
+
+	.BannerContainer:hover, .BannerContainer:focus {
+		box-shadow: inset 3px -3px 3px 1px rgba(192, 192, 192, 0.75);
+		left: 1px;
 	}
 
 
@@ -302,9 +513,10 @@ select:focus, select:hover, select:active {
 	}
 
 
-#glyphOne {
+#glyphOne, #doubleChevron {
 	transform: rotate(0deg);
 	transition: transform ease-out 0.5s;
+	font: 700 50px/75px Droid Sans, Helvetica, sans-serif;
 }
 
 
@@ -312,27 +524,29 @@ select:focus, select:hover, select:active {
 	position: absolute;
 	display: none;
 	height: auto;
-	width: 80px;
+	width: 65px;
 	right: 0;
-	left: 0;
+	left: 10px;
 	float: right;
-	margin: 0px;
+	margin: 0 0 0 0;
 	padding: 0px;
-	top: 80px;
-	border-radius: 10% 0px 10% 0px;
+	top: 75px;
+	border-radius: 10px 0 10px 0;
+	overflow: hidden;
 }
 
 #toolsNavBar > button {
 	display: block;
 	position: relative;
-	width: 70px;
-	height: 70px;
+	width: 65px;
+	height: 65px;
 	float: right;
 	border-radius: 0px;
+	margin: auto;
 	border: 0px;
 	background-color: gray;
-	font-family: Helvetica;
-	font-size: 50px;
+	font: 50px/65px Droid Sans, Helvetica, sans-serif;
+	vertical-align: middle;
 }
 
 	#toolsNavBar > button:hover {
@@ -340,24 +554,75 @@ select:focus, select:hover, select:active {
 		border-radius: 15% 0 15% 0;
 	}
 
+	#googs img {
+		border-radius: 50%;
+		height: 40px; 
+		width: auto; 
+		position: relative; 
+		transition: height 0.5s ease-out;
+		display: block;
+		margin: auto;
+	}
+
+		#googs > a {
+			height: 100%;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			position: relative;
+		}
+
+		#googs:hover img {
+			height: 55px;
+			box-shadow: 0.1px 0.1px 5px MediumSeaGreen;
+		}
+
+.glyphTwo {
+	font: bold 50px/65px Droid Sans, Helvetica, sans-serif;
+	transition: font 0.5s ease-out;
+}
+
+	#toolsNavBar > button:hover .glyphTwo {
+		font: bold 75px/65px Droid Sans, Helvetica, sans-serif;
+	}
+
+
+	#tripSummary  img {
+		height: 40px; 
+		width: auto; 
+		margin: auto; 
+		position: relative;
+		display: block;
+		transition: height 0.5s ease-out;
+	}
+
+		#tripSummary:hover img {
+			height: 55px;
+			box-shadow: -0.1px -0.1px 5px 1px MediumSeaGreen;
+		}
+
+
+
 legend {
 	color: white;
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 25px;
+	font: bold 28px/24px Play, Arial, sans-serif;
 	text-shadow: 1px 1px 1px #00ffe6, -1px -1px 1px dimgray;
+	width: auto;
+	margin: 0;
+	padding: 0;
+	display: inline;
 }
 
 #dropRightBtn {
 	position: relative;
-	display: absolute;
-	width: 80px;
-	height: 80px;
+	display: block;
+	width: 75px;
+	height: 75px;
 	vertical-align: middle;
 	margin: 0 0 0 0;
 	padding: 0px;
-	font-family: Rockwell;
-	font-size: 32px;
-	font-weight: bolder;
+	transform: rotate(0deg);
+	transition: transform 0.5s ease-out;
 }
 
 
@@ -366,7 +631,7 @@ legend {
 	font-size: 24px;
 	font-weight: bold;
 	width: 150px;
-	height: 80px;
+	height: 20px;
 	position: relative;
 	display: inline;
 	margin: 0px;
@@ -376,7 +641,7 @@ legend {
 
 	#addTripBtn:hover, #dropRightBtn:hover {
 		background-color: #d6d4d4;
-		box-shadow: 0px 0px 10px 2px white;
+		box-shadow: 0px 0px 5px 1px white;
 	}
 
 
@@ -390,12 +655,41 @@ legend {
 	text-shadow: 2px 2px 1px #00ffe6, -2px -2px 1px dimgray;
 } 
 
+/*
+	.subHeaderRule {
+		// subHeaderRule.setAttribute("style", "display: block; width: 100%; margin: 0; text-align: center; position: relative; height: 1px; color: white; box-shadow: none; outline: none;");
+		// background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, .25) 75%, rgba(0, 0, 0, 0) 100%);
+	}
+*/
+
+.headerRuler {
+	background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 45%, rgba(255, 255, 255, 1) 92%, rgba(255, 255, 255, 0.9) 99%);
+	border: none; 
+	outline: none; 
+	box-shadow: none;
+}
+
 #headDiv {
-	position: fixed;
 	display: block;
-	width: 50%;
+	width: 70%;
 	margin: 0 auto;
 	z-index: 5;
+}
+
+.date_ListItem div {
+	display: block; 
+	position: relative; 
+	width: 70%; 
+	height: auto; 
+	margin-right: 20%;
+	padding-right: 20px;
+	left: 0;
+	font: italic 14px/12px Helvetica, sans-serif;
+	color: DimGray;
+}
+
+.summaryFooter {
+
 }
 
 .btn {
@@ -418,23 +712,195 @@ legend {
 	}
 
 
-#XButton {
+.XButton {
 	position: absolute;
 	color: white;
-	right: 50px;
+	top: 5px;
+	right: 5px;
+	width: 60px;
+	height: 60px;
 	font-family: Rockwell;
 	border: none;
 	background: none;
 	font-weight: bolder;
-	font-size: 75px;
-	line-height: 55px;
-	margin: 10px 0 0 0;
+	font-size: 60px;
+	line-height: 60px;
+	margin: 0;
 	padding: 0px;
 }
 
-	#XButton:hover {
+	.XButton:hover {
 		cursor: pointer;
 		background: none;
 		box-shadow: none;
 	}
+
+#right_Collapse {
+	height: auto;
+	width: 0;
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 0;
+	margin: 0;
+	/* transition: width 2s ease; */
+	background: rgba(255, 255, 255, 0.95);
+	overflow: hidden;
+	z-index: 2000;
+	animation: rightCollapse 2s 0.1s ease forwards;
+}
+
+	#right_Collapse > div:first-child {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: auto;
+		animation: expandFromCenter 2s 5s forwards;
+	}
+
+	#right_Collapse > * {
+		animation: fadeIn 2s 3s forwards;
+		visibility: hidden;
+	}
+
+#centerExpand_HR {
+	position: relative;
+	visibility: hidden;
+	display: block;
+	width: 90%;
+	height: 2px;
+	background: linear-gradient(to left, white, black, white);
+	margin: 20px auto;
+	animation: expandFromCenter 2s 3s linear forwards;
+}
+
+#summaryBody {
+	visibility: hidden;
+	animation: fadeIn 2s 6s forwards;
+	width: 100%;
+	display: block;
+	position: relative;
+	height: auto;
+	min-height: 200px;
+	margin: 2% auto;
+}
+
+#summaryTitle {
+	visibility: hidden;
+	width: 90%;
+	margin: 3% auto 20px auto;
+	text-align: center;
+	position: relative;
+	font: 700 80px/65px Play, Helvetica, sans-serif; 
+	/* font-family: "PT Sans"; */
+	font-variant: small-caps;
+	z-index: 2100;
+	animation: fadeIn 2s 4s forwards;
+}
+
+#summarySubtitle {
+	width: 90%;
+	margin: auto;
+	text-align: center;
+	position: relative;
+	font: 30px/28px Helvetica, sans-serif;
+	color: silver;
+	visibility: hidden;
+	animation: fadeIn 2s 4.5s forwards;
+}
+
+#summaryTitle_Active {
+	width: 90%;
+	margin: auto;
+	text-align: center;
+	position: relative;
+	font: bold 50px/45px Play, Helvetica, sans-serif;
+	z-index: 2100;
+	animation: fadeIn 3s 1s ease forwards;
+}
+
+#summary_CountriesList {
+	height: auto;
+	width: 20%; 
+	position: relative; 
+	display: inline-block;
+	margin: 50px 2%;
+	top: 0;
+	padding: 0;
+	/* margin: 20px 0 20px 16%; */
+	box-shadow: -2px -2px 2px DimGray;
+	border: 1px solid black;
+	
+}
+
+#allPlaces {
+	max-height: 400px;
+	height: auto;
+	position: relative;
+	float: left;
+	display: inline-block;
+	width: 20%;
+	top: 0;
+	padding: 0;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	text-align: center;
+	border: 1px solid black;
+	margin: 50px 2%;
+	/* margin: 20px 16% 20px 16%; */
+	background-color: white;
+}
+
+#textual_Analysis {
+	height: auto;
+	max-height: 400px;
+	min-height: 200px;
+	position: relative;
+	top: 0;
+	padding: 0;
+	display: inline-block;
+	width: 40%;
+	margin: 50px 2%;
+	border: 2px solid purple;
+	background: LightGray;
+}
+
+
+.haventBeen {
+	background-color: LightGray;
+	opacity: 0.3;
+}
+
+
+	.haveBeen {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		background-color: rgb(244, 241, 168);
+		color: black;
+	}		
+
+#chart {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;	
+	margin: auto 0;
+	padding: 0;
+	clear: both;
+}
+
+
+#myCanvas {
+	background: Gray url("../Graphics/World_Map_Blue.png") center center/cover no-repeat;
+	border-radius: 50px 0 50px 0;
+	border: none;
+	box-shadow: -2px -2px 15px 5px DimGray;
+	position: relative;
+	display: block;
+	margin: 0 0 0 200px;
+}
 
