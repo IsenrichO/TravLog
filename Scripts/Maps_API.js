@@ -1,14 +1,14 @@
 function initMap() {
 
 	var fusionTablesId = "1atL7oaDB6nSPSQ6inNg5lZwHjTfHbPXIidWZ_5f3";
-	/* [Ref. URL]: < https://www.google.com/fusiontables/DataSource?docid=1atL7oaDB6nSPSQ6inNg5lZwHjTfHbPXIidWZ_5f3 > */
+	// [Ref. URL]: < https://www.google.com/fusiontables/DataSource?docid=1atL7oaDB6nSPSQ6inNg5lZwHjTfHbPXIidWZ_5f3 >
 
 
 	// Defined styles array:
 	var styles = [
 		{
 			stylers: [
-				{ hue: "#35acf2" }, 
+				{ hue: "#35ACF2" }, 
 				{ saturation: 30 }
 			]
 		}, {
@@ -29,14 +29,14 @@ function initMap() {
 			elementType: "all",
 			stylers: [
 				{ visibility: "on" },
-				{ color: "#3a3a3a" }	// rgb(21, 25, 24);
+				{ color: "#3A3A3A" }		// rgb(21, 25, 24);
 			]
 		}, {
 			featureType: "administrative.country",
 			elementType: "geometry.stroke",
 			stylers: [
 				{ visibility: "on" },
-				{ color: "#ffffff" },
+				{ color: "#FFFFFF" },
 				{ weight: 1 }
 			]
 		}
@@ -49,8 +49,7 @@ function initMap() {
 
 	// Create a mapOptions object, including a MapTypeId to add to the map type control:
 	var mapOptions = {
-		
-
+	
 		zoom: 2,
 		minZoom: 2,
 		maxZoom: 11,
@@ -107,45 +106,39 @@ function initMap() {
 
 
 	var layer = new google.maps.FusionTablesLayer();
-	layer.setMap(map);
+	
 
 	google.maps.event.addDomListener(
-		document.getElementById("submitBtn"),
-		"click",
+		document.getElementById("submit_Btn"),
+		"click", 
 		function() {
 			filterMap(layer, fusionTablesId, map);
 		}
 	);
 
-	// On-app-load pin marker for Washington, D.C.
+	google.maps.event.addDomListener(
+		document.getElementById("delete_Trip"),
+		"click", 
+		function() {
+			filterMap(layer, fusionTablesId, map);
+		}
+	);
+
+	// On-app-load pin marker for Washington, D.C.:
 	var marker = new google.maps.Marker({
 		map: map,
 		draggable: false,
 		animation: google.maps.Animation.BOUNCE,
 		position: {lat: 38.889931, lng: -77.009003}
-	})
-
-	/* function pinIt(nation) {
-		var latitude = nation["latitude"],
-		    longitude = nation["longitude"];
-	
-		var marker = new google.maps.Marker({
-			map: map,
-			position: {
-				lat: latitude, 
-				lng: longitude
-			},
-			draggable: true,
-			animation: google.maps.Animation.DROP
-		}, 2000);
-	} */
+	});
 
 }
 
 
 function filterMap(layer, fusionTablesId, map) {
 
-	var queryStr = "CountryName IN (" + listArr.join(",") + ")";
+	// var queryStr = "CountryName IN (" + listArr.join(",") + ")";
+	var queryStr = "CountryName IN ('" + listArr.join("' ,'") + "')";
 
 	layer.setOptions({
 		query: {
@@ -155,11 +148,11 @@ function filterMap(layer, fusionTablesId, map) {
 		}, 
 		styles: [{
 			polygonOptions: {
-				fillColor: "#12f902", //"#1E90FF",
+				fillColor: "#12F902", 			// #1E90FF
 				fillOpacity: 0.2,
-				strokeColor: "#10a396", //"#20d6a5"
+				strokeColor: "#FFFFFF",			// #10A396"		|	"#20d6a5"
 				strokeOpacity: 0.95,
-				strokeWeight: 2
+				strokeWeight: 1
 			}
 		}]
 	});
@@ -168,18 +161,5 @@ function filterMap(layer, fusionTablesId, map) {
 }
 
 
-/* To be implemented after having expanded country Object for latitude/longitude coordinate data:
-
-	function forEach(array, callback) {
-		for (var i = 0; i < array.length; i++) {
-			callback(array[i]);
-		}
-	}
-
-	forEach(listArr, function() {
-		pinIt(nation);
-	})
-	
-*/
 
 
