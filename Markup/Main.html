@@ -36,12 +36,25 @@
 		</header>
 
 		<div id="summaryBody">
+			<div>
+				<div id="filter_Cont">
+					<div class="filter">
+						<h2>All</h2>
+					</div>
+					<div class="filter">
+						<h2>Filtered</h2>
+					</div>
+					<div class="filter">
+						<h2>Results</h2>
+					</div>
+				</div>
 
-			<div id="summary_CountriesList"></div>
-
-			<div id="allPlaces"></div>
-
-			<div id="textual_Analysis"></div>
+				<div id="results_Cont">
+					<div id="allPlaces" class="result"></div>
+					<div id="summary_CountriesList" class="result"></div>
+					<div id="textual_Analysis" class="result"></div>
+				</div> 
+			</div>
 
 		</div>
 
@@ -54,33 +67,45 @@
 	</div>
 
 	<div id="modalWindow">
-		<button class="btn XButton" onclick="toggleDisplay('modalWindow')">&times;</button>			<!-- onclick="document.getElementById('modalWindow').style.display='none'" -->
-		<form id="modalForm">
+		<button class="btn XButton" onclick="toggleDisplay('modalWindow')">&times;</button>	
+		<form id="modalForm" onload="setDefault()">
+
+			<h1>New Trip Record</h1>
+
+			<fieldset id="logType">
+				<div class="logType_Div">
+					<input type="radio" id="itineraryType" name="recordType" value="Travel Itinerary" />
+					<label for="itineraryType">Travel Itinerary</label>	
+				</div>
+
+				<div class="logType_Div">
+					<input type="radio" id="recordType" name="recordType" value="Travel Log" />
+					<label for="recordType">Travel Log</label>				
+				</div>
+			</fieldset>
 
 			<hr style="width: 95%; height: 2px; position: relative; display: block; margin: 20px auto; color: black; z-index: 100;" />
 
 			<fieldset>
-				<legend style="text-align: center;">&nbsp; Trip Details &nbsp;</legend>	
+				<legend>
+					<span class="top">&nbsp; Where &nbsp;</span>
+					<span class="bottom">&nbsp; Trip Location &nbsp;</span>
+				</legend>
 
-				<div style="position: relative; display: block; text-align: center; width: 95%;">
-					<label for="select_Country" style="position: relative; display: inline;">Country</label> 
-					<select id="select_Country" name="select_Country" autofocus required>
+				<div id="place_Selection">
+					<label for="select_Country">&nbsp; Destination: &nbsp;</label> 
+					<select id="select_Country" name="select_Country" value="2014-03-19" autofocus required>
 					
 						<!-- <option value="">Specify A Locale</option> -->
 
 						<option value="Afghanistan">Afghanistan</option>
-						<option value="Africa">Africa</option>
 						<option value="Albania">Albania</option> 
 						<option value="Algeria">Algeria</option> 
 						<option value="Andorra">Andorra</option> 
 						<option value="Angola">Angola</option> 
-						<option value="Antarctica">Antarctica</option>
 						<option value="Antigua & Barbuda">Antigua & Barbuda</option> 
-						<option value="Arctic Circle">Arctic Circle, The</option>
 						<option value="Argentina">Argentina</option> 
 						<option value="Armenia">Armenia</option> 
-						<option value="Asia">Asia</option>
-						<option value="Australia">Australia</option> 
 						<option value="Austria">Austria</option> 
 						<option value="Azerbaijan">Azerbaijan</option> 
 						<option value="Bahamas">Bahamas, The</option> 
@@ -91,7 +116,6 @@
 						<option value="Belgium">Belgium</option> 
 						<option value="Belize">Belize</option> 
 						<option value="Benin">Benin</option> 
-						<option value="Bermuda">Bermuda</option>
 						<option value="Bhutan">Bhutan</option> 
 						<option value="Bolivia">Bolivia</option> 
 						<option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option> 
@@ -108,7 +132,14 @@
 						<option value="Central African Republic">Central African Republic</option> 
 						<option value="Chad">Chad</option> 
 						<option value="Chile">Chile</option> 
-						<option value="China">China, People's Repbulic of (PRC)</option> 
+
+						<optgroup label="China">
+							<option value="China" style="font: bolder; color: DodgerBlue;"> &nbsp; ⁍ &nbsp; China, People's Repbulic of (PRC)</option> 
+							<option value="Hong Kong"> &nbsp; ⁍ &nbsp; Hong Kong, Special Administrative Region (SAR) of The PRC</option> 
+							<option value="Macau"> &nbsp; ⁍ &nbsp; Macau, Special Administrative Region (SAR) of The PRC</option>
+							<option value="Taiwan"> &nbsp; ⁍ &nbsp; Taiwan / Republic of China (RoC) (fmy. Formosa)</option>	
+						</optgroup>
+
 						<option value="Colombia">Colombia</option> 
 						<option value="Comoros">Comoros</option> 
 						<option value="Congo, Democratic Republic of The">Congo, Democratic Republic of The</option> 
@@ -118,12 +149,18 @@
 						<option value="Croatia">Croatia</option> 
 						<option value="Cuba">Cuba</option> 
 						<option value="Cyprus">Cyprus</option> 
-						<option value="Czech Republic">Czech Republic</option> 
-						<option value="Denmark">Denmark</option> 
+						<option value="Czech Republic">Czech Republic (fmy. Czechslovakia)</option> 
+						
+						<optgroup label="Denmark">
+							<option value="Denmark" style="font: bolder; color: DodgerBlue;"> &nbsp; ⁍ &nbsp; Denmark, Kingdom of</option> 
+							<option value="Faroe Islands"> &nbsp; ⁍ &nbsp; Faroe Islands</option>	
+							<option value="Greenland"> &nbsp; ⁍ &nbsp; Greenland</option>
+						</optgroup>
+
 						<option value="Djibouti">Djibouti</option> 
 						<option value="Dominica">Dominica</option> 
 						<option value="Dominican Republic">Dominican Republic</option> 
-						<option value="East Timor">East Timor (formerly Timor-Leste)</option> 
+						<option value="East Timor">East Timor (fmy. Timor-Leste)</option> 
 						<option value="Ecuador">Ecuador</option> 
 						<option value="Egypt">Egypt</option> 
 						<option value="El Salvador">El Salvador</option> 
@@ -131,31 +168,32 @@
 						<option value="Eritrea">Eritrea</option> 
 						<option value="Estonia">Estonia</option> 
 						<option value="Ethiopia">Ethiopia</option> 
-						<option value="Europe">Europe</option>
-						<option value="Falkland Islands">Falkland Islands (Islas Malvinas)</option>
-						<option value="Faroe Islands">Faroe Islands</option>
 						<option value="Fiji">Fiji</option> 
 						<option value="Finland">Finland</option> 
-						<option value="France">France</option> 
-						<option value="French Guiana">French Guiana</option>
-						<option value="French Polynesia">French Polynesia</option>
+						
+						<optgroup label="France">
+							<option value="France" style="font: bolder; color: DodgerBlue;"> &nbsp; ⁍ &nbsp; France</option>
+							<option value="French Guiana"> &nbsp; ⁍ &nbsp; French Guiana</option>
+							<option value="French Polynesia"> &nbsp; ⁍ &nbsp; French Polynesia</option>
+							<option value="Guadeloupe"> &nbsp; ⁍ &nbsp; Guadeloupe</option>
+							<option value="Martinique"> &nbsp; ⁍ &nbsp; Martinique</option>
+							<option value="New Caledonia"> &nbsp; ⁍ &nbsp; New Caledonia</option>
+							<option value="Réunion"> &nbsp; ⁍ &nbsp; Réunion</option>
+						</optgroup>
+
 						<option value="Gabon">Gabon</option> 
 						<option value="Gambia">Gambia, The</option> 
-						<option value="Gaza Strip">Gaza Strip</option>
 						<option value="Georgia">Georgia</option> 
 						<option value="Germany">Germany</option> 
 						<option value="Ghana">Ghana</option> 
 						<option value="Greece">Greece</option> 
-						<option value="Greenland">Greenland</option>
 						<option value="Grenada">Grenada</option> 
-						<option value="Guadeloupe">Guadeloupe</option>
 						<option value="Guatemala">Guatemala</option> 
 						<option value="Guinea">Guinea</option> 
 						<option value="Guinea-Bissau">Guinea-Bissau</option> 
 						<option value="Guyana">Guyana</option> 
 						<option value="Haiti">Haiti</option> 
 						<option value="Honduras">Honduras</option> 
-						<option value="Hong Kong">Hong Kong, Special Administrative Region (SAR) of The PRC</option> 
 						<option value="Hungary">Hungary</option> 
 						<option value="Iceland">Iceland</option> 
 						<option value="India">India</option> 
@@ -164,15 +202,13 @@
 						<option value="Iraq">Iraq</option> 
 						
 						<optgroup label="Ireland">
-							<option value="Ireland, Northern">Ireland, Northern</option>
-							<option value="Ireland, Republic of">Ireland, Republic of</option> 
+							<option value="Ireland, Northern"> &nbsp; ⁍ &nbsp; Ireland, Northern</option>
+							<option value="Ireland, Republic of"> &nbsp; ⁍ &nbsp; Ireland, Republic of</option> 
 						</optgroup>
 
-						<option value="Isle of Man">Isle of Man</option>
 						<option value="Israel">Israel</option> 
 						<option value="Italy">Italy</option> 
 						<option value="Jamaica">Jamaica</option> 
-						<option value="Jan Mayen">Jan Mayen</option>
 						<option value="Japan">Japan</option> 
 						<option value="Jordan">Jordan</option> 
 						<option value="Kazakhstan">Kazakhstan</option> 
@@ -180,15 +216,14 @@
 						<option value="Kiribati">Kiribati</option> 
 						
 						<optgroup label="Korea">
-							<option value="Korea, North">Korea, Peoples Republic of (North Korea)</option>
-							<option value="Korea, South">Korea, Republic of (South Korea)</option>
+							<option value="Korea, North"> &nbsp; ⁍ &nbsp; Korea, Peoples Republic of (North Korea)</option>
+							<option value="Korea, South"> &nbsp; ⁍ &nbsp; Korea, Republic of (South Korea)</option>
 						</optgroup>
 
 						<option value="Kosovo">Kosovo</option> 
 						<option value="Kuwait">Kuwait</option> 
 						<option value="Kyrgyzstan">Kyrgyzstan</option> 
 						<option value="Laos">Laos</option> 
-						<option value="Latin America">Latin America</option>
 						<option value="Latvia">Latvia</option> 
 						<option value="Lebanon">Lebanon</option> 
 						<option value="Lesotho">Lesotho</option> 
@@ -197,7 +232,6 @@
 						<option value="Liechtenstein">Liechtenstein</option> 
 						<option value="Lithuania">Lithuania</option> 
 						<option value="Luxembourg">Luxembourg</option> 
-						<option value="Macau">Macau, Special Administrative Region (SAR) of The PRC</option>
 						<option value="Macedonia">Macedonia</option> 
 						<option value="Madagascar">Madagascar</option> 
 						<option value="Malawi">Malawi</option> 
@@ -205,37 +239,36 @@
 						<option value="Maldives">Maldives</option>  
 						<option value="Mali">Mali</option>  
 						<option value="Malta">Malta</option>  
-						<option value="Martinique">Martinique</option>
 						<option value="Marshall Islands">Marshall Islands</option>  
-						<option value="Martinique">Martinique</option>
 						<option value="Mauritania">Mauritania</option>  
 						<option value="Mauritius">Mauritius</option>  
 						<option value="Mexico">Mexico</option>  
 						<option value="Micronesia">Micronesia, Federated States of (MFS)</option>  
-						<option value="Middle East">Middle East</option>
 						<option value="Moldova">Moldova</option>  
 						<option value="Monaco">Monaco</option>  
 						<option value="Mongolia">Mongolia</option>  
 						<option value="Montenegro">Montenegro</option>  
 						<option value="Morocco">Morocco</option>  
 						<option value="Mozambique">Mozambique</option>  
-						<option value="Myanmar">Myanmar (Burma)</option>  
+						<option value="Myanmar">Myanmar (fmy. Burma)</option>  
 						<option value="Namibia">Namibia</option>  
 						<option value="Nauru">Nauru</option>  
 						<option value="Nepal">Nepal</option>  
 						<option value="Netherlands">Netherlands, The (Holland)</option>  
-						<option value="New Caledonia">New Caledonia</option>
 						<option value="New Zealand">New Zealand</option>  
 						<option value="Nicaragua">Nicaragua</option>  
 						<option value="Niger">Niger</option>  
 						<option value="Nigeria">Nigeria</option>  
-						<option value="North America">North America</option>
-						<option value="Northern Mariana Islands">Northern Mariana Islands</option>
-						<option value="Norway">Norway</option>  
+						
+						<optgroup label="Norway">
+							<option value="Jan Mayen"> &nbsp; ⁍ &nbsp; Jan Mayen</option>
+							<option value="Norway" style="font: bolder; color: DodgerBlue;"> &nbsp; ⁍ &nbsp; Norway, Kingdom of</option>  
+							<option value="Svalbard"> &nbsp; ⁍ &nbsp; Svalbard</option>
+						</optgroup>
+
 						<option value="Oman">Oman</option>  
 						<option value="Pakistan">Pakistan</option>  
 						<option value="Palau">Palau</option>  
-						<option value="Palestine">Palestine</option>
 						<option value="Panama">Panama</option>  
 						<option value="Papua New Guinea">Papua New Guinea</option>  
 						<option value="Paraguay">Paraguay</option>  
@@ -243,20 +276,17 @@
 						<option value="Philippines">Philippines</option>  
 						<option value="Poland">Poland</option>  
 						<option value="Portugal">Portugal</option>  
-						<option value="Puerto Rico">Puerto Rico</option>
 						<option value="Qatar">Qatar</option>  
-						<option value="Réunion">Réunion</option>
 						<option value="Romania">Romania</option>  
 						<option value="Russia">Russian Federation</option>  
 						<option value="Rwanda">Rwanda</option>  
 						<option value="St. Kitts & Nevis">Saint Kitts & Nevis</option>  
 						<option value="St. Lucia">Saint Lucia</option>  
 						<option value="St. Vincent & The Grenadines">Saint Vincent & The Grenadines</option>  
-						<option value="Samoa">Samoa</option>  
+						<option value="Samoa">Samoa (fmy. Western Samoa)</option>  
 						<option value="San Marino">San Marino</option>  
 						<option value="São Tomé & Príncipe">São Tomé & Príncipe</option>  
 						<option value="Saudi Arabia">Saudi Arabia</option>  
-						<option value="Scotland">Scottland, Kingdom of</option>
 						<option value="Senegal">Senegal</option>  
 						<option value="Serbia">Serbia</option>  
 						<option value="Seychelles">Seychelles</option>  
@@ -267,18 +297,15 @@
 						<option value="Solomon Islands">Solomon Islands</option>  
 						<option value="Somalia">Somalia</option>  
 						<option value="South Africa">South Africa</option>  
-						<option value="South America">South America</option>
 						<option value="South Sudan">South Sudan, Republic of</option>  
 						<option value="Spain">Spain</option>  
 						<option value="Sri Lanka">Sri Lanka</option>  
 						<option value="Sudan">Sudan</option>  
 						<option value="Suriname">Suriname</option>  
-						<option value="Svalbard">Svalbard</option>
 						<option value="Swaziland">Swaziland</option>  
 						<option value="Sweden">Sweden</option>  
 						<option value="Switzerland">Switzerland</option>  
-						<option value="Syria">Syria</option>  
-						<option value="Taiwan">Taiwan / Republic of China (RoC) (formerly Formosa)</option>  
+						<option value="Syria">Syria</option>   
 						<option value="Tajikistan">Tajikistan</option>  
 						<option value="Tanzania">Tanzania, United Republic of</option>  
 						<option value="Thailand">Thailand</option>  
@@ -288,42 +315,95 @@
 						<option value="Tunisia">Tunisia</option> 
 						<option value="Turkey">Turkey</option> 
 						<option value="Turkmenistan">Turkmenistan</option> 
-						<option value="Turks & Caicos">Turks & Caicos</option>
 						<option value="Tuvalu">Tuvalu</option> 
 						<option value="Uganda">Uganda</option> 
 						<option value="Ukraine">Ukraine</option> 
 						<option value="United Arab Emirates">United Arab Emirates (UAE)</option> 
-						<option value="United Kingdom">United Kingdom (UK)</option> 
-						<option value="United States">United States of America (USA)</option> 
+							
+						<optgroup label="The UK">
+							<option value="Bermuda"> &nbsp; ⁍ &nbsp; Bermuda</option>
+							<option value="Falkland Islands"> &nbsp; ⁍ &nbsp; Falkland Islands (Islas Malvinas)</option>
+							<option value="Isle of Man"> &nbsp; ⁍ &nbsp; Isle of Man</option>
+							<option value="Scotland"> &nbsp; ⁍ &nbsp; Scottland, Kingdom of</option>
+							<option value="Turks & Caicos"> &nbsp; ⁍ &nbsp; Turks & Caicos Islands (TCI)</option>
+							<option value="United Kingdom" style="font: bolder; color: DodgerBlue;"> &nbsp; ⁍ &nbsp; United Kingdom (UK)</option>
+							<option value="Wales"> &nbsp; ⁍ &nbsp; Wales</option>
+						</optgroup> 
+	
+						<optgroup label="The US">
+							<option value="Northern Mariana Islands"> &nbsp; ⁍ &nbsp; Northern Mariana Islands</option>
+							<option value="Puerto Rico"> &nbsp; ⁍ &nbsp; Puerto Rico, Commonwealth of</option>
+							<option value="United States" style="font: bolder; color: DodgerBlue;"> &nbsp; ⁍ &nbsp; United States of America (USA)</option>
+						</optgroup>
+						
 						<option value="Uruguay">Uruguay</option> 
 						<option value="Uzbekistan">Uzbekistan</option> 
 						<option value="Vanuatu">Vanuatu</option> 
 						<option value="Vatican City">Vatican City</option> 
 						<option value="Venezuela">Venezuela</option> 
 						<option value="Vietnam">Vietnam</option> 
-						<option value="Wales">Wales</option>
 						<option value="Western Sahara">Western Sahara</option>
 						<option value="Yemen">Yemen</option> 
-						<option value="Yugoslavia">Yugoslavia (formerly)</option>
-						<option value="Zaire">Zaire (formerly)</option>
+						<option value="Yugoslavia">Yugoslavia (fmy.)</option>
+						<option value="Zaire">Zaire (fmy.)</option>
 						<option value="Zambia">Zambia</option> 
 						<option value="Zimbabwe">Zimbabwe</option>
+
+						<optgroup label="Disputed Territories">
+							<option value="Crimea"> &nbsp; ⁍ &nbsp; Crimea, Republic of</option>
+							<option value="Gaza Strip"> &nbsp; ⁍ &nbsp; Gaza Strip</option>	
+							<option value="Palestine"> &nbsp; ⁍ &nbsp; Palestine</option>
+							
+						</optgroup>
+
+						<optgroup label="Supernational Geographic Regions">
+							<option value="Africa"> &nbsp; ⁍ &nbsp; Africa</option>
+							<option value="Antarctica"> &nbsp; ⁍ &nbsp; Antarctica</option>
+							<option value="Arctic Circle"> &nbsp; ⁍ &nbsp; Arctic Circle, The</option>
+							<option value="Asia"> &nbsp; ⁍ &nbsp; Asia</option>
+							<option value="Australia"> &nbsp; ⁍ &nbsp; Australia</option>
+							<option value="Earth" style="font: bolder; color: DodgerBlue;"> &nbsp; ⁍ &nbsp; Earth, Planet</option>
+							<option value="Europe"> &nbsp; ⁍ &nbsp; Europe</option>
+							<option value="Latin America"> &nbsp; ⁍ &nbsp; Latin America</option>
+							<option value="Middle East"> &nbsp; ⁍ &nbsp; Middle East</option>
+							<option value="North America"> &nbsp; ⁍ &nbsp; North America</option>
+							<option value="Oceania"> &nbsp; ⁍ &nbsp; Oceania</option>
+							<option value="South America"> &nbsp; ⁍ &nbsp; South America</option>
+						</optgroup>
+
+						<option value="Unknown">Unknown (?)</option>
+
 					</select>
 				</div>
 
-				<textarea id="tripDescrip" placeholder="Record your trip experience. Plan an itinerary. Or just mess around with my project. That's cool too."></textarea>
+				<div id="summary_Cont">
+					<label for="tripDescrip">
+						<span class="tripSummary_Span"> <br /> &nbsp; Trip &nbsp; <br /> &nbsp; Summary: &nbsp;</span>
+					</label>
+
+					<textarea id="tripDescrip" placeholder="Record your trip experience. Plan an itinerary. Or just mess around with my project. That's cool too."></textarea>
+				</div>
+
 			</fieldset>
 
 			<br />
+			<hr style="width: 95%; height: 2px; position: relative; display: block; margin: 20px auto; color: black; z-index: 100;" />
+
 				
 			<fieldset id="tripDates_Field">
-				<legend style="text-align: center;">&nbsp; Record Your Experiences &nbsp;</legend>
+
+				<legend style="text-align: center;">
+					<span class="top">&nbsp; When &nbsp;</span>
+					<span class="bottom">&nbsp; Remember The Goodtimes &nbsp;</span>
+				</legend>
+
 				<div id="datesContainer">
 					<fieldset class="date_Field">
 						<div class="newEntry">
 							<div class="newRow">
-								<label class="date_Label" for="dateInputOne">Trip Memory N<sup><u>o</u></sup> 1: </label>
-								<input type="date" id="dateInput1" class="trip_Dates" />
+								<label class="date_Label" for="dateInputOne" required>Trip Memory № 1: &nbsp; </label>
+									<!-- Symbolic No. Representation via innerHTML modification:	N<sup><u>o</u></sup>	-->
+								<input type="date" id="dateInput1" class="trip_Dates" value="DD-MM-YYYY" />
 							</div>
 
 							<textarea id="expander_Cnt" class="date_Msg" placeholder="Make note of a memorable event on your trip."></textarea>
@@ -402,42 +482,45 @@
 
 		<a class="bottomNavTab" href="Change_Log.html" target="_blank"><h2 class="navTabText">Change Log</h2></a>
 
-		<div class="bottomNavTab"><h2 class="navTabText"><span class="dropupGlyph">&nbsp;&nbsp; &#x2630;</span>About . . .</h2>
+		<div class="bottomNavTab"><h2 class="navTabText"><span class="dropupGlyph">&nbsp; &nbsp; &#x2630;</span>About . . .</h2>
 			<div class="popup">
 				<a href="Myself.html" target="_blank">&nbsp;
 					<img src="../Graphics/Profile_Picture.jpg" 
-						 style="border-radius: 50%; vertical-align: middle;" height="40px;" width="40px;" alt="Personal Contact Chip" />&nbsp;&nbsp;&nbsp;&nbsp; Myself
+						 style="border-radius: 50%; vertical-align: middle;" height="40px;" width="40px;" alt="Personal Contact Chip" />&nbsp; &nbsp; &nbsp; &nbsp; Myself
 				</a>
 				<hr class="submenuHR" />
-				<a href="This_Project.html" target="_blank"><span class="dropupGlyph" style="font-size: 40px; margin-left: -5px;">&nbsp; &#x1f310;</span>&nbsp;&nbsp;&nbsp;&nbsp; This Project</a>
+				<a href="Markup/This_Project.html" target="_blank">&nbsp;
+					<img src="../Graphics/Edge-firefox.svg" style="vertical-align: middle;" height="40px;" width="40px;" alt="FireFox Edge Browser Globe Glyph (Black)" />
+					&nbsp; &nbsp; &nbsp; This Project
+				</a>
 			</div>
 		</div>
 
-		<div class="bottomNavTab"><h2 class="navTabText"><span class="dropupGlyph">&nbsp;&nbsp; &#x2630;</span>Connect</h2>
+		<div class="bottomNavTab"><h2 class="navTabText"><span class="dropupGlyph">&nbsp; &nbsp; &#x2630;</span>Connect</h2>
 			<div class="popup">
 				<a href="https://www.facebook.com/rE.vilO.I.13" target="_blank">&nbsp;
 					<img src="../Graphics/Facebook.jpg" 
-						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp;&nbsp;&nbsp;&nbsp; Facebook
+						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp; &nbsp; &nbsp; &nbsp; Facebook
 				</a>
 				<hr class="submenuHR" />
 				<a href="https://github.com/IsenrichO" target="_blank">&nbsp;
 					<img src="../Graphics/octocat.svg" 
-						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp;&nbsp;&nbsp;&nbsp; GitHub
+						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp; &nbsp; &nbsp; &nbsp; GitHub
 				</a>
 				<hr class="submenuHR" />
 				<a href="https://plus.google.com/+OliverIsenrich" target="_blank">&nbsp;
 					<img src="../Graphics/GooglePlus.png" 
-						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp;&nbsp;&nbsp;&nbsp; Google+
+						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp; &nbsp; &nbsp; &nbsp; Google+
 				</a>
 				<hr class="submenuHR" />
 				<a href="https://www.quora.com/profile/Oliver-Isenrich" target="_blank">&nbsp;
 					<img src="../Graphics/Quora.png" 
-						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp;&nbsp;&nbsp;&nbsp; Quora
+						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp; &nbsp; &nbsp; &nbsp; Quora
 				</a>
 				<hr class="submenuHR" />
 				<a href="https://twitter.com/IsenrichO" target="_blank">&nbsp;
 					<img src="../Graphics/Twitter.png" 
-						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp;&nbsp;&nbsp;&nbsp; Twitter
+						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp; &nbsp; &nbsp; &nbsp; Twitter
 				</a>
 			</div>
 		</div>
