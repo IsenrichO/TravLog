@@ -103,30 +103,17 @@ h1 {
 	transition: top 1s 0.4s ease-in-out;
 }
 
-@keyframes listOverslide {
-	0% {
-		top: 400px;
-	}
-	50% {
-		top: -50px;
-	}
-	100% {
-		top: 100px;
-	}
-}
-
 .list {
 	position: relative;
-	/* transition: top 1s 0.2s ease-in-out, transform 1s 0.2s ease-in-out; */
 	list-style: none;
 	top: 400px;
 	z-index: 20;
 	width: 90%;
 	text-align: justify;
 	margin: 0 auto;
-	font: 28px/26px Helvetica, Arial, sans-serif;
-	color: white;
-	padding: 10px 15px;
+	font: 24px/24px Helvetica, Arial, sans-serif;
+	color: White;
+	padding: 4px 10px;
 }	
 
 	.list:nth-child(odd) {
