@@ -25,73 +25,57 @@ body {
 	display: block;
 	position: absolute;
 	top: 120%;
-	/* transform: translateY(-50%); */
 	height: auto;
 	min-height: 50%;
 	max-height: 90%;
 	width: 50%;
-	/* border: 8px ridge white; */
 	border-radius: 15% 0% 15% 0%;
-	box-shadow: -2px -2px 15px 5px white;
+	box-shadow: -2px -2px 15px 5px White;
 	background-color: LightGray;
 	z-index: 100;
 	left: 25%;
-	overflow-y: scroll;
+	
 	overflow-x: hidden;
-	animation: slideUp 1.0s 0.1s ease forwards; */
+	animation: slideUp 1.0s 0.1s ease forwards; 
 }
 
-#modalForm input[type="button"] {
-	font-family: Roboto;
-	font-size: 16px;
-	font-weight: bolder;
-	width: 80px;
-	padding: 10px 5px;
-	line-height: 15px;
-	position: relative;
-	border-radius: 10px 0 10px 0;
-	display: inline;
-	margin: 5% 10%;
-}
-
-#eventAdd_Btn, #eventRemove_Btn {
-	position: relative;
-	width: 60px;
-	height: 60px;
-	padding: 0;
-	display: block;
-	border-radius: 15% 0 15% 0;
-	left: 50%;
-	top: 50%;
-	transform: translateY(-50%) translateX(-50%);
-	margin: 25px auto;
-}
-
-
-#eventAdd_Btn img, #eventRemove_Btn img {
-	width: 40px;
-	height: auto;
-	margin: auto;
-	padding: 0;
-	transition: width 0.5s ease-out;
-}
-
-	#eventAdd_Btn:hover img, #eventRemove_Btn:hover img {
-		width: 50px;
-		height: auto;
+	#modalForm * {
+		overflow: hidden;
 	}
+
+	#modalForm input[type="button"] {
+		font-family: Roboto;
+		font-size: 16px;
+		font-weight: bolder;
+		width: 80px;
+		padding: 10px 5px;
+		line-height: 15px;
+		position: relative;
+		border-radius: 10px 0 10px 0;
+		display: inline;
+		margin: 2.5% 10%;
+	}
+
+	#modalForm > h1 {
+		font: small-caps 700 54px/54px PT Sans, Helvetica, sans-serif;
+		color: White;
+		text-shadow: 2px 2px 3px #7EFCEF, -1.5px -1.5px 1px DimGray;
+		text-align: center;
+	}
+
 
 input[type="radio"] {
     width: 20px;
     height: 20px;
-    border: 1px solid DarkGray;
+    border: 1.5px solid DimGray;
     border-radius: 50%;
     outline: none;
     padding: 0;
     margin: auto;
-    box-shadow: inset 0 0 5px 0 gray;
-    -moz-box-shadow: inset 0 0 5px 0 gray;
+    box-shadow: inset 0 0 5px 0 rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: inset 0 0 5px 0 rgba(255, 255, 255, 0.75);
     -webkit-appearance: none;
+	vertical-align: middle;
 }
 
 	input[type="radio"]:hover {
@@ -110,29 +94,42 @@ input[type="radio"] {
 
 	input[type="radio"]:checked:before {
 	    background: MediumSeaGreen;
-	    width: 70%;
-	    height: 70%;
-	    margin: 15%;
+	    width: 60%;
+	    height: 60%;
+	    margin: 20%;
 	    padding: 0;
 	}
 
 
+input[type="date"] {
+		text-align: center;
+		vertical-align: middle;
+		width: 70%; 
+		margin: auto;
+	}
+
+	input[type="date"]:before {
+		content: attr(placeholder);
+	}
+	
+
 #logType {
-	border: none;
 	display: block;
 	position: relative;
-	background: none;
-	width: 100%;
-	margin: auto;
+	width: 90%;
+	height: auto;
+	margin: 4% auto;
+	vertical-align: middle;
 }
 
 #logType label {
-	display: inline-block;
-	font: bold 24px/24px Play, Helvetica, sans-serif;
-	color: DimGray;
+	display: inline;
+	font: 700 24px/28px Play, Helvetica, sans-serif;
+	color: DarkSlateGray;
 	position: relative;
-	margin: auto;
+	margin: auto 10px;
 	width: auto;
+	vertical-align: middle;
 }
 
 .logType_Div {
@@ -141,6 +138,7 @@ input[type="radio"] {
 	margin: auto;
 	padding: 0;
 	position: relative;
+	vertical-align: middle;
 }
 
 fieldset {
@@ -162,27 +160,57 @@ fieldset {
 }
 
 label[for="select_Country"] {
-	font: 20px/16px Helvetica, Arial, sans-serif;
-	margin-right: 30px;
+	font: 700 18px/16px Play, Helvetica, sans-serif;
+	color: DarkSlateGray;
+	margin: auto;
+	padding: 5px 0;
+	vertical-align: middle;
+	top: 0;
 	position: relative;
+	display: inline;
+	width: 20%;
+	text-align: center;
+}
+
+label[for="tripDescrip"] {
+	font: bold 18px/16px Play, Helvetica, sans-serif;
 	display: inline-block;
+	color: DarkSlateGray;
+	width: 20%;
+	margin: auto;
+	position: relative;
+	padding: 5px 0;
+	vertical-align: middle;
+	text-align: center;
+	top: 0;
+	right: 2.5%;
+	transform: translateY(50%);
+}
+
+.tripSummary_Span {
+	width: 100%;
+	margin: auto;
+	position: relative;
+	display: inline;
 }
 
 .trip_Dates {
 	text-align: center;
+	vertical-align: middle;
 	display: inline;
-	margin: 0;
-	padding: 0 auto 0 10px;
+	margin: auto;
+	padding: auto;	
 	position: relative;
-	width: auto;
-	min-width: 200px;
+	width: 70%;
 	height: 25px;
-	font: 14px/12px Courier, Arial, sans-serif;
+	font: 14px/14px Helvetica, Arial, sans-serif;
+	top: 0;
 }
 
 #tripDates_Field {
 	min-height: 100px;
 	height: auto;
+	margin: auto;
 	position: relative;
 	vertical-align: middle;
 }
@@ -196,127 +224,216 @@ label[for="select_Country"] {
 
 
 .date_Label {
-	/* font: bold 16px/14px Helvetica, Arial, sans-serif; */
-	font: bold 18px/16px Helvetica, Arial, sans-serif;
-	text-align: left;
-	margin: 0 30px 0 auto;
+	font: 600 14px/14px Play, Helvetica, sans-serif;
+	text-align: center;
+	color: DarkSlateGray;
+	margin: auto;
+	padding: 5px 0;
 	display: inline;
 	position: relative;
-	padding: 5px 0;
-	width: 150px;
+	top: 0;
+	width: 20%;
 	vertical-align: middle;
 } 
 
 .date_Msg {
 	width: 90%;
+	height: 30px;
+	max-height: 60px;
 	position: relative;
 	text-align: center;
+	top: 0;
 	display: block;
-	clear: both;
 	margin: auto;
+	padding: 5px 10px;
 	resize: vertical;
-	max-height: 60px;
 }
-
-input[type="text"], textarea {
-	text-align: justify;
-	font: 18px/18px Helvetica, Arial, sans-serif;
-}
-
-input[type="date"] {
-	text-align: center;
-	content: "";
-	vertical-align: middle;
-}
-
-
-input[type="date"]:before {
-	content: attr(placeholder);
-}
-	
 
 #datesContainer {
 	height: auto;
-	width: 85%;
+	width: 84%;
 	position: relative;
 	display: inline-block;
 	float: left;
-	margin: 0 auto;
+	margin: auto;
 	padding: 0;
-	text-align: center;
+	text-align: left;
 	vertical-align: middle;
+	overflow: visible;
 }
-
 
 select {
 	font: bold 16px/16px Helvetica, Arial, sans-serif;
 	color: DimGray;
 	text-align: center;
-	display: block;
-	margin: 10px auto;
-	width: 50%;
-	height: 30px;
+	margin: auto auto auto 2.5%;
+	padding: 5px 20px;
+	width: 72.5%;
+	height: auto;
 	display: inline;
-}
-
-select:focus, select:hover, select:active, .trip_Dates:focus, .trip_Dates:hover, .trip_Dates:active {
-	outline: MediumSeaGreen solid 2px;
+	right: 0;
 	background-color: AliceBlue;
 }
 
+	select:hover, select:active, .trip_Dates:focus, .trip_Dates:hover, .trip_Dates:active {
+		outline: MediumSeaGreen solid 2px;
+		background-color: AliceBlue;
+	}
+
+	select:focus {
+		outline: MediumSeaGreen solid 2px;
+	}
+
+	option {
+		font: bolder 16px/16px Helvetica, Arial, sans-serif;
+		color: DimGray;		
+		border: 1px solid Gray;
+	}
+
+	optgroup {
+		background: rgba(255, 255, 255, 0.75);
+		border: 1px solid Gray;
+		text-decoration: overline;
+	}
+
+		optgroup > option {
+			font: bold 13px/14px Helvetica, Arial, sans-serif;
+			color: Silver;
+		}
+
+		optgroup > option:before {
+			content: "‣";				/* Hex Character Code:  &#8227;	*/
+			position: absolute;
+			width: auto;
+			height: 13px;
+			display: inline;
+			font: bold 13px/14px Helvetica, Arial, sans-serif;
+			color: Gray;
+		}
+
+
 #addDate_Div {
-	display: inline-block;
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-end;
 	position: relative;
-	width: 15%;
-	float: right;
-	margin: 0 auto;
+	width: 12%;
+	margin: auto;
 	padding: 0;
 	height: auto;
 	min-height: 100px;
 	text-align: center;
 	vertical-align: middle;
+	overflow: visible;
+	left: 5%;
+	top: 25px;
+	float: right;
+}
+
+#eventAdd_Btn {
+	top: 50%;
+}
+
+#eventAdd_Btn, #eventRemove_Btn {
+	position: relative;
+	width: 60px;
+	height: 60px;
+	padding: 0;
+	display: block;
+	border-radius: 15% 0 15% 0;
+	transform: translateY(-50%) translateX(-50%);
+	margin: 15px auto;
+	text-align: center;
+	flex-grow: 1;
+}
+
+
+#eventAdd_Btn img, #eventRemove_Btn img {
+	width: 40px;
+	height: auto;
+	margin: auto;
+	padding: 0;
+	text-align: center;
+	transition: width 0.5s ease-out;
+}
+
+	#eventAdd_Btn:hover img, #eventRemove_Btn:hover img {
+		width: 50px;
+		height: auto;
+		text-align: center;
+	}
+
+
+.date_Field {
+	overflow: visible;
 }
 
 .newEntry {
 	position: relative;
 	display: block;
-	margin: 5px auto;
+	margin: 5px auto 10px auto;
 	padding: 0;
 	width: 100%;
+	height: auto;
 	text-align: center;
 }
 
 .newRow {
 	width: 100%;
-	height: 20px;
+	height: auto;
 	display: block;
-	margin: 0 auto 20px auto;
+	margin: 5px auto 10px auto;
 	padding: 0;
 	position: relative;
 	text-align: center;
 	vertical-align: middle;
 }
 
+.tripSummary_Span {
+	text-align: center;
+}
 
 #tripDescrip {
 	min-height: 100px;
 	max-height: 200px;
+	width: 70%;
+	margin: auto;
+	padding: 5px 20px;
+	top: 0;
 }
+
+#place_Selection {
+	width: 100%;
+	margin: auto;
+	height: auto;
+	text-align: left;
+}
+
+#summary_Cont {
+	vertical-align: middle;
+	height: auto;
+	margin: auto;
+	width: 95%;
+	text-align: left;
+}
+
 
 textarea {
 	position: relative;
-	width: 90%;
+	width: 95%;
 	text-align: center;
-	margin: 10px auto;
-	background-color: white;
-	font-family: Roboto;
-	font-size: 20px;
-	color: black;
+	margin: auto;
+	background-color: White;
+	font: 16px/16px Helvetica, Arial, sans-serif;
+	color: DimGray;
 	vertical-align: text-top;
 	resize: vertical;
 	text-overflow: ellipsis;
-	overflow: auto;
-	padding: 10px;
+	overflow: hidden;
+	display: inline;
+	padding: 5px;
+	right: 0;
 }
 	
 	textarea:hover, textarea:focus, textarea:active {
@@ -602,15 +719,21 @@ textarea {
 		}
 
 
-
-legend {
+legend .top {
 	color: white;
-	font: bold 28px/24px Play, Arial, sans-serif;
+	font: bold 28px/26px Play, Arial, sans-serif;
 	text-shadow: 1px 1px 1px #00ffe6, -1px -1px 1px dimgray;
 	width: auto;
 	margin: 0;
 	padding: 0;
-	display: inline;
+	display: block;
+}
+
+legend .bottom {
+	font: italic 16px/16px Play, Helvetica, sans-serif;
+	top: 4px;
+	color: rgba(255, 255, 255, 0.75);
+	display: block;
 }
 
 #dropRightBtn {
@@ -688,20 +811,16 @@ legend {
 	color: DimGray;
 }
 
-.summaryFooter {
-
-}
-
 .btn {
 	background-color: MediumSeaGreen;
-	color: white;
-	box-shadow: 0 0 0 silver;
-	transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+	color: White;
+	box-shadow: 0 0 0 Silver;
+	transition: background-color 0.5s 0.05s ease, color 0.5s 0.05s ease, box-shadow 0.5s 0.05s ease;
 	border: none;
 }
 
 	.btn:hover {
-		background-color: white;
+		background-color: White;
 		color: MediumSeaGreen;						/* Teal: Hex Code... #0eb7b7 */
 		box-shadow: 2px 2px 1px Gray;
 	}
@@ -714,19 +833,16 @@ legend {
 
 .XButton {
 	position: absolute;
-	color: white;
+	color: White;
 	top: 5px;
 	right: 5px;
 	width: 60px;
 	height: 60px;
-	font-family: Rockwell;
+	font: bolder 60px/60px Play, Helvetica, sans-serif;
 	border: none;
 	background: none;
-	font-weight: bolder;
-	font-size: 60px;
-	line-height: 60px;
 	margin: 0;
-	padding: 0px;
+	padding: 0;
 }
 
 	.XButton:hover {
@@ -744,7 +860,6 @@ legend {
 	top: 0;
 	padding: 0;
 	margin: 0;
-	/* transition: width 2s ease; */
 	background: rgba(255, 255, 255, 0.95);
 	overflow: hidden;
 	z-index: 2000;
@@ -759,10 +874,10 @@ legend {
 		animation: expandFromCenter 2s 5s forwards;
 	}
 
-	#right_Collapse > * {
+	/* #right_Collapse > * {
 		animation: fadeIn 2s 3s forwards;
 		visibility: hidden;
-	}
+	} */
 
 #centerExpand_HR {
 	position: relative;
@@ -775,19 +890,7 @@ legend {
 	animation: expandFromCenter 2s 3s linear forwards;
 }
 
-#summaryBody {
-	visibility: hidden;
-	animation: fadeIn 2s 6s forwards;
-	width: 100%;
-	display: block;
-	position: relative;
-	height: auto;
-	min-height: 200px;
-	margin: 2% auto;
-}
-
 #summaryTitle {
-	visibility: hidden;
 	width: 90%;
 	margin: 3% auto 20px auto;
 	text-align: center;
@@ -796,7 +899,7 @@ legend {
 	/* font-family: "PT Sans"; */
 	font-variant: small-caps;
 	z-index: 2100;
-	animation: fadeIn 2s 4s forwards;
+	/* animation: fadeIn 2s 4s forwards; */
 }
 
 #summarySubtitle {
@@ -806,7 +909,6 @@ legend {
 	position: relative;
 	font: 30px/28px Helvetica, sans-serif;
 	color: silver;
-	visibility: hidden;
 	animation: fadeIn 2s 4.5s forwards;
 }
 
@@ -820,52 +922,144 @@ legend {
 	animation: fadeIn 3s 1s ease forwards;
 }
 
-#summary_CountriesList {
+#summaryBody {
+	/* animation: fadeIn 2s 6s forwards; */
+	background: LightGray;
+	width: 100%;
+	display: block;
+	position: relative;
 	height: auto;
-	width: 20%; 
-	position: relative; 
+	min-height: 600px;
+	margin: 2% auto;
+	overflow: hidden;
+}
+
+	#summaryBody > div:first-child {
+		width: 75%;
+		height: 550px;
+		top: 25px;
+		position: relative;
+		margin: auto;
+		display: block;
+		background: white;
+		overflow: hidden;
+		border-radius: 50px 0 50px 0;
+		box-shadow: -2px -2px 15px 5px DimGray;
+	}
+
+
+#filter_Cont {
+	width: 6%;
+	height: 100%;
+	position: absolute;
+	left: 0;
 	display: inline-block;
-	margin: 50px 2%;
-	top: 0;
+	left: 0;
+	margin: 0;
 	padding: 0;
-	/* margin: 20px 0 20px 16%; */
-	box-shadow: -2px -2px 2px DimGray;
-	border: 1px solid black;
+	border-right: 3px solid Black;
+	z-index: 11;
+	overflow: hidden;
+}
 	
+	#filter_Cont > div:first-child {
+		border-radius: 50px 0 0 0;
+	}
+
+	#filter_Cont > div:first-child, #filter_Cont > div:nth-child(2) {
+		border-bottom: 3px solid black;
+		height: 33%;
+	}
+
+	#filter_Cont > div:last-child {
+		height: 34%;
+		top: 0;
+	}
+
+
+.filter {
+	display: block;
+	position: relative;
+	width: auto;
+	margin: auto;
+	text-align: center;
+	padding: 0;
+	color: White;
+	background: MediumSeaGreen;
+	overflow: hidden;
+	transition: background 1s 0.1s ease, color 1s 0.1s ease;
+}
+
+	.filter:hover {
+		background: White;
+		color: MediumSeaGreen;
+		cursor: pointer;
+	}
+
+	.filter h2 {
+		width: 100%;
+		height: auto;
+		margin: auto;
+		position: relative;
+		top: 50%;
+		transform: rotate(-90deg);
+		text-align: center;
+		padding: 0;
+		font: 700 32px/32px Droid Sans, Play, sans-serif;
+		font-variant: small-caps;
+	}
+
+
+#results_Cont {
+	display: inline-block;
+	background: White;
+	width: 94%;
+	height: 100%;
+	float: right;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	z-index: 10;
+}
+
+	#results_Cont > div:first-child {
+		display: inline-block;
+	}
+
+	#results_Cont > div:last-child {
+		margin: 0;
+		background: LightGray;
+	}
+
+
+.result {
+	height: 85%;
+	width: 100%; 
+	display: none;
+	position: relative;
+	top: 15%;
+	left: 0;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	border-radius: 0 0 50px 0;
 }
 
 #allPlaces {
-	max-height: 400px;
-	height: auto;
-	position: relative;
 	float: left;
-	display: inline-block;
-	width: 20%;
-	top: 0;
-	padding: 0;
 	overflow-y: scroll;
 	overflow-x: hidden;
 	text-align: center;
 	border: 1px solid black;
-	margin: 50px 2%;
-	/* margin: 20px 16% 20px 16%; */
-	background-color: white;
 }
 
-#textual_Analysis {
-	height: auto;
-	max-height: 400px;
-	min-height: 200px;
-	position: relative;
-	top: 0;
-	padding: 0;
-	display: inline-block;
-	width: 40%;
-	margin: 50px 2%;
-	border: 2px solid purple;
-	background: LightGray;
+#selected {
+	background: White;
+	font: 700 36px/36px Droid Sans, Play, sans-serif;
+	top: 50%;
+	color: MediumSeaGreen;
+	display: block;
 }
-
 
 .haventBeen {
 	background-color: LightGray;
