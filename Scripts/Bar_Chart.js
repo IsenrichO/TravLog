@@ -5,6 +5,23 @@ window.onload = function() {
 };
 
 
+	var filts = document.getElementById("filter_Cont");
+	console.log(filts);
+
+	console.log(lastFilt);
+
+	var firstFilt = filts.firstElementChild,
+		secondFilt = firstFilt.nextElementSibling,
+		lastFilt = filts.lastElementChild;
+
+	console.log(firstFilt);
+	console.log(secondFilt);
+
+
+			var dc = document.getElementById("results_Cont").children;
+		console.log(dc);
+		console.log(dc[2]);
+
 function gen() {
 	// Array 'diffs' calculates the total number of days spent in each destination:
 	diffs = map(daysAbroad_Arr, function(set) {
@@ -22,6 +39,8 @@ function gen() {
 }
 
 
+
+
 // Text analytics production function, 'textAnalysis':
 function textAnalysis() {
 
@@ -30,13 +49,6 @@ function textAnalysis() {
 
 	// Assigned #textual_Analysis div to variable 'textCont':
 	var textCont = document.getElementById("textual_Analysis");
-
-
-	/* Function 'reduce' implementation:
-	var red = reduce(listArr, function(a, b) {
-		return a + ", " + b;
-	}, "");
-	console.log(red); */
 
 	// Var 'totalStay' returns the total number of days spent abroad:
 	var totalStay = reduce(diffs, function(trip1, trip2) {
@@ -51,6 +63,16 @@ function textAnalysis() {
 	// Var 'maxStay' returns the number of days spent on the user's longest trip:
 	var maxStay = max(diffs);
 	console.log(maxStay);
+
+	/* 
+	DOM_ElCreator("P", textCont, function(el) {
+		var newa = document.createTextNode("HEY HEY");
+		el.appendChild(newa);
+	}); 
+
+	listen("myCanvas", function() {
+		document.getElementById("right_Collapse").style.display = "none;";
+	});*/
 
 	function newResult(node_Str) {
 		var resultPar = document.createElement("P");
