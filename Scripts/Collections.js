@@ -16,30 +16,35 @@ var listArr = [],
 				map: "https://upload.wikimedia.org/wikipedia/commons/1/19/Afghanistan_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Afghanistan",
 				emblem: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Emblem_of_Afghanistan.svg",
+				coat: "",
 				capital: "Kabul",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Africa: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/8/86/Africa_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/en/0/0c/African_Union_flag",
-				capital: "",
+				coat: "",
+				capital: "N/A (Continent)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Albania: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Albania_%28orthographic_projection%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/3/36/Flag_of_Albania",
+				coat: "",
 				capital: "Tirana",
 				coords: {lat: 41.3300000, lng: 19.8200000}
 			},
 			Algeria: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/2/25/Algeria_%28orthographic_projection%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_Algeria",
+				coat: "",
 				capital: "Algiers",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Andorra: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/8/83/Andorra_on_the_globe_%28Europe_centered%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/d/dc/Flag_of_Andorra%281934%29",
+				coat: "",
 				capital: "Andorra la Vella",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
@@ -47,384 +52,468 @@ var listArr = [],
 				map: "https://upload.wikimedia.org/wikipedia/commons/8/89/Angola_%28orthographic_projection%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola",
 				capital: "Luanda",
+				coat: "",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Antarctica: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Antarctica_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/6/68/Flag_of_the_Antarctic_Treaty",
-				capital: "",
+				capital: "N/A (Continent)",
+				coat: "",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Antigua & Barbuda": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/2/21/ATG_orthographic", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/8/89/Flag_of_Antigua_and_Barbuda",
+				coat: "",
 				capital: "St. John's",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Arctic Circle": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/9/92/Arctic_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Worldmap_northern",
+				coat: "",
 				capital: "",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Argentina: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Argentina_%28orthographic_projection%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina",
+				coat: "",
 				capital: "Buenos Aires",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Armenia: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/9/96/Armenia_%28orthographic_projection%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_Armenia",
+				coat: "",
 				capital: "Yerevan",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Asia: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/8/80/Asia_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/en/8/87/Flag_of_ASEAN",
-				capital: "",
+				coat: "",
+				capital: "N/A (Continent)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Australia: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/d/da/Australia_with_AAT_%28orthographic_projection%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29",
+				coat: "",
 				capital: "Canberra",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Austria: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/6/62/Austria_on_the_globe_%28Europe_centered%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_Austria",
+				coat: "",
 				capital: "Vienna",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Azerbaijan: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/0/01/Azerbaijan_%28orthographic_projection%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Azerbaijan",
+				coat: "",
 				capital: "Baku",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Bahamas: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/d/de/The_Bahamas_on_the_globe_%28Americas_centered%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/9/93/Flag_of_the_Bahamas",
+				coat: "",
 				capital: "Nassau",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Bahrain: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/6/62/Bahrain_on_the_globe_%28Afro-Eurasia_centered%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_Bahrain",
+				coat: "",
 				capital: "Al-Manámah",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Bangladesh: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Bangladesh_%28orthographic_projection%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Flag_of_Bangladesh",
+				coat: "",
 				capital: "Dhaka",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Barbados: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/a/a1/BRB_orthographic", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/e/ef/Flag_of_Barbados",
+				coat: "",
 				capital: "Bridgetown",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Belarus: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/6/68/Belarus_on_the_globe_%28Europe_centered%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/8/85/Flag_of_Belarus",
+				coat: "",
 				capital: "Mensk (Minsk)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Belgium: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/b/b4/Belgium_on_the_globe_%28Europe_centered%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/f/fe/Government_Ensign_of_Belgium",
+				coat: "",
 				capital: "Brussels",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Belize: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/4/43/BLZ_orthographic", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Flag_of_Belize",
+				coat: "",
 				capital: "Belmopan",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Benin: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Benin_on_the_globe_%28Africa_centered%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Flag_of_Benin",
+				coat: "",
 				capital: "Porto-Novo",
 				coords: {lat: 34.533333, lng: 69.166667}
+			},
+			Bermuda: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/a/ab/United_Kingdom_on_the_globe_%28Bermuda_special%29_%28Americas_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Flag_of_Bermuda",
+				coat: "https://upload.wikimedia.org/wikipedia/commons/5/58/Coat_of_arms_of_Bermuda",
+				capital: "Hamilton (British Overseas Territory)",
+				coords: {lat: 32.333333, lng: -64.75}
 			},
 			Bhutan: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Bhutan_%28orthographic_projection%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/9/91/Flag_of_Bhutan",
+				coat: "",
 				capital: "Thimphu",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Bolivia: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Bolivia_%28orthographic_projection%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/d/de/Flag_of_Bolivia_%28state%29",
+				coat: "",
 				capital: "Sucre",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Bosnia & Herzegovina": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/1/1c/Bosnia_and_Herzegovina_on_the_globe_%28Europe_centered%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Flag_of_Bosnia_and_Herzegovina",
+				coat: "",
 				capital: "Sarajevo",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Botswana: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Botswana_on_the_globe_%28Africa_centered%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_Botswana",
+				coat: "",
 				capital: "Gaborone",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Brazil: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/9/90/Brazil_on_the_globe_%28South_America_centered%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil",
+				coat: "",
 				capital: "Brasília",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Brunei: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/d/d8/Brunei_on_the_globe_%28Brunei_centered%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Brunei",
+				coat: "",
 				capital: "Bandar Seri Begawan",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Bulgaria: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Bulgaria_on_the_globe_%28Europe_centered%29", 
 				flag: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Bulgaria",
+				coat: "",
 				capital: "Sofia",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Burkina Faso": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Burkina_Faso_on_the_globe_%28Africa_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/3/31/Flag_of_Burkina_Faso",
+				coat: "",
 				capital: "Ouagadougou",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Burundi: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/2/27/Burundi_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/5/50/Flag_of_Burundi",
+				coat: "",
 				capital: "Bujumbura",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Cambodia: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Cambodia_on_the_globe_%28Southeast_Asia_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_Cambodia",
+				coat: "",
 				capital: "Phnom Penh",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Cameroon: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/b/b4/Cameroon_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Cameroon",
+				coat: "",
 				capital: "Yaoundé",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Canada: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/c/c7/Canada_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/en/c/cf/Flag_of_Canada",
+				coat: "",
 				capital: "Ottawa",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Cape Verde": {
-				map: "https://upload.wikimedia.org/wikipedia/commons/4/47/Cape_Verde_%28orthographic_projection%29",
+				map: "https://upload.wikimedia.org/wikipedia/commons/d/d7/CPV_orthographic_NaturalEarth",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/3/38/Flag_of_Cape_Verde",
+				coat: "",
 				capital: "Praia",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Central African Republic": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Central_African_Republic_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Flag_of_the_Central_African_Republic",
+				coat: "",
 				capital: "Bangui",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Chad: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/4/46/Chad_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Flag_of_Chad",
+				coat: "",
 				capital: "N'Djamena",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Chile: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Chile_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/7/78/Flag_of_Chile",
+				coat: "",
 				capital: "Santiago",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			China: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/7/78/People%27s_Republic_of_China_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China",
+				coat: "",
 				capital: "Beijing",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Colombia: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/c/ca/COL_orthographic_%28San_Andr%C3%A9s_and_Providencia_special%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia",
+				coat: "",
 				capital: "Santafé de Bogotá",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Comoros: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Comoros_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/9/94/Flag_of_the_Comoros",
+				coat: "",
 				capital: "Moroni (on Grande Comoro)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Congo, Democratic Republic of The": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Democratic_Republic_of_the_Congo_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Flag_of_the_Democratic_Republic_of_the_Congo",
+				coat: "",
 				capital: "Kinshasa",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Congo, Republic of The": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Republic_of_the_Congo_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/9/92/Flag_of_the_Republic_of_the_Congo",
+				coat: "",
 				capital: "Brazzaville",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Costa Rica": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Costa_Rica_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Costa_Rica_%28state%29",
+				coat: "",
 				capital: "San José",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Côte d’Ivoire": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/9/9b/C%C3%B4te_d%27Ivoire_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_C%C3%B4te_d%27Ivoire",
+				coat: "",
 				capital: "Yamoussoukro",
 				coords: {lat: 34.533333, lng: 69.166667}
+			},
+			Crimea: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Crimea_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Flag_of_Crimea",
+				coat: "https://upload.wikimedia.org/wikipedia/commons/c/c8/Emblem_of_Crimea",
+				capital: "Simferopol (Federal Subject of Russia, Disputed)",
+				coords: {lat: 45.3, lng: 34.4}
 			},
 			Croatia: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/1/15/EU-Croatia",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Flag_of_Croatia",
+				coat: "",
 				capital: "Zagreb",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Cuba: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/0/01/Cuba_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Flag_of_Cuba",
+				coat: "",
 				capital: "Havana",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Cyprus: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/4/4f/EU-Cyprus",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Cyprus",
+				coat: "",
 				capital: "Lefkosia (Nicosia)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Czech Republic": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/2/20/Czech_Republic_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_Czech_Republic",
+				coat: "",
 				capital: "Prague",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Denmark: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Denmark_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Denmark",
+				coat: "",
 				capital: "Copenhagen",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Djibouti: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/b/b7/Djibouti_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/3/34/Flag_of_Djibouti",
-				capital: "Djibouti",
+				coat: "",
+				capital: "Djibouti (City)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Dominica: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/7/78/Dominica_on_the_globe_%28Americas_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Flag_of_Dominica",
+				coat: "",
 				capital: "Roseau",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Dominican Republic": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/9/95/Dominican_Republic_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_the_Dominican_Republic",
+				coat: "",
 				capital: "Santo Domingo",
 				coords: {lat: 34.533333, lng: 69.166667}
+			},
+			Earth: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/5/57/Earth_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/e/ef/International_Flag_of_Planet_Earth",
+				coat: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Earth_symbol",
+				capital: "N/A (Planetary Body)",
+				coords: {lat: undefined, lng: undefined}
 			},
 			"East Timor": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Timor_Leste_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/2/26/Flag_of_East_Timor",
+				coat: "",
 				capital: "Dili",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Ecuador: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/c/c8/Ecuador_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Flag_of_Ecuador",
+				coat: "",
 				capital: "Quito",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Egypt: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/a/a1/EGY_orthographic",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt",
+				coat: "",
 				capital: "Cairo",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"El Salvador": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/e/e3/El_Salvador_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/3/34/Flag_of_El_Salvador",
+				coat: "",
 				capital: "San Salvador",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Equatorial Guinea": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Location_Equatorial_Guinea_AU_Africa",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/3/31/Flag_of_Equatorial_Guinea",
+				coat: "",
 				capital: "Malabo",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Eritrea: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/4/43/Eritrea_%28Africa_orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/2/29/Flag_of_Eritrea",
+				coat: "",
 				capital: "Asmara",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Estonia: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/b/b1/Estonia_on_the_globe_%28Europe_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_Estonia_%28bordered%29",
+				coat: "",
 				capital: "Tallinn",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Ethiopia: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Ethiopia_%28Africa_orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/7/71/Flag_of_Ethiopia",
+				coat: "",
 				capital: "Addis Ababa",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Europe: {
-				map: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Europe_%28orthographic_projection%29",
+				map: "https://upload.wikimedia.org/wikipedia/commons/4/44/Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe",
-				capital: "",
+				coat: "",
+				capital: "N/A (Continent)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Falkland Islands": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Falkland_Islands_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_Falkland_Islands",
-				capital: "",
+				coat: "",
+				capital: "Stanley (British Overseas Territory)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Faroe Islands": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/3/38/Kingdom_of_Denmark_on_the_globe_%28Faroer_special%29_%28Europe_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Flag_of_the_Faroe_Islands",
-				capital: "",
+				coat: "",
+				capital: "Tórshavn (Danish Overseas Territory)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Fiji: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Fiji_on_the_globe_%28small_islands_magnified%29_%28Polynesia_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Fiji",
+				coat: "",
 				capital: "Suva (on Viti Levu)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Finland: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/7/7a/Finland_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Finland",
+				coat: "",
 				capital: "Helsinki",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			France: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/e/e1/France_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France",
+				coat: "",
 				capital: "Paris",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"French Guiana": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/8/89/French_Guiana_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/2/29/Flag_of_French_Guiana",
-				capital: "Cayenne (Prefecture)",
+				capital: "Cayenne (French Prefecture)",
 				coords: {lat: 4.9372, lng: -52.326}
 			},
 			"French Polynesia": {
@@ -466,12 +555,14 @@ var listArr = [],
 			Ghana: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/3/30/Ghana_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Ghana",
+				coat: "",
 				capital: "Accra",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Greece: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/2/21/EU-Greece",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece",
+				coat: "",
 				capital: "Athens",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
@@ -484,8 +575,16 @@ var listArr = [],
 			Grenada: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/5/53/Grenada_in_its_region",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Grenada",
+				coat: "",
 				capital: "St. George's",
 				coords: {lat: 34.533333, lng: 69.166667}
+			},
+			Guadeloupe: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/6/60/France_on_the_globe_%28Guadeloupe_special%29_%28Americas_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/0/04/Flag_of_Guadeloupe_%28local%29",
+				coat: "https://upload.wikimedia.org/wikipedia/commons/7/7d/Coat_of_arms_of_Guadeloupe",
+				capital: "Basse-Terre (French Prefecture)",
+				coords: {lat: 15.9958, lng: -61.7292}, 
 			},
 			Guatemala: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/7/70/Guatemala_%28orthographic_projection%29",
@@ -538,6 +637,7 @@ var listArr = [],
 			Iceland: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/7/7a/Iceland_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Iceland",
+				coat: "",
 				capital: "Reykjavik",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
@@ -577,9 +677,17 @@ var listArr = [],
 				capital: "Dublin",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
+			"Isle of Man": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Isle_of_Man_on_the_globe_%28Europe_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Flag_of_the_Isle_of_Mann",
+				coat: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Coat_of_arms_of_the_Isle_of_Man",
+				capital: "Douglas (Doolish)",
+				coords: {lat: 54.145, lng: -4.482}, 
+			},
 			Israel: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/4/42/Israel_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Israel",
+				coat: "",
 				capital: "Jerusalem",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
@@ -598,7 +706,7 @@ var listArr = [],
 			"Jan Mayen": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/7/75/Jan_Mayen_in_Norway",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway",
-				capital: "N/A (Unassigned Landmass)",
+				capital: "N/A (Norwegian Territory)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Japan: {
@@ -658,7 +766,7 @@ var listArr = [],
 			Kyrgyzstan: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Kyrgyzstan_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/c/c7/Flag_of_Kyrgyzstan",
-				capital: "Bishkek (formerly Frunze)",
+				capital: "Bishkek (fmy. Frunze)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Laos: {
@@ -670,7 +778,7 @@ var listArr = [],
 			"Latin America": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/6/63/Latin_America_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/7/75/Cartography_of_Latin_America",
-				capital: "",
+				capital: "N/A (Territorial Group)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Latvia: {
@@ -778,7 +886,7 @@ var listArr = [],
 			Martinique: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/2/29/Martinique_on_the_globe_%28Americas_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/5/52/Flag_of_Martinique",
-				capital: "Fort-de-France (Prefecture)",
+				capital: "Fort-de-France (French Prefecture)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Mauritania: {
@@ -808,7 +916,8 @@ var listArr = [],
 			"Middle East": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Middle_East_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Flag_of_the_Arab_League",
-				capital: "",
+				coat: "N/A (Territorial Group)",
+				capital: "N/A (Territorial Group)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Moldova: {
@@ -820,8 +929,9 @@ var listArr = [],
 			Monaco: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Monaco_on_the_globe_%28Europe_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/6/69/Flag_of_Monaco_%28state%29",
-				capital: "Monaco",
-				coords: {lat: 34.533333, lng: 69.166667}
+				coat: "https://upload.wikimedia.org/wikipedia/commons/c/c8/Coat_of_arms_of_Monaco",
+				capital: "Monaco (City-State)",
+				coords: {lat: 43.733333, lng: 7.416667}
 			},
 			Mongolia: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Mongolia_%28orthographic_projection%29",
@@ -850,7 +960,7 @@ var listArr = [],
 			Myanmar: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Myanmar_on_the_globe_%28Myanmar_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Flag_of_Myanmar",
-				capital: "Rangoon (formerly Yangon)",
+				capital: "Rangoon (fmy. Yangon)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Namibia: {
@@ -874,96 +984,112 @@ var listArr = [],
 			Netherlands: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/4/41/Kingdom_of_the_Netherlands_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands",
+				coat: "",
 				capital: "Amsterdam",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"New Caledonia": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/0/0e/New_Caledonia_on_the_globe_%28small_islands_magnified%29_%28Polynesia_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/8/88/Pro-Independence_Flag_of_New_Caledonia",
-				capital: "Nouméa",
+				coat: "",
+				capital: "Nouméa (Special Collectivity of France)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"New Zealand": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/c/c0/New_Zealand_%28orthographic_projection%29_2",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/3/3e/Flag_of_New_Zealand",
+				coat: "",
 				capital: "Wellington",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Nicaragua: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/3/38/Nicaragua_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Nicaragua",
+				coat: "",
 				capital: "Managua",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Niger: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/8/88/Niger_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Flag_of_Niger",
+				coat: "",
 				capital: "Niamey",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Nigeria: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Nigeria_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria",
+				coat: "",
 				capital: "Abuja",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"North America": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/1/1a/North_America_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_the_North_American_Free_Trade_Agreement_%28standard_version%29",
-				capital: "",
+				coat: "",
+				capital: "N/A (Continent)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Northern Mariana Islands": {
 				map: "Northern_Mariana_Islands_on_the_globe_(Southeast_Asia_centered)_(small_islands_magnified)",
 				flag: "Flag_of_the_Northern_Mariana_Islands",
-				capital: "Capitol Hill (Saipan)",
+				coat: "",
+				capital: "Capitol Hill (Saipan) ",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Norway: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/2/28/Norway_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway",
+				coat: "",
 				capital: "Oslo",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Oceania: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Oceania_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/2/25/Flag_of_Oceania_%28Proposal%29",
-				capital: "",
+				coat: "",
+				capital: "N/A (Continent)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Oman: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Oman_%28better%29_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Oman",
+				coat: "",
 				capital: "Muscat",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Pakistan: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Pakistan_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/3/32/Flag_of_Pakistan",
+				coat: "",
 				capital: "Islamabad",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Palau: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Palau_on_the_globe_%28small_islands_magnified%29_%28Polynesia_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/4/48/Flag_of_Palau",
+				coat: "",
 				capital: "Melekeok",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Palestine: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/a/ad/State_of_Palestine_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Flag_of_Palestine_%28State%29",
+				coat: "",
 				capital: "East Jerusalem (Proclaimed)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Panama: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/e/e1/Panama_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Flag_of_Panama",
+				coat: "",
 				capital: "Panama City",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Papua New Guinea": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/7/79/Papua_New_Guinea_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Flag_of_Papua_New_Guinea",
+				coat: "",
 				capital: "Port Moresby",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
@@ -994,294 +1120,357 @@ var listArr = [],
 			Portugal: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Portugal_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal",
+				coat: "",
 				capital: "Lisbon",
 				coords: {lat: 34.533333, lng: 69.166667}
+			},
+			"Puerto Rico": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Puerto_Rico_%28orthographic_projection%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/2/28/Flag_of_Puerto_Rico",
+				coat: "https://upload.wikimedia.org/wikipedia/commons/3/36/Coat_of_arms_of_the_Commonwealth_of_Puerto_Rico",
+				capital: "San Juan (US Territory)",
+				coords: {lat: 18.406389, lng: -66.063889}, 
 			},
 			Qatar: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/d/d4/QAT_orthographic",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Qatar",
+				coat: "",
 				capital: "Doha",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Réunion: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Reunion_on_the_globe_%28Africa_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Proposed_flag_of_R%C3%A9union_%28VAR%29",
-				capital: "Saint-Denis",
-				coords: {lat: 34.533333, lng: 69.166667}
+				coat: "https://upload.wikimedia.org/wikipedia/commons/3/39/Armoiries_R%C3%A9union",
+				capital: "Saint-Denis (French Prefecture)",
+				coords: {lat: -20.8789, lng: 55.4481}, 
 			},
 			Romania: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/8/87/Romania_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/7/73/Flag_of_Romania",
+				coat: "",
 				capital: "Bucharest",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Russia: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/6/65/Russian_Federation_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia",
+				coat: "",
 				capital: "Moscow",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Rwanda: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/0/06/Rwanda_on_the_globe_%28Africa_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Rwanda",
+				coat: "",
 				capital: "Kigali",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"St. Kitts & Nevis": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/5/5d/KNA_orthographic",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Saint_Kitts_and_Nevis",
+				coat: "",
 				capital: "Basseterre (on St. Kitts)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"St. Lucia": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/9/97/Saint_Lucia_on_the_globe_%28Americas_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Saint_Lucia",
+				coat: "",
 				capital: "Castries",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"St. Vincent & The Grenadines": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/7/70/VCT_orthographic",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Flag_of_Saint_Vincent_and_the_Grenadines",
+				coat: "",
 				capital: "Kingstown",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Samoa: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/7/74/Samoa_on_the_globe_%28Polynesia_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/3/31/Flag_of_Samoa",
+				coat: "",
 				capital: "Apia",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"San Marino": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/4/49/San_Marino_on_the_globe_%28Europe_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/b/b1/Flag_of_San_Marino",
-				capital: "San Marino",
-				coords: {lat: 34.533333, lng: 69.166667}
+				coat: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Coat_of_arms_of_San_Marino",
+				capital: "San Marino (City-State)",
+				coords: {lat: 43.941667, lng: 12.458333}
 			},
 			"São Tomé & Príncipe": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/3/35/Location_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe_AU_Africa",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Sao_Tome_and_Principe",
+				coat: "",
 				capital: "São Tomé",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Saudi Arabia": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/4/47/Saudi_Arabia_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia",
+				coat: "",
 				capital: "Riyadh",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Scotland: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/8/82/Scotland_in_the_UK_and_Europe",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/1/10/Flag_of_Scotland",
+				coat: "",
 				capital: "Edinburgh",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Senegal: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Senegal_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Flag_of_Senegal",
+				coat: "",
 				capital: "Dakar",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Serbia: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/5/54/Serbia_on_the_globe_%28claimed%29_%28Europe_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Flag_of_Serbia",
+				coat: "",
 				capital: "Belgrade",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Seychelles: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/4/47/Seychelles_on_the_globe_%28Africa_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Seychelles",
+				coat: "",
 				capital: "Victoria",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Sierra Leone": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/3/38/Sierra_Leone_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Sierra_Leone",
+				coat: "",
 				capital: "Freetown",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Singapore: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/3/35/Singapore_on_the_globe_%28Southeast_Asia_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/4/48/Flag_of_Singapore",
-				capital: "Singapore",
+				coat: "",
+				capital: "Singapore (City)",
 				coords: {lat: 34.533333, lng: 69.166667}			
 			},
 			Slovakia: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Slovakia_on_the_globe_%28Europe_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Flag_of_Slovakia",
+				coat: "",
 				capital: "Bratislava",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Slovenia: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Slovenia_%28orthographic_projection%29_gray_and_green_scheme_globe",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Flag_of_Slovenia",
+				coat: "",
 				capital: "Ljubljana",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Solomon Islands": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Solomon_Islands_on_the_globe_%28Oceania_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/7/74/Flag_of_the_Solomon_Islands",
+				coat: "",
 				capital: "Honiara (on Guadalcanal)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Somalia: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Somalia_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Flag_of_Somalia",
+				coat: "",
 				capital: "Mogadishu",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"South Africa": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/6/6e/South_Africa_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa",
+				coat: "",
 				capital: "Pretoria",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"South America": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/0/0f/South_America_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_South_America_%28proposal%29",
-				capital: "",
+				coat: "",
+				capital: "N/A (Continent)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"South Sudan": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/f/fe/South_Sudan_hd_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/7/7a/Flag_of_South_Sudan",
+				coat: "",
 				capital: "Juba",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Spain: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/4/49/Spain_WS-included_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain",
+				coat: "",
 				capital: "Madrid",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Sri Lanka": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/9/96/Sri_Lanka_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/1/11/Flag_of_Sri_Lanka",
+				coat: "",
 				capital: "Colombo",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Sudan: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Sudan_%28orthographic_projection%29_highlighted",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_Sudan",
+				coat: "",
 				capital: "Khartoum",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Suriname: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/8/87/Suriname_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/6/60/Flag_of_Suriname",
+				coat: "",
 				capital: "Paramaribo",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Svalbard: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/b/be/Norway_on_the_globe_%28Svalbard_special%29_%28Europe_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Svalbard_geoflag",
-				capital: "Longyearbyen",
+				coat: "",
+				capital: "Longyearbyen (Norwegian Territory)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Swaziland: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Swaziland_on_the_globe_%28Africa_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Flag_of_Swaziland",
+				coat: "",
 				capital: "Mbabane",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Sweden: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/3/30/Sweden_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/en/4/4c/Flag_of_Sweden",
+				coat: "",
 				capital: "Stockholm",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Switzerland: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/6/63/Switzerland_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland",
+				coat: "",
 				capital: "Bern",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Syria: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/1/11/Syria_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/5/53/Flag_of_Syria",
+				coat: "",
 				capital: "Damascus",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Taiwan: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Taiwan_%28orthographic_projection%3B_southeast_Asia_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/7/72/Flag_of_the_Republic_of_China",
+				coat: "",
 				capital: "Taipei",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Tajikistan: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Tajikistan_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/d/d0/Flag_of_Tajikistan",
+				coat: "",
 				capital: "Dushanbe",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Tanzania: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Tanzania_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/3/38/Flag_of_Tanzania",
+				coat: "",
 				capital: "Dar es Salaam",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Thailand: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Thailand_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_Thailand",
+				coat: "",
 				capital: "Bangkok",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Togo: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Togo_on_the_globe_%28Africa_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/6/68/Flag_of_Togo",
+				coat: "",
 				capital: "Lomé",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Tonga: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Tonga_on_the_globe_%28Polynesia_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Tonga_%283-2%29",
+				coat: "",
 				capital: "Nuku'alofa",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"Trinidad & Tobago": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/e/ed/Trinidad_and_Tobago_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Trinidad_and_Tobago",
+				coat: "",
 				capital: "Port-of-Spain",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Tunisia: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/d/da/Tunisia_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Tunisia",
+				coat: "",
 				capital: "Tunis",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Turkey: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Turkey_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey",
+				coat: "",
 				capital: "Ankara",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Turkmenistan: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/5/59/Turkmenistan_on_the_globe_%28Eurasia_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Flag_of_Turkmenistan",
+				coat: "",
 				capital: "Ashgabat",
 				coords: {lat: 34.533333, lng: 69.166667}
+			},
+			"Turks & Caicos": {
+				map: "https://upload.wikimedia.org/wikipedia/commons/f/fe/Turks_and_Caicos_Islands_on_the_globe_%28Americas_centered%29",
+				flag: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Flag_of_the_Turks_and_Caicos_Islands",
+				coat: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Coat_of_arms_of_the_Turks_and_Caicos_Islands",
+				capital: "Cockburn Town (British Overseas Territory)",
+				coords: {lat: 21.75, lng: -71.583333}
 			},
 			Tuvalu: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Tuvalu_on_the_globe_%28Polynesia_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/3/38/Flag_of_Tuvalu",
+				coat: "",
 				capital: "Funafuti",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Uganda: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Uganda_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Flag_of_Uganda",
+				coat: "",
 				capital: "Kampala",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			Ukraine: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/4/44/Ukraine_on_the_globe_%28Europe_centered%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Ukraine",
+				coat: "",
 				capital: "Kyiv (Kiev)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
 			"United Arab Emirates": {
 				map: "https://upload.wikimedia.org/wikipedia/commons/c/cd/United_Arab_Emirates_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates",
+				coat: "",
 				capital: "Abu Dhabi",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
@@ -1297,9 +1486,17 @@ var listArr = [],
 				capital: "Washington, D.C. (District of Columbia)",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
+			Unknown: {
+				map: "https://upload.wikimedia.org/wikipedia/commons/a/a9/None_%28orthographic_projection%29",
+				flag: "N/A (Unidentified Geographic Locale)",
+				coat: "N/A (Unidentified Geographic Locale)",
+				capital: "N/A (Unidentified Geographic Locale)",
+				coords: {lat: undefined, lng: undefined}
+			},
 			Uruguay: {
 				map: "https://upload.wikimedia.org/wikipedia/commons/8/8d/Uruguay_%28orthographic_projection%29",
 				flag: "https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Uruguay",
+				coat: "",
 				capital: "Montevideo",
 				coords: {lat: 34.533333, lng: 69.166667}
 			},
