@@ -59,8 +59,9 @@ function addTrip() {
 	newTrip.setAttribute("style", "background: rgba(192, 192, 192, 0.25);");
 	
 	bodyCont.setAttribute("style", "display: flex; flex-direction: row; justify-content: center; align-items: baseline; position: relative; width: 98%; padding: 2px 0 0 2px; overflow-x: hidden; margin-bottom: 2%; min-height: 180px;");
+
 	bannerCont.className = "BannerContainer";
-	bannerCont.setAttribute("style", "display: block; position: relative; padding: 0 0 10px 10px; top 25px; width: 100%; height: 105px; vertical-align: middle; margin-bottom: 0;");
+	bannerCont.setAttribute("style", "display: block; position: relative; padding: 0 0 10px 10px; top 25px; width: 100%; height: 105px; vertical-align: middle; margin-bottom: 0; overflow: hidden; text-overflow: ellipsis;");
 
 	headerRule.setAttribute("style", "display: block; top: 0; left: 15px; right: -2px; position: relative; margin: 0 0 2% 0; width: auto; overflow: hidden; height: 4px;");
 	headerRule.className = "headerRuler";
@@ -68,7 +69,7 @@ function addTrip() {
 
 	// Define nested contents of the 'bannerCont' variable:
 	arrowGlyph.innerHTML = "❱❱";				// Guillemet Symbol:  ❱❱		|	⇒
-	arrowGlyph.setAttribute("style", "display: block; width: 100%; height: 100%; position: relative; margin-right: 15px; color: dimgray; font: bold 50px/25px Helvetica, sans-serif;");
+	arrowGlyph.setAttribute("style", "display: inline; width: 100%; height: 100%; position: relative; margin-right: 15px; color: DimGray; font: bold 35px/25px Helvetica, sans-serif;");
 	arrowGlyph.className = "doubleChevron";
 
 	arrowGlyph_Cont.appendChild(arrowGlyph);
@@ -78,7 +79,7 @@ function addTrip() {
 	bodyTxt_Header.setAttribute("style", "height: 20px; text-align: center; margin: 5px auto; width: 95%; display: block; font: bold 16px/18px Helvetica, Arial, sans-serif; color: DimGray; overflow: hidden;");
 
 	titleHolder.appendChild(cardTitle);
-	titleHolder.setAttribute("style", "position: relative; display: inline-block; font-size: 40px; color: #FFFFFF; text-shadow: -2px -2px 1px dimgray, 2px 2px 1px #7efcef; font-variant: small-caps; font-family: Droid Sans; float: left; max-width: 75%; font-weight: 700; bottom: 0px; line-height: 50px; height: 50px; margin: auto;");
+	titleHolder.setAttribute("style", "position: relative; display: inline-block; font: small-caps 700 40px/40px Droid Sans; color: #FFFFFF; text-shadow: -2px -2px 1px DimGray, 2px 2px 1px #7EFCEF; float: left; max-width: 75%; top: 50%; transform: translateY(-50%); height: 70px; margin: auto; overflow: hidden; text-overflow: ellipsis;");
 	titleHolder.insertBefore(arrowGlyph_Cont, titleHolder.childNodes[0]);
 	
 	// Define nested contents of the 'bodyCont' variable:
@@ -92,7 +93,7 @@ function addTrip() {
 	bodyTxt.appendChild(setOfDates);
 	bodyTxt.insertBefore(subHeaderRule, bodyTxt.childNodes[0]);
 	bodyTxt.insertBefore(bodyTxt_Header, bodyTxt.childNodes[0]);
-	bodyTxt.setAttribute("style", "display: inline-block; position: relative; float: right; width: 65%; background: white; text-align: justify; word-wrap: break-word; font-family: Roboto; font-size: 16px; color: #111111; margin: 0 15px; padding: 10px; vertical-align: middle; min-height: 200px; overflow-x: hidden; box-shadow: -3px 3px 2px DimGray;");
+	bodyTxt.setAttribute("style", "display: inline-block; position: relative; float: right; width: 65%; background: white; text-align: justify; word-wrap: break-word; font: 16px Roboto; color: #111111; margin: 0 15px; padding: 10px; vertical-align: middle; min-height: 200px; overflow-x: hidden; box-shadow: -3px 3px 2px DimGray;");
 
 
 
@@ -153,28 +154,15 @@ function addTrip() {
 
 
 function makeDatesArray() {
-	var tripDates = [];
-	//var dates_Field = document.getElementById("tripDates_Field");
-	// var numDates = dates_Field.childNodes.length / 2;
-			
-	//var field = document.getElementById("tripDates_Field");
-	//var fieldS = field.getElementsByTagName("INPUT");
-	// var fieldS_Len = fieldS.childNodes.length;
+	var tripDates = [],
+		ns = document.getElementsByClassName("trip_Dates"),
+		ls = document.getElementsByClassName("trip_Dates").length;
 
-	//var dates_Field = document.getElementsByClassName("trip_Dates");
-	//forEach(dates_Field, function(date) {
-	//	tripDates.push(date.value);
-	//});
-	/* tripDates = map(dates_Field, function(date) {
-		return date.value;
-	}); */
-	var ns = document.getElementsByClassName("trip_Dates");
-	var ls = document.getElementsByClassName("trip_Dates").length;
-	console.log(ls);
 	for (var i = 0; i < ls; i++) {
 		tripDates.push(ns[i].value);
 	}
 
+	console.log(ls);
 	console.log(tripsObj);
 	console.log(tripDates);
 
@@ -185,12 +173,13 @@ function makeDatesArray() {
 
 
 function addDates() {
-	var tripDates_Arr = makeDatesArray();
+	var tripDates_Arr = makeDatesArray(),
+		datesCont = document.getElementById("datesContainer").getElementsByTagName("TEXTAREA"),
+		datesList = document.createElement("UL"),
+		iterator = 0;
 
 	console.log(tripDates_Arr);
 
-	var expander_Msg = document.getElementById("expander_Cnt").value;
-	var datesList = document.createElement("UL");
 	datesList.setAttribute("style", "list-style-type: none; width: 100%; height: auto; display: block; position: relative; margin: 10px 0 0 0; padding: 0; left: 0; overflow-x: hidden;");
 	datesList.className = "dates_UL";
 
@@ -241,31 +230,36 @@ function addDates() {
 					break;
 			}
 
-			var formattedDate_Str = day + " " + month + " " + year;
+			var formattedDate_Str = day + " " + month + " " + year,
+				expander_Msg = datesCont[iterator].value;
 
-			var thisDate_El = document.createElement("LI");
-			var thisDate_Node = document.createTextNode(formattedDate_Str);
+			var thisDate_El = document.createElement("LI"),
+				thisDate_Node = document.createTextNode(formattedDate_Str);
+
 			thisDate_El.appendChild(thisDate_Node);
 			thisDate_El.setAttribute("style", "height: auto; padding: 7.5px 0; margin: 1px 0; display: block; position: relative; width: 100%; left: 0; font: bold 18px/16px Play, Arial, sans-serif;");
 			thisDate_El.className = "date_ListItem";
-			
 
-			var expander = document.createElement("DIV");
-			var expander_Node = document.createTextNode(expander_Msg);
+			var expander = document.createElement("DIV"),
+				expander_Node = document.createTextNode(expander_Msg);
+
 			expander.appendChild(expander_Node);
 			expander.setAttribute("style", "display: block; position: relative; width: 95%; height: auto; top: 100%; margin: 10px; padding: 5px; font: italic 14px/12px Helvetica, Arial, sans-serif; color: silver;");
 
 			thisDate_El.appendChild(expander);
 
 
-			var guillemetGlyph_El = document.createElement("DIV");
-			var guillemetGlyph_Node = document.createTextNode("►");
+			var guillemetGlyph_El = document.createElement("DIV"),
+				guillemetGlyph_Node = document.createTextNode("►");
+
 			guillemetGlyph_El.appendChild(guillemetGlyph_Node);
 			guillemetGlyph_El.className = "collapseGlyph";
-			guillemetGlyph_El.setAttribute("style", "transform: rotate(0deg); font: 18px/16px Play, Arial, sans-serif; width: 6px; margin: 0 25px 0 10px; height: auto; display: inline; position: relative; text-shadow: -1px -1px 1px DimGray; color: #7efcef;");
+			guillemetGlyph_El.setAttribute("style", "transform: rotate(0deg); font: bold 18px/16px Play, Arial, sans-serif; width: 6px; margin: 0 25px 0 10px; height: auto; display: inline; position: relative; text-shadow: -1px -1px 1px DimGray; color: #7EFCEF;");
 						
 			thisDate_El.insertBefore(guillemetGlyph_El, thisDate_El.childNodes[0]);
 			datesList.appendChild(thisDate_El);
+
+			iterator++;
 		}
 
 	});
