@@ -28,14 +28,14 @@ function filter(collection, predicate) {
 	var outputArr = [];
 	forEach(collection, function(val) {
 		if (predicate(val)) {
-			outputArr.push(val);
+			outputArr.push(collection[val]);
 		}
 	});
 	return outputArr;
 }
 
 
-// Underscore.js 'reject' implementation (conceptually, the antithesis to the 'filter' function):
+// Underscore.js 'reject' implementation (conceptually, the opposite of the 'filter' function):
 function reject(collection, predicate) {
 	var outputArr = [];
 	forEach(collection, function(val) {
@@ -90,11 +90,32 @@ function max(collection) {
 }
 
 
-// Custom higher-order function, 'listen':
+// Underscore.js 'sort' implementation:
+function sort(collection) {
+
+}
+
+
+/*
+// Custom higher-order function, 'DOM_ElCreator':
+function DOM_ElCreator(ElType, parentNode, action) {
+	var new = document.createElement(ElType);
+	if (action !== undefined) {
+		action(ElType);	// * Optional *
+	}
+	var parentNode.appendChild(new);
+} */
+
+
 function listen(elemID, action) {
 	var el = document.getElementById(elemID);
 	el.addEventListener("click", action);
 }
+
+
+/*
+// Custom higher-order function, 'custom':
+function custom(builtIn, ) */
 
 
 // Activates/deactivates display of specified element:
@@ -132,12 +153,18 @@ function fixTripNum() {
 	tripNum--;
 }
 
+function setDefault() {
+	var dts = document.getElementsByClassName("trip_Dates");
+	forEach(dts, function(dt) {
+		dt.defaultValue = "2016-03-19";
+	});
+}
 
 // New calendar/date event addition function, 'addNew':
 function addNew(divID) {
-			// var datesCont = document.getElementById(divID);
-
+			
 			tripNum++;
+
 			var inputID = "dateInput" + tripNum;
 
 			var containerField_El = document.createElement("FIELDSET");
@@ -150,22 +177,25 @@ function addNew(divID) {
 			newRow.className = "newRow";
 
 			var newMsg = document.createElement("TEXTAREA");
-			newMsg.className = "date_Msg";
 			newMsg.setAttribute("placeholder", "Remember a memorable event.");
+			newMsg.className = "date_Msg";
 
-			var newLab = document.createElement("LABEL");
-			var newInput = document.createElement("INPUT");
+			var newLbl = document.createElement("LABEL"),
+				newInput = document.createElement("INPUT");
 
-			newLab.innerHTML = "<h3 style='display: inline; font: bold 18px/16px Helvetica, Arial, sans-serif;'>Trip Memory N<sup><u><span style='font: 11px;'>o</span></u></sup> " + tripNum + " : </h3>";
+			newLbl.appendChild(document.createTextNode("Trip Memory № " + tripNum + ":" + " "));
+			newLbl.innerHTML += "&nbsp;";
+			newLbl.setAttribute("for", inputID);
+			newLbl.className = "date_Label";
+
+			console.log(newLbl.innerHTML);
 
 			newInput.setAttribute("type", "date");
+			// newInput.defaultValue = "2000-05-05";
 			newInput.id = inputID;
 			newInput.className = "trip_Dates";
 
-			newLab.className = "date_Label";
-			newLab.setAttribute("for", inputID);
-
-			newRow.appendChild(newLab);
+			newRow.appendChild(newLbl);
 			newRow.insertBefore(newInput, newDate.childNodes[0]);
 
 			newDate.appendChild(newMsg);
@@ -208,7 +238,7 @@ function allCountries(name) {
 	var listI = document.createElement("H6");
 	var listI_Node = document.createTextNode(name);
 	listI.appendChild(listI_Node);
-	listI.setAttribute("style", "width: 100%; margin: auto; position: relative; display: block; padding: 2px 0; font: 700 16px/16px 'PT Sans', Helvetica; border-bottom: 1px solid gray;"); 
+	listI.setAttribute("style", "width: 100%; height: 22px; margin: auto; position: relative; display: block; padding: 2px 0; font: 700 20px/22px Droid Sans, Helvetica, sans-serif; border-bottom: 1px solid gray; border-top: 1px solid Gray;"); 
 
 	listArr.indexOf(name) !== -1 ? listI.className = "haveBeen" : listI.className = "haventBeen";
 
@@ -237,15 +267,3 @@ function generateSummary() {
 	
 		
 }
-
-
-/* function spin() {
-	var chevs = document.getElementsByClassName("doubleChevron");
-
-	forEach(chevs, function(chev) {
-		chevs[chev].addEventListener("click", function() {
-			chev.style = "transform: rotate(90deg);"; 
-		});
-	});
-
-} */
