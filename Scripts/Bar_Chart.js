@@ -5,7 +5,7 @@ window.onload = function() {
 };
 
 
-	var filts = document.getElementById("filter_Cont");
+	/* var filts = document.getElementById("filter_Cont");
 	console.log(filts);
 
 	console.log(lastFilt);
@@ -17,10 +17,10 @@ window.onload = function() {
 	console.log(firstFilt);
 	console.log(secondFilt);
 
+	var dc = document.getElementById("results_Cont").children;
+	console.log(dc);
+	console.log(dc[2]); */
 
-			var dc = document.getElementById("results_Cont").children;
-		console.log(dc);
-		console.log(dc[2]);
 
 function gen() {
 	// Array 'diffs' calculates the total number of days spent in each destination:
@@ -40,6 +40,68 @@ function gen() {
 
 
 
+/* function filterResult(filt_Clicked) {
+	forEach(filts_Arr, function(filt) {
+		filt.removeAttribute("id");
+	});
+
+}  */
+
+var filts_Arr = document.getElementsByClassName("filter_Btn"),
+	filts_Cont = document.getElementById("filter_Cont");
+
+var results_Arr = document.getElementsByClassName("result"),
+	res_Cont = document.getElementById("results_Cont");
+
+
+
+var firstFilt = filts_Cont.firstElementChild,
+	secondFilt = firstFilt.nextElementSibling,
+	thirdFilt = filts_Cont.lastElementChild;
+
+
+var firstResult = res_Cont.firstElementChild,
+	secondResult = firstResult.nextElementSibling,
+	thirdResult = res_Cont.lastElementChild;
+
+
+	firstFilt.addEventListener("click", function() {
+		forEach(results_Arr, function(res) {
+			res.removeAttribute("id");
+		});
+		firstResult.id = "selectedResult";
+
+		forEach(filts_Arr, function(filt) {
+			filt.removeAttribute("id");
+		});
+		firstFilt.id = "selectedFilter";
+	});
+	
+	secondFilt.addEventListener("click", function() {
+		forEach(results_Arr, function(res) {
+			res.removeAttribute("id");
+		});
+		secondResult.id = "selectedResult";
+
+		forEach(filts_Arr, function(filt) {
+			filt.removeAttribute("id");
+		});
+		secondFilt.id = "selectedFilter";
+	});
+
+	thirdFilt.addEventListener("click", function() {
+		forEach(results_Arr, function(res) {
+			res.removeAttribute("id");
+		});
+		thirdResult.id = "selectedResult";
+
+
+		forEach(filts_Arr, function(filt) {
+			filt.removeAttribute("id");
+		});
+		thirdFilt.id = "selectedFilter";
+	});	
+
 
 // Text analytics production function, 'textAnalysis':
 function textAnalysis() {
@@ -48,7 +110,9 @@ function textAnalysis() {
 	gen();
 
 	// Assigned #textual_Analysis div to variable 'textCont':
-	var textCont = document.getElementById("textual_Analysis");
+		// var textCont = document.getElementById("textual_Analysis");
+	var cC = document.getElementById("results_Cont");
+	var textCont = cC.lastElementChild;
 
 	// Var 'totalStay' returns the total number of days spent abroad:
 	var totalStay = reduce(diffs, function(trip1, trip2) {
@@ -63,17 +127,7 @@ function textAnalysis() {
 	// Var 'maxStay' returns the number of days spent on the user's longest trip:
 	var maxStay = max(diffs);
 	console.log(maxStay);
-
-	/* 
-	DOM_ElCreator("P", textCont, function(el) {
-		var newa = document.createTextNode("HEY HEY");
-		el.appendChild(newa);
-	}); 
-
-	listen("myCanvas", function() {
-		document.getElementById("right_Collapse").style.display = "none;";
-	});*/
-
+	
 	function newResult(node_Str) {
 		var resultPar = document.createElement("P");
 		var resultPar_Node = document.createTextNode(node_Str);
@@ -93,7 +147,6 @@ function textAnalysis() {
 	newResult(minResult);
 	newResult(maxResult);
 	newResult(totalResult);
-
 }
 
 
@@ -102,19 +155,23 @@ function drawBars() {
 	var canvas = document.getElementById("myCanvas"),
 		ctx = canvas.getContext("2d");
 
+	ctx.font = "32px PT Sans";
+
 	gen();
 
-	var baseline = 50,
+	var canv = document.getElementById("chart"),
+		baseline = 50,
 		iterator = 0,
 		hexCodes = ["#3CB371", "#F4F1A8", "#0EB7B7", "#FC7474", "#28A9FF", "#7EFCEF"];
 		//		     MSeaGrn ,  Tan     ,  Teal    ,  Rust    ,  DgrBlue ,  NeonGreen
 	
-	ctx.lineWidth = 3; 
 
-	// Generate bars:
+	// Iteration through the chosen trips' respective lengths of stay:
 	forEach(diffs, function(t) {
 		baseline += 100;
 		
+		// Dynamically generated, styled bars indicative of the relative lengths of stay in the chosen destinations:
+		ctx.lineWidth = 2; 
 		ctx.fillStyle = hexCodes[iterator];
 		ctx.fillRect(baseline, 480, 50, -t * 10);
 
@@ -125,21 +182,42 @@ function drawBars() {
  		
  		ctx.stroke();
 		
-		var canv = document.getElementById("chart");
-		var h6 = document.createElement("H6");
-		var h6_Node = document.createTextNode(listArr[iterator]);
+		// Dynamically generated, styled bar identifiers corresponding to the name of the destination:
+		var h6 = document.createElement("H6"),
+			h6_Node = document.createTextNode(listArr[iterator]);
+
 		h6.appendChild(h6_Node);
-		h6.setAttribute("style", "font: bold 12px/12px Play, Helvetica, sans-serif; width: 50px; height: auto; position: absolute; display: inline; transform: rotate(45deg); z-index: 13; text-shadow: 0.1px 0.1px 1px Dimgray;");
+		h6.setAttribute("style", "font: bold 12px/12px Play, Helvetica, sans-serif; width: 80px; height: auto; position: absolute; display: inline; transform: rotate(45deg); z-index: 13; text-shadow: 0.1px 0.1px 1px Dimgray;");
 		h6.style.color = hexCodes[iterator];
-		h6.style.top = "485px";
-		h6.style.left = baseline + 200 + 5 + "px";
+		h6.style.top = "490px";
+		h6.style.left = baseline + 200 + "px";
 
+		// Creation of the DOM node 'axisY' to be superpositioned atop the <canvas> element and serve as the y-axis unit value:
+		var axisY = document.createElement("P"),
+			axisY_Node = document.createTextNode("Days");
+
+		axisY.appendChild(axisY_Node);
+		console.log(axisY);
+		axisY.setAttribute("style", "font: 700 24px/24px Droid Sans, Helvetica, sans-serif; position: absolute; display: inline; width: 50px; height: auto; color: DarkSlateGray; left: 250px; top: 240px; transform: rotate(-90deg); z-index: 13;");
+
+		// Dynamically generated, styled number values corresponding to the lengths of stay at each destination:
+		var daysAbroad = diffs[iterator];
+		console.log(diffs[iterator]);
+		console.log(daysAbroad);
+
+		ctx.fillText(daysAbroad, baseline + 11, 480 - (t * 10) - 10);
+
+		ctx.lineWidth = 1; 
+		ctx.strokeStyle = "#2F4F4F";
+		ctx.strokeText(daysAbroad, baseline + 11, 480 - (t * 10) - 10);
+
+		// Appending of the DOM nodes to the #chart element:
 		canv.insertBefore(h6, canv.childNodes[1]);
+		canv.insertBefore(axisY, canv.childNodes[2]);
 		iterator++;
-
 	}); 
 
-	// Generate the bar chart axes:
+	// Generation of the bar charts' axes:
 	ctx.moveTo(100, 50);
 	ctx.lineTo(100, 480);
 	ctx.lineTo(900, 480);
