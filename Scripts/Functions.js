@@ -7,7 +7,7 @@ function forEach(collection, callback) {
 		}
 	} else {
 		for (var key in collection) {
-			return callback(key);
+			return callback(collection[key]);
 		}
 	} 
 }
@@ -160,6 +160,24 @@ function setDefault() {
 	});
 }
 
+
+// Function 'radioCheck' evaluates whether one of the two #modalForm's radio inputs have been checked:
+function radioCheck() {
+	var logType = document.getElementById("recordType"),
+		itineraryType = document.getElementById("itineraryType");
+
+	if (logType.checked === true) {
+		return logType.value;
+		console.log(logType.value);
+		// imgRedirect = "../Graphics/Trip_Log.png"
+	} else if (itineraryType.checked == true) {
+		return itineraryType.value;
+		console.log(itineraryType.value);
+		// imgRedirect = "../Graphics/Itinerary_Plan.png"
+	}
+}
+
+
 // New calendar/date event addition function, 'addNew':
 function addNew(divID) {
 			
@@ -214,8 +232,12 @@ function removeLast(divID) {
 }
 
 
+
+
 function createCountryDiv(name) {
-	var countriesCont = document.getElementById("summary_CountriesList");
+	var cC = document.getElementById("results_Cont");
+	var countriesCont = cC.firstElementChild.nextElementSibling;
+	console.log(countriesCont);
 
 	var holder = document.createElement("DIV");
 	holder.setAttribute("style", "position: relative; display: block; width: 100%; height: 40px; margin: 0 auto; background: silver; border-bottom: 1px solid gray;");
@@ -225,7 +247,6 @@ function createCountryDiv(name) {
 	namedCountry.setAttribute("style", "position: relative; display: block; font: 700 24px/22px 'Droid Sans', Helvetica, Arial, sans-serif; text-align: center; width: 95%; height: auto; margin: auto; font-variant: small-caps; background-size: 50px auto; background-repeat: repeat; z-index: 12000; top: 50%; transform: translateY(-50%);");
 
 	namedCountry.appendChild(namedCountry_Node);
-
 	
 	holder.appendChild(namedCountry);
 	countriesCont.appendChild(holder);
@@ -233,37 +254,53 @@ function createCountryDiv(name) {
 
 
 function allCountries(name) {
-	var rightPanel = document.getElementById("allPlaces");
+	var cC = document.getElementById("results_Cont");
+	var rightPanel = cC.firstElementChild
 
-	var listI = document.createElement("H6");
-	var listI_Node = document.createTextNode(name);
+	var listI_Cont = document.createElement("DIV"),
+		listI = document.createElement("H6"),
+		listI_Node = document.createTextNode(name);
+	
 	listI.appendChild(listI_Node);
-	listI.setAttribute("style", "width: 100%; height: 22px; margin: auto; position: relative; display: block; padding: 2px 0; font: 700 20px/22px Droid Sans, Helvetica, sans-serif; border-bottom: 1px solid gray; border-top: 1px solid Gray;"); 
+	listI.setAttribute("style", "width: 100%; height: 22px; margin: auto; position: relative; display: inline; font: 700 20px/22px Droid Sans, Helvetica, sans-serif; vertical-align: middle;"); 
 
-	listArr.indexOf(name) !== -1 ? listI.className = "haveBeen" : listI.className = "haventBeen";
+	listI_Cont.appendChild(listI);
+	listI_Cont.setAttribute("style", "width: 100%; height: 24px; margin: auto; position: relative; display: block; padding: 4px 0; border-bottom: 1px solid Gray; border-top: 1px solid Gray; vertical-align: middle;");
+	listArr.indexOf(name) !== -1 ? listI_Cont.className = "haveBeen" : listI_Cont.className = "haventBeen";
 
-	rightPanel.appendChild(listI);
+	if (listI_Cont.className === "haveBeen") {
+		var tripType_Img = document.createElement("IMG"),
+			img_Path,
+			keyK = name + "Trip";
+		console.log(keyK);
+		
+		tripType_Img.setAttribute("style", "display: inline; position: absolute; right: 5%; top: 1%; height: 98%; width: auto; margin: auto 15% auto auto; vertical-align: middle;");
+
+		if (tripsObj[keyK]["type"] === "Travel Log") {
+			img_Path = countryObject + ".svg";
+			tripType_Img.setAttribute("src", "../Graphics/Trip_Log.png");
+			listI_Cont.insertBefore(tripType_Img, listI_Cont.childNodes[1]);
+		} else if (tripsObj[keyK]["type"] === "Travel Itinerary") {
+			tripType_Img.setAttribute("src", "../Graphics/Itinerary_Plan.png");
+			listI_Cont.insertBefore(tripType_Img, listI_Cont.childNodes[1]);
+		}
+	}
+	rightPanel.appendChild(listI_Cont);
 }
 
 
 function generateSummary() {
 
 	forEach(listArr, function(country) {
-		
 		return createCountryDiv(country);
 	});
 	console.log(listArr);
-				
 
-	/* forEach(countryObject, function(country) {
-		return allCountries(country);
-	}); */
 
 	for (var keyC in countryObject) {
 	  if (countryObject.hasOwnProperty(keyC)) {
 	    allCountries(keyC);
 	  }
 	}
-	
-		
 }
+
