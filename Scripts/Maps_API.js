@@ -113,6 +113,7 @@ function initMap() {
 		"click", 
 		function() {
 			filterMap(layer, fusionTablesId, map);
+
 		}
 	);
 
@@ -121,16 +122,30 @@ function initMap() {
 		"click", 
 		function() {
 			filterMap(layer, fusionTablesId, map);
+
+			filterMarkers(null);
+			markers_Arr.pop();
+			console.log(markers_Arr);
+
+			filterMarkers(map);
 		}
 	);
 
 	// On-app-load pin marker for Washington, D.C.:
-	var marker = new google.maps.Marker({
+	/* var marker = new google.maps.Marker({
 		map: map,
 		draggable: false,
 		animation: google.maps.Animation.BOUNCE,
 		position: {lat: 38.889931, lng: -77.009003}
-	});
+	}); */
+
+
+	/* forEach(markers_Arr, function(mrkr) {
+		markers_Arr[mrkr].addListener("click", function() {
+			// var animationState = (
+			mrkr.getAnimation() !== null ? mrkr.setAnimation(null) : mrkr.setAnimation(google.maps.Animation.BOUNCE);
+		});
+	}); */
 
 }
 
@@ -139,6 +154,14 @@ function filterMap(layer, fusionTablesId, map) {
 
 	// var queryStr = "CountryName IN (" + listArr.join(",") + ")";
 	var queryStr = "CountryName IN ('" + listArr.join("' ,'") + "')";
+
+	// var country_Ref = listArr[listArr.length - 1];
+	var	latitude = countryObject[listArr[listArr.length - 1]]["coords"]["lat"],
+		longitude = countryObject[listArr[listArr.length - 1]]["coords"]["lng"];
+
+	console.log(latitude);
+	console.log(longitude);
+
 
 	layer.setOptions({
 		query: {
@@ -157,9 +180,36 @@ function filterMap(layer, fusionTablesId, map) {
 		}]
 	});
 
+	
+	function toggleAnimationState() {
+		(marker.getAnimation() !== null) ? marker.setAnimation(null) : marker.setAnimation(google.maps.Animation.BOUNCE);
+	}
+	
+
+	var marker = new google.maps.Marker({
+		map: map,
+		title: listArr[listArr.length - 1],
+		draggable: false,
+		animation: google.maps.Animation.DROP,
+		position: {lat: latitude, lng: longitude}
+	});
+
+	marker.addListener("click", toggleAnimationState);
+
+
+	markers_Arr.push(marker);
+	console.log(markers_Arr);
+
+
 	layer.setMap(map);
 }
 
 
 
 
+
+function filterMarkers(map) {
+	forEach(markers_Arr, function(mrkr) {
+		markers_Arr[mrkr].setMap(map);
+	});
+}
