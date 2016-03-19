@@ -26,7 +26,7 @@
 <body>
 
 	<div id="right_Collapse">
-		<button class="btn XButton" onclick="document.getElementById('right_Collapse').style.display='none', drawBars()" style="color: black;">&times;</button>
+		<button class="btn XButton" onclick="document.getElementById('right_Collapse').style.display='none'">&times;</button>
 		
 		<header>
 			<h1 id="summaryTitle">Your Personal Travel History</h1>
@@ -38,21 +38,21 @@
 		<div id="summaryBody">
 			<div>
 				<div id="filter_Cont">
-					<div class="filter">
+					<div class="filter_Btn">
 						<h2>All</h2>
 					</div>
-					<div class="filter">
+					<div class="filter_Btn">
 						<h2>Filtered</h2>
 					</div>
-					<div class="filter">
+					<div class="filter_Btn">
 						<h2>Results</h2>
 					</div>
 				</div>
 
 				<div id="results_Cont">
-					<div id="allPlaces" class="result"></div>
-					<div id="summary_CountriesList" class="result"></div>
-					<div id="textual_Analysis" class="result"></div>
+					<div class="result"></div>									<!--  id="allPlaces"  -->
+					<div class="result"></div>									<!--  id="summary_CountriesList"  -->
+					<div class="result"></div>									<!--  id="textual_Analysis"  -->
 				</div> 
 			</div>
 
@@ -73,14 +73,48 @@
 			<h1>New Trip Record</h1>
 
 			<fieldset id="logType">
-				<div class="logType_Div">
-					<input type="radio" id="itineraryType" name="recordType" value="Travel Itinerary" />
-					<label for="itineraryType">Travel Itinerary</label>	
-				</div>
+				<legend>&nbsp; What &nbsp;
+					<span class="top">&nbsp; What &nbsp;</span>
+					<span class="bottom">&nbsp; Planning or Recording? &nbsp;</span>
+				</legend>
 
-				<div class="logType_Div">
-					<input type="radio" id="recordType" name="recordType" value="Travel Log" />
-					<label for="recordType">Travel Log</label>				
+				<div>
+					<div class="logType_Div">
+						<div>
+							<input type="radio" id="recordType" name="recordType" value="Travel Log" />
+							<label for="recordType">&nbsp; Travel Log &nbsp;</label>	
+						</div>
+
+						<div style="margin: 15px 25px 20px auto;">
+							<p class="log_Descrip">
+								<figure>
+									<img src="../Graphics/Trip_Log.png" alt="Make a record of a trip taken. Plane-on-paper glyph." />
+									<figcaption>Trip Log</figcaption>
+								</figure>
+								Got cool stories from abroad? Or just want somewhere to write the things you don't want to forget? This button will make the trips you've actually taken visually distinct from those that are still waiting to be crossed off your bucket list. Look for this icon to distinguish your travel records (<i>i.e.</i>, "trip logs") from those still in the works.
+							</p>
+						</div>
+					</div>
+
+					<!-- Inline-block displayed <div> element to serve as vertical separator: -->
+					<div></div>
+
+					<div class="logType_Div">
+						<div>
+							<input type="radio" id="itineraryType" name="recordType" value="Travel Itinerary" />
+							<label for="itineraryType">&nbsp; Travel Itinerary &nbsp;</label>	
+						</div>
+
+						<div style="margin: 15px 15px 20px 20px;">
+							<p class="log_Descrip">
+								<figure>
+									<img src="../Graphics/Itinerary_Plan.png" alt="Make a plan for a trip to take. Old-fashioned pen & paper planning glyph." />
+									<figcaption>Travel Itinerary</figcaption>
+								</figure>
+								Maybe your not quite the border-hopper you want to be yet. But if you got that wanderlust, there's no reason you can't make a plan for what's to come. Look for this icon to distinguish your travel plans (<i>i.e.</i>, "itineraries") from your already had adventures.
+							</p>
+						</div>
+					</div>
 				</div>
 			</fieldset>
 
@@ -106,6 +140,7 @@
 						<option value="Antigua & Barbuda">Antigua & Barbuda</option> 
 						<option value="Argentina">Argentina</option> 
 						<option value="Armenia">Armenia</option> 
+						<option value="Australia">Australia</option>
 						<option value="Austria">Austria</option> 
 						<option value="Azerbaijan">Azerbaijan</option> 
 						<option value="Bahamas">Bahamas, The</option> 
@@ -134,10 +169,10 @@
 						<option value="Chile">Chile</option> 
 
 						<optgroup label="China">
-							<option value="China" style="font: bolder; color: DodgerBlue;"> &nbsp; ⁍ &nbsp; China, People's Repbulic of (PRC)</option> 
-							<option value="Hong Kong"> &nbsp; ⁍ &nbsp; Hong Kong, Special Administrative Region (SAR) of The PRC</option> 
-							<option value="Macau"> &nbsp; ⁍ &nbsp; Macau, Special Administrative Region (SAR) of The PRC</option>
-							<option value="Taiwan"> &nbsp; ⁍ &nbsp; Taiwan / Republic of China (RoC) (fmy. Formosa)</option>	
+							<option value="China" style="font: bolder; color: DodgerBlue;"> &nbsp; ❱ &nbsp; China, People's Repbulic of (PRC)</option> 
+							<option value="Hong Kong"> &nbsp; ❱ &nbsp; Hong Kong, Special Administrative Region (SAR) of The PRC</option> 
+							<option value="Macau"> &nbsp; ❱ &nbsp; Macau, Special Administrative Region (SAR) of The PRC</option>
+							<option value="Taiwan"> &nbsp; ❱ &nbsp; Taiwan / Republic of China (RoC) (fmy. Formosa)</option>	
 						</optgroup>
 
 						<option value="Colombia">Colombia</option> 
@@ -152,9 +187,9 @@
 						<option value="Czech Republic">Czech Republic (fmy. Czechslovakia)</option> 
 						
 						<optgroup label="Denmark">
-							<option value="Denmark" style="font: bolder; color: DodgerBlue;"> &nbsp; ⁍ &nbsp; Denmark, Kingdom of</option> 
-							<option value="Faroe Islands"> &nbsp; ⁍ &nbsp; Faroe Islands</option>	
-							<option value="Greenland"> &nbsp; ⁍ &nbsp; Greenland</option>
+							<option value="Denmark" style="font: bolder; color: DodgerBlue;"> &nbsp; ❱ &nbsp; Denmark, Kingdom of</option> 
+							<option value="Faroe Islands"> &nbsp; ❱ &nbsp; Faroe Islands</option>	
+							<option value="Greenland"> &nbsp; ❱ &nbsp; Greenland</option>
 						</optgroup>
 
 						<option value="Djibouti">Djibouti</option> 
@@ -172,13 +207,13 @@
 						<option value="Finland">Finland</option> 
 						
 						<optgroup label="France">
-							<option value="France" style="font: bolder; color: DodgerBlue;"> &nbsp; ⁍ &nbsp; France</option>
-							<option value="French Guiana"> &nbsp; ⁍ &nbsp; French Guiana</option>
-							<option value="French Polynesia"> &nbsp; ⁍ &nbsp; French Polynesia</option>
-							<option value="Guadeloupe"> &nbsp; ⁍ &nbsp; Guadeloupe</option>
-							<option value="Martinique"> &nbsp; ⁍ &nbsp; Martinique</option>
-							<option value="New Caledonia"> &nbsp; ⁍ &nbsp; New Caledonia</option>
-							<option value="Réunion"> &nbsp; ⁍ &nbsp; Réunion</option>
+							<option value="France" style="font: bolder; color: DodgerBlue;"> &nbsp; ❱ &nbsp; France</option>
+							<option value="French Guiana"> &nbsp; ❱ &nbsp; French Guiana</option>
+							<option value="French Polynesia"> &nbsp; ❱ &nbsp; French Polynesia</option>
+							<option value="Guadeloupe"> &nbsp; ❱ &nbsp; Guadeloupe</option>
+							<option value="Martinique"> &nbsp; ❱ &nbsp; Martinique</option>
+							<option value="New Caledonia"> &nbsp; ❱ &nbsp; New Caledonia</option>
+							<option value="Réunion"> &nbsp; ❱ &nbsp; Réunion</option>
 						</optgroup>
 
 						<option value="Gabon">Gabon</option> 
@@ -202,8 +237,8 @@
 						<option value="Iraq">Iraq</option> 
 						
 						<optgroup label="Ireland">
-							<option value="Ireland, Northern"> &nbsp; ⁍ &nbsp; Ireland, Northern</option>
-							<option value="Ireland, Republic of"> &nbsp; ⁍ &nbsp; Ireland, Republic of</option> 
+							<option value="Ireland, Northern"> &nbsp; ❱ &nbsp; Ireland, Northern</option>
+							<option value="Ireland, Republic of"> &nbsp; ❱ &nbsp; Ireland, Republic of</option> 
 						</optgroup>
 
 						<option value="Israel">Israel</option> 
@@ -216,11 +251,10 @@
 						<option value="Kiribati">Kiribati</option> 
 						
 						<optgroup label="Korea">
-							<option value="Korea, North"> &nbsp; ⁍ &nbsp; Korea, Peoples Republic of (North Korea)</option>
-							<option value="Korea, South"> &nbsp; ⁍ &nbsp; Korea, Republic of (South Korea)</option>
+							<option value="Korea, North"> &nbsp; ❱ &nbsp; Korea, Peoples Republic of (North Korea)</option>
+							<option value="Korea, South"> &nbsp; ❱ &nbsp; Korea, Republic of (South Korea)</option>
 						</optgroup>
 
-						<option value="Kosovo">Kosovo</option> 
 						<option value="Kuwait">Kuwait</option> 
 						<option value="Kyrgyzstan">Kyrgyzstan</option> 
 						<option value="Laos">Laos</option> 
@@ -261,9 +295,9 @@
 						<option value="Nigeria">Nigeria</option>  
 						
 						<optgroup label="Norway">
-							<option value="Jan Mayen"> &nbsp; ⁍ &nbsp; Jan Mayen</option>
-							<option value="Norway" style="font: bolder; color: DodgerBlue;"> &nbsp; ⁍ &nbsp; Norway, Kingdom of</option>  
-							<option value="Svalbard"> &nbsp; ⁍ &nbsp; Svalbard</option>
+							<option value="Jan Mayen"> &nbsp; ❱ &nbsp; Jan Mayen</option>
+							<option value="Norway" style="font: bolder; color: DodgerBlue;"> &nbsp; ❱ &nbsp; Norway, Kingdom of</option>  
+							<option value="Svalbard"> &nbsp; ❱ &nbsp; Svalbard</option>
 						</optgroup>
 
 						<option value="Oman">Oman</option>  
@@ -321,19 +355,19 @@
 						<option value="United Arab Emirates">United Arab Emirates (UAE)</option> 
 							
 						<optgroup label="The UK">
-							<option value="Bermuda"> &nbsp; ⁍ &nbsp; Bermuda</option>
-							<option value="Falkland Islands"> &nbsp; ⁍ &nbsp; Falkland Islands (Islas Malvinas)</option>
-							<option value="Isle of Man"> &nbsp; ⁍ &nbsp; Isle of Man</option>
-							<option value="Scotland"> &nbsp; ⁍ &nbsp; Scottland, Kingdom of</option>
-							<option value="Turks & Caicos"> &nbsp; ⁍ &nbsp; Turks & Caicos Islands (TCI)</option>
-							<option value="United Kingdom" style="font: bolder; color: DodgerBlue;"> &nbsp; ⁍ &nbsp; United Kingdom (UK)</option>
-							<option value="Wales"> &nbsp; ⁍ &nbsp; Wales</option>
+							<option value="Bermuda"> &nbsp; ❱ &nbsp; Bermuda</option>
+							<option value="Falkland Islands"> &nbsp; ❱ &nbsp; Falkland Islands (Islas Malvinas)</option>
+							<option value="Isle of Man"> &nbsp; ❱ &nbsp; Isle of Man</option>
+							<option value="Scotland"> &nbsp; ❱ &nbsp; Scottland, Kingdom of</option>
+							<option value="Turks & Caicos"> &nbsp; ❱ &nbsp; Turks & Caicos Islands (TCI)</option>
+							<option value="United Kingdom" style="font: bolder; color: DodgerBlue;"> &nbsp; ❱ &nbsp; United Kingdom (UK)</option>
+							<option value="Wales"> &nbsp; ❱ &nbsp; Wales</option>
 						</optgroup> 
 	
 						<optgroup label="The US">
-							<option value="Northern Mariana Islands"> &nbsp; ⁍ &nbsp; Northern Mariana Islands</option>
-							<option value="Puerto Rico"> &nbsp; ⁍ &nbsp; Puerto Rico, Commonwealth of</option>
-							<option value="United States" style="font: bolder; color: DodgerBlue;"> &nbsp; ⁍ &nbsp; United States of America (USA)</option>
+							<option value="Northern Mariana Islands"> &nbsp; ❱ &nbsp; Northern Mariana Islands</option>
+							<option value="Puerto Rico"> &nbsp; ❱ &nbsp; Puerto Rico, Commonwealth of</option>
+							<option value="United States" style="font: bolder; color: DodgerBlue;"> &nbsp; ❱ &nbsp; United States of America (USA)</option>
 						</optgroup>
 						
 						<option value="Uruguay">Uruguay</option> 
@@ -350,30 +384,34 @@
 						<option value="Zimbabwe">Zimbabwe</option>
 
 						<optgroup label="Disputed Territories">
-							<option value="Crimea"> &nbsp; ⁍ &nbsp; Crimea, Republic of</option>
-							<option value="Gaza Strip"> &nbsp; ⁍ &nbsp; Gaza Strip</option>	
-							<option value="Palestine"> &nbsp; ⁍ &nbsp; Palestine</option>
+							<option value="Crimea"> &nbsp; ❱ &nbsp; Crimea, Republic of</option>
+							<option value="Gaza Strip"> &nbsp; ❱ &nbsp; Gaza Strip</option>	
+							<option value="Kosovo"> &nbsp; ❱ &nbsp; Kosovo</option> 
+							<option value="Palestine"> &nbsp; ❱ &nbsp; Palestine</option>
 							
 						</optgroup>
 
 						<optgroup label="Supernational Geographic Regions">
-							<option value="Africa"> &nbsp; ⁍ &nbsp; Africa</option>
-							<option value="Antarctica"> &nbsp; ⁍ &nbsp; Antarctica</option>
-							<option value="Arctic Circle"> &nbsp; ⁍ &nbsp; Arctic Circle, The</option>
-							<option value="Asia"> &nbsp; ⁍ &nbsp; Asia</option>
-							<option value="Australia"> &nbsp; ⁍ &nbsp; Australia</option>
-							<option value="Earth" style="font: bolder; color: DodgerBlue;"> &nbsp; ⁍ &nbsp; Earth, Planet</option>
-							<option value="Europe"> &nbsp; ⁍ &nbsp; Europe</option>
-							<option value="Latin America"> &nbsp; ⁍ &nbsp; Latin America</option>
-							<option value="Middle East"> &nbsp; ⁍ &nbsp; Middle East</option>
-							<option value="North America"> &nbsp; ⁍ &nbsp; North America</option>
-							<option value="Oceania"> &nbsp; ⁍ &nbsp; Oceania</option>
-							<option value="South America"> &nbsp; ⁍ &nbsp; South America</option>
+							<option value="Africa"> &nbsp; ❱ &nbsp; Africa</option>
+							<option value="Antarctica"> &nbsp; ❱ &nbsp; Antarctica</option>
+							<option value="Arctic Circle"> &nbsp; ❱ &nbsp; Arctic Circle, The</option>
+							<option value="Asia"> &nbsp; ❱ &nbsp; Asia</option>
+							<option value="Australia"> &nbsp; ❱ &nbsp; Australia</option>
+							<option value="Earth" style="font: bolder; color: DodgerBlue;"> &nbsp; ❱ &nbsp; Earth, Planet</option>
+							<option value="Europe"> &nbsp; ❱ &nbsp; Europe</option>
+							<option value="Latin America"> &nbsp; ❱ &nbsp; Latin America</option>
+							<option value="Middle East"> &nbsp; ❱ &nbsp; Middle East</option>
+							<option value="North America"> &nbsp; ❱ &nbsp; North America</option>
+							<option value="Oceania"> &nbsp; ❱ &nbsp; Oceania</option>
+							<option value="South America"> &nbsp; ❱ &nbsp; South America</option>
 						</optgroup>
 
 						<option value="Unknown">Unknown (?)</option>
 
 					</select>
+						<!-- <optgroup> element sub-heading bullet icons:	"⁍" , "❱"		-->
+
+
 				</div>
 
 				<div id="summary_Cont">
@@ -398,12 +436,12 @@
 				</legend>
 
 				<div id="datesContainer">
-					<fieldset class="date_Field">
+					<fieldset class="date_Field" style="margin-top: 25px;">
 						<div class="newEntry">
 							<div class="newRow">
 								<label class="date_Label" for="dateInputOne" required>Trip Memory № 1: &nbsp; </label>
 									<!-- Symbolic No. Representation via innerHTML modification:	N<sup><u>o</u></sup>	-->
-								<input type="date" id="dateInput1" class="trip_Dates" value="DD-MM-YYYY" />
+								<input type="date" id="dateInput1" class="trip_Dates" value="2016-03-20" />
 							</div>
 
 							<textarea id="expander_Cnt" class="date_Msg" placeholder="Make note of a memorable event on your trip."></textarea>
@@ -414,18 +452,22 @@
 
 
 				<div id="addDate_Div">
-					<button type="button" id="eventAdd_Btn" class="btn" onClick="addNew('datesContainer')" value="New Date">
+					<button type="button" id="eventAdd_Btn" class="btn toolTip" onClick="addNew('datesContainer')" value="New Date">
 						<img src="../Graphics/Calendar_Event.png" alt="Add new calendar event action." />
+						<span class="toolTip_Txt2">Add Date Event</span>
 					</button>
 
-					<button type="button" id="eventRemove_Btn" class="btn" onclick="removeLast('datesContainer'), fixTripNum()" value="Remove Date">
+					<button type="button" id="eventRemove_Btn" class="btn toolTip" onclick="removeLast('datesContainer'), fixTripNum()" value="Remove Date">
 						<img src="../Graphics/Calendar_Remove.png" alt="Remove last calendar event block." />
+						<span class="toolTip_Txt2">Remove Date Event</span>
 					</button>
 				</div>
 			</fieldset>
 
 			<div id="modalBtns">
-				<input type="button" id="submit_Btn" class="btn" value="ADD" onclick="addTrip(), toggleDisplay('modalWindow')">					
+				<button type="button" id="submit_Btn" class="btn toolTip" value="ADD" onclick="addTrip(), toggleDisplay('modalWindow')">ADD
+					<span class="toolTip_Txt" style="top: 2.5px; width: 75px;">Log Trip</span>					
+				</button>
 			</div>
 		</form>
 	</div>
@@ -433,27 +475,61 @@
 	
 	<div id="btnsBar">
 		<div id="dropRightMenu">
-			<button id="dropRightBtn" class="btn" onclick="spin('dropRightBtn'), toggleAnimation('glyphOne'), toggleDisplay('toolsNavBar')">
+			<button id="dropRightBtn" class="btn2" onclick="spin('dropRightBtn'), toggleAnimation('glyphOne'), toggleDisplay('toolsNavBar')">
 				<div id="glyphOne">&#x2630;</div>
 			</button>
-				<nav id="toolsNavBar">
-					<button class="btn" onclick="toggleDisplay('modalWindow')" value="Add">
-						<span class="glyphTwo">&plus;</span>
-					</button>
-					<hr class="tripMenuHR" />
-					<button id="delete_Trip" class="btn" onclick="fixList(), removeLast('tripsContainer')" value="Remove">
-						<span class="glyphTwo">&minus;</span>
-					</button>
-					<hr class="tripMenuHR" />
-					<button id="tripSummary" class="btn" onclick="toggleDisplay('right_Collapse'), generateSummary(), drawBars(), textAnalysis()" value="Trip Summary">
-						<img src="../Graphics/Trip_Summary.png" alt="Trip Summary Generated Dialogue Glyph" />
-					</button>
-					<hr class="tripMenuHR" />
-					<button id="googs" class="btn" value="Google">
-						<a href="https://www.google.com/">
-							<img src="../Graphics/Google_Logo.png" alt="Google" />
-						</a>
-					</button>				
+			
+				<nav id="toolsNavBar">		
+					<div>
+						<div>
+							<h4>Modify</h4>
+						</div>
+						<div>
+							<button class="btn2 toolTip" onclick="toggleDisplay('modalWindow')" value="Add">
+								<span class="glyphTwo">&plus;</span>
+								<span class="toolTip_Txt">Add New Trip</span>
+							</button>
+							
+							<hr class="tripMenuHR2" />
+							
+							<button id="delete_Trip" class="btn2 toolTip" onclick="fixList(), removeLast('tripsContainer')" value="Remove">
+								<span class="glyphTwo">&minus;</span>
+								<span class="toolTip_Txt">Remove Last Trip</span>
+							</button>
+
+							<hr class="tripMenuHR" />
+						</div>
+					</div>
+
+					<div>
+						<div>
+							<h4>Eval.</h4>
+						</div>
+						<div>
+							<button id="tripSummary" class="btn2 toolTip" onclick="toggleDisplay('right_Collapse'), generateSummary(), drawBars(), textAnalysis(), busy(), notBusy()" value="Trip Summary">
+								<img src="../Graphics/Bar_Chart.png" alt="Trip summary analtyics generation. Bar chart glyph." />
+								<span class="toolTip_Txt">Generate Results</span>
+							</button>
+
+							<hr class="tripMenuHR" />
+						</div>
+					</div>
+
+					<div>
+						<div>
+							<h4>Tools</h4>
+						</div>
+						<div>					
+							<button id="googs" class="btn2 toolTip" value="Google">
+								<a href="https://www.google.com/">
+									<img src="../Graphics/Google_Logo.png" alt="Google" />
+									<span class="toolTip_Txt">Search Google</span>
+								</a>
+							</button>				
+						</div>
+					</div>
+
+
 				</nav>
 			</div>
 		<!-- </button> -->
@@ -527,7 +603,24 @@
 
 	</nav>
 
-	
+	<script>
+	var rP = document.getElementById("right_Collapse");
+	var rr;
+
+	function busy() {
+		rr = setTimeout(function() {
+			document.body.style.cursor = "progress";
+		}, 0001);
+	}
+
+	function notBusy() {
+		setTimeout(function() {
+			clearTimeout(rr);
+			document.body.style.cursor = "auto";
+		}, 6000);
+	}
+	</script>
+
 	<script src="../Scripts/Maps_API.js"></script>																	 
 
 
