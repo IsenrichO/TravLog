@@ -9,7 +9,9 @@ function addTrip() {
 	// Declare variables with values equal to id's of fetched HTML elements:
 	var countryName = document.getElementById("select_Country").value,
 		descrip = document.getElementById("tripDescrip").value,
-		expander_Msg = document.getElementById("expander_Cnt").value;
+		expander_Msg = document.getElementById("expander_Cnt").value,
+		tripType = radioCheck();	
+		console.log(tripType);
 
 	// listArr.push("'" + countryName + "'");
 	listArr.push(countryName);
@@ -53,6 +55,7 @@ function addTrip() {
 	flagImg.setAttribute("style", "max-height: 90px; max-width: 130px; top: 15px; right: 30px; display: inline-block; float: right; position: relative; vertical-align: middle;");
 
 
+
 	// Declare preliminary stylistic scheme for pursuant content:
 	newTrip.setAttribute("style", "background: silver; box-shadow: 2px 2px 2px dimgray; position: relative; left: 7%; top: 10%; width: 90%; height: 100px;");
 	newTrip.className = "trip"; 
@@ -69,7 +72,7 @@ function addTrip() {
 
 	// Define nested contents of the 'bannerCont' variable:
 	arrowGlyph.innerHTML = "❱❱";				// Guillemet Symbol:  ❱❱		|	⇒
-	arrowGlyph.setAttribute("style", "display: inline; width: 100%; height: 100%; position: relative; margin-right: 15px; color: DimGray; font: bold 35px/25px Helvetica, sans-serif;");
+	arrowGlyph.setAttribute("style", "display: inline; width: 100%; height: 100%; position: relative; margin-right: 15px; color: DimGray; font: bold 35px/25px Helvetica, sans-serif; text-shadow: none;");
 	arrowGlyph.className = "doubleChevron";
 
 	arrowGlyph_Cont.appendChild(arrowGlyph);
@@ -79,7 +82,7 @@ function addTrip() {
 	bodyTxt_Header.setAttribute("style", "height: 20px; text-align: center; margin: 5px auto; width: 95%; display: block; font: bold 16px/18px Helvetica, Arial, sans-serif; color: DimGray; overflow: hidden;");
 
 	titleHolder.appendChild(cardTitle);
-	titleHolder.setAttribute("style", "position: relative; display: inline-block; font: small-caps 700 40px/40px Droid Sans; color: #FFFFFF; text-shadow: -2px -2px 1px DimGray, 2px 2px 1px #7EFCEF; float: left; max-width: 75%; top: 50%; transform: translateY(-50%); height: 70px; margin: auto; overflow: hidden; text-overflow: ellipsis;");
+	titleHolder.setAttribute("style", "position: relative; display: inline-block; font: small-caps 700 40px/40px Droid Sans; color: #FFFFFF; text-shadow: -2px -2px 1.5px DimGray; float: left; max-width: 75%; top: 25%; height: 90px; margin: auto; overflow: hidden; text-overflow: ellipsis;");
 	titleHolder.insertBefore(arrowGlyph_Cont, titleHolder.childNodes[0]);
 	
 	// Define nested contents of the 'bodyCont' variable:
@@ -87,15 +90,20 @@ function addTrip() {
 	mapCont.insertBefore(mapImg, mapCont.childNodes[0]);
 	mapCont.setAttribute("style", "display: inline-block; order: -1; vertical-align: middle; float: left; width: 29%; height: auto; position: relative; left: 0; padding: auto; margin: auto;"); 
 
-
 	var setOfDates = addDates();
+
+	var coatFilePath = "'" + countryObject[countryName]["coat"] + ".svg" + "'";
+	console.log(coatFilePath);
+
+	var bg = '"' + "background: White url(" + coatFilePath + ") 20px 35px / 15px 15px repeat;" + '"';
+	console.log(bg);
 
 	bodyTxt.appendChild(setOfDates);
 	bodyTxt.insertBefore(subHeaderRule, bodyTxt.childNodes[0]);
 	bodyTxt.insertBefore(bodyTxt_Header, bodyTxt.childNodes[0]);
-	bodyTxt.setAttribute("style", "display: inline-block; position: relative; float: right; width: 65%; background: white; text-align: justify; word-wrap: break-word; font: 16px Roboto; color: #111111; margin: 0 15px; padding: 10px; vertical-align: middle; min-height: 200px; overflow-x: hidden; box-shadow: -3px 3px 2px DimGray;");
-
-
+	bodyTxt.className = "dates_Cont";
+	bodyTxt.setAttribute("style", "display: inline-block; position: relative; float: right; width: 65%; background: White; text-align: justify; word-wrap: break-word; font: 16px Helvetica, Arial, sans-serif; color: #111111; margin: 0 15px; padding: 10px; vertical-align: middle; min-height: 200px; overflow-x: hidden; box-shadow: -3px 3px 2px DimGray;");
+	
 
 	bannerCont.onclick = function() {
 		if (newTrip.className === "trip") {
@@ -166,10 +174,8 @@ function makeDatesArray() {
 	console.log(tripsObj);
 	console.log(tripDates);
 
-
 	return tripDates;
 }
-
 
 
 function addDates() {
@@ -274,6 +280,7 @@ function addDates() {
 	} else {
 		tripsObj[key] = {
 			place: countryName,
+			type: tripType,
 			nickname: "",
 			dates: makeDatesArray()
 		};
