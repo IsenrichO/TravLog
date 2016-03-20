@@ -8,13 +8,22 @@ function addTrip() {
 
 	// Declare variables with values equal to id's of fetched HTML elements:
 	var countryName = document.getElementById("select_Country").value,
+		key = countryName + "Trip",
 		descrip = document.getElementById("tripDescrip").value,
 		expander_Msg = document.getElementById("expander_Cnt").value,
 		tripType = radioCheck();	
-		console.log(tripType);
+	console.log(tripType);
+
 
 	// listArr.push("'" + countryName + "'");
 	listArr.push(countryName);
+	console.log(listArr);
+
+	//
+	tripCoordinates.push({lat: countryObject[countryName]["coords"]["lat"],
+					lng: countryObject[countryName]["coords"]["lng"]});
+	console.log(tripCoordinates);
+
 	
 	// Invocations of the .createElement() method to trigger production of needed HTML entities for created trips:
 	var newTrip = document.createElement("DIV"),
@@ -53,7 +62,6 @@ function addTrip() {
 	var flagFilePath = countryObject[countryName]["flag"] + ".svg";
 	flagImg.setAttribute("src", flagFilePath);
 	flagImg.setAttribute("style", "max-height: 90px; max-width: 130px; top: 15px; right: 30px; display: inline-block; float: right; position: relative; vertical-align: middle;");
-
 
 
 	// Declare preliminary stylistic scheme for pursuant content:
@@ -155,10 +163,6 @@ function addTrip() {
 	summary_El.insertBefore(summary_Header, summary_El.childNodes[0]);
 
 	summary_El.setAttribute("style", "position: relative; display: block; width: 90%; height: auto; min-height: 100px; clear: both; margin: 30px auto; background: radial-gradient(circle, rgba(255, 255, 255, 0.85) 30%, rgba(255, 255, 255, 0) 85%);");
-
-	var key = countryName + "Trip";
-
-
 
 
 function makeDatesArray() {
@@ -287,16 +291,12 @@ function addDates() {
 	}
 	console.log(tripsObj);
 
-
-
 	// Array 'daysAbroad_Arr' :
 	daysAbroad_Arr.push(tripsObj[key]["dates"]);
 	forEach(daysAbroad_Arr, function(dates) {
 		return dates.sort();
 	})
-
 	console.log(daysAbroad_Arr);
-
 }	
 
 
