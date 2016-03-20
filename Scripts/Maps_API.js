@@ -130,23 +130,6 @@ function initMap() {
 			filterMarkers(map);
 		}
 	);
-
-	// On-app-load pin marker for Washington, D.C.:
-	/* var marker = new google.maps.Marker({
-		map: map,
-		draggable: false,
-		animation: google.maps.Animation.BOUNCE,
-		position: {lat: 38.889931, lng: -77.009003}
-	}); */
-
-
-	/* forEach(markers_Arr, function(mrkr) {
-		markers_Arr[mrkr].addListener("click", function() {
-			// var animationState = (
-			mrkr.getAnimation() !== null ? mrkr.setAnimation(null) : mrkr.setAnimation(google.maps.Animation.BOUNCE);
-		});
-	}); */
-
 }
 
 
@@ -173,7 +156,7 @@ function filterMap(layer, fusionTablesId, map) {
 			polygonOptions: {
 				fillColor: "#12F902", 			// #1E90FF
 				fillOpacity: 0.2,
-				strokeColor: "#FFFFFF",			// #10A396"		|	"#20d6a5"
+				strokeColor: "#FFFFFF",			// #10A396"		|	"#20D6A5"
 				strokeOpacity: 0.95,
 				strokeWeight: 1
 			}
@@ -201,11 +184,18 @@ function filterMap(layer, fusionTablesId, map) {
 	console.log(markers_Arr);
 
 
+	var travelPath = new google.maps.Polyline({
+		path: tripCoordinates,
+		geodesic: false,
+		strokeColor: "#ED5353",					// CSS3 'MediumSeaGreen', Hex Color Code: "#3CB371"		|		CSS3 'DodgerBlue', Hex Color Code: "#1E90FF"
+		strokeOpacity: 0.95,
+		strokeWeight: 3
+	});
+
+	travelPath.setMap(map);
+	
 	layer.setMap(map);
 }
-
-
-
 
 
 function filterMarkers(map) {
