@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>World Travel Log</title>
-	
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />					<!-- Import 'Roboto' font from Google Fonts. -->
-	<link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet" type="text/css" />		<!-- Import 'Allerta Stencil' font from Google Fonts. -->
+	<title>Home | TravLog</title>
+	<meta charset="UTF-8" />
+
+	<link href="Graphics/Airplane_favicon.ico" rel="icon" type="image/vnd.microsoft.icon" />											<!-- Browser tab icon -->
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />										<!-- Import 'Roboto' font from Google Fonts. -->
+	<link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet" type="text/css" />							<!-- Import 'Allerta Stencil' font from Google Fonts. -->
+	<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet" type="text/css"> 										<!-- Import the 'Play' font style from Google Fonts. -->
+	<link href="https://fonts.googleapis.com/css?family=Droid+Sans:700|PT+Sans:700" rel="stylesheet" type="text/css">					<!-- Import the 'Droid Serif: Bold 700" font. -->
 	
 	<link href="Stylesheets/Nav-Bar.css" rel="stylesheet" type="text/css" />
 	<link href="Stylesheets/Landing_Page.css" rel="stylesheet" type="text/css" />
@@ -65,27 +70,24 @@
 		</div>
 
 		<div class="introSection">
-			<div class="interfacePanel sideImg" style="float: right;">
-				<img src="Graphics/Itinerary_Plan.png" width="400px;" />
-			</div>
-			<div class="interfacePanel sideTxt" style="float: left;">
-				<h1 class="panelHead sideHeader">Make An Itinerary 
-									  <br /> 
-									  Plan For Future Expeditions
+
+			<div class="interfacePanel">
+				<h1 class="panelHead sideHeader">
+					Make An Itinerary <br />
+					Plan For Future Expeditions
 				</h1>
 				<ul id="firstUL" class="introSectList" style="margin-left: 100px; margin-right: 50px; color: white;">
 					<li>Simply looking to make a record of a trip you're thinking of taking? Then you're where you need to be!</li>
 					<li>Select international destinations and create organized layouts of your planned voyages.</li>
 					<li>Interact with the most up-to-date mapping data on the side!</li>
 				</ul>
+				
 			</div>
 		</div>
 		
 		<div class="introSection" id="record">		
 			<div class="interfacePanel sideTxt" style="float: right; width: 20%;"></div>
 			<div class="interfacePanel" id="indoPicCont" >
-				<!-- <img id="indoPic" src="../Graphics/{Graphic} Outlook From Atop Borobudur, Edit... (18 Feb. 2016, 0806) [Isenrich, Oliver] [Res. 2448 x 3264 px].png" 
-					 style="width: 100%; height: auto; float: left; margin: 0px; padding: 0px;" /> -->
 				<h1 class="panelHead" style="text-align: center;">Record Your Travel Experiences</h1>
 				<ul class="introSectList" style="margin-right: 150px;">
 					<li>Wax nostalgic and reflect on the adventures you've had with a concrete record of your trips!</li>
@@ -100,58 +102,76 @@
 	</div>
 
 
+	<div id="navBar_Cont">
 	<nav id="inter-pageNavBar">
-		<a class="bottomNavTab" style="border-left: none;" href="Markup/Main.html" target="_self"><h2 class="navTabText">Main</h2></a>
+		<div class="bottomNavTab">
+			<a href="Markup/Main.html" target="_self">
+				<h2 class="navTabText">Main</h2>
+			</a>
+		</div>
 
-		<a class="bottomNavTab" href="Markup/Change_Log.html" target="_blank"><h2 class="navTabText">Change Log</h2></a>
+		<div class="bottomNavTab">
+			<a href="Markup/Change_Log.html" target="_blank">
+				<h2 class="navTabText">Change Log</h2>
+				<img class="URL_Link" src="Graphics/New_Tab.png" alt="Opens in new tab, URL hyperlink glyph (Blue)" style="height: 25px; width: 25px; top: 5px;" />
+			</a>
+		</div>
 
-		<div class="bottomNavTab"><h2 class="navTabText"><span class="dropupGlyph">&nbsp; &nbsp; &#x2630;</span>About . . .</h2>			<!-- BB Up Arrow Glyph, Hex Code:  &#x21ee; -->
+		<div class="bottomNavTab">
+			<span class="dropupGlyph navTabText">☰</span>
+			<h2 class="navTabText">About . . .</h2>											<!-- BB Up Arrow Glyph, Hex Code:  &#x21ee; -->
 			<div class="popup">
-				<a href="Markup/Myself.html" target="_blank">&nbsp;
-					<img src="Graphics/Profile_Picture.jpg" style="border-radius: 50%; vertical-align: middle;" height="40px;" width="40px;" alt="Personal Contact Chip" />
-					&nbsp; &nbsp; &nbsp; &nbsp; Myself
+				<a href="Markup/Myself.html" target="_blank">
+					<img class="nav_Img" src="Graphics/Profile_Picture.jpg" alt="Personal Contact Chip" style="border-radius: 50%;" />
+					<span class="menuItem">Myself</span>
+					<img class="URL_Link" src="Graphics/New_Tab.png" alt="Opens in new tab, URL hyperlink glyph (Blue)" />					
 				</a>
 				<hr class="submenuHR" />
-				<a href="Markup/This_Project.html" target="_blank">&nbsp;
-					<img src="Graphics/Edge-firefox.svg" style="vertical-align: middle;" height="40px;" width="40px;" alt="FireFox Edge Browser Globe Glyph (Black)" />
-					&nbsp; &nbsp; &nbsp; &nbsp; This Project
-
-					<!-- <span style="font-size: 40px; margin-left: -5px; line-height: 40px;">&nbsp; &#x1f310;</span>
-					&nbsp;&nbsp;&nbsp;&nbsp; -->
+				<a href="Markup/This_Project.html" target="_blank">
+					<img class="nav_Img" src="Graphics/Edge-firefox.svg" alt="FireFox Edge Browser Globe Glyph (Black)" />
+					<span class="menuItem">This Project</span>
+					<img class="URL_Link" src="Graphics/New_Tab.png" alt="Opens in new tab, URL hyperlink glyph (Blue)" />
 				</a>
 			</div>
 		</div>
 
-		<div class="bottomNavTab"><h2 class="navTabText"><span class="dropupGlyph">&nbsp; &nbsp; &#x2630;</span>Connect</h2>
+		<div class="bottomNavTab">
+				<span class="dropupGlyph navTabText">☰</span>
+				<h2 class="navTabText">Connect</h2>
 			<div class="popup">
 				<a href="https://www.facebook.com/rE.vilO.I.13" target="_blank">&nbsp;
-					<img src="Graphics/Facebook.jpg" 
-						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp; &nbsp; &nbsp; &nbsp; Facebook
+					<img class="nav_Img" src="Graphics/Facebook.jpg" alt="Facebook Logo (Blue)" />
+					<span class="menuItem">Facebook</span>
+					<img class="URL_Link" src="Graphics/New_Tab.png" alt="Opens in new tab, URL hyperlink glyph (Blue)" />
 				</a>
 				<hr class="submenuHR" />
 				<a href="https://github.com/IsenrichO" target="_blank">&nbsp;
-					<img src="Graphics/octocat.svg" 
-						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp; &nbsp; &nbsp; &nbsp; GitHub
+					<img class="nav_Img" src="Graphics/octocat.svg" alt="GitHub Logo (Black)" />
+					<span class="menuItem">GitHub</span>
+					<img class="URL_Link" src="Graphics/New_Tab.png" alt="Opens in new tab, URL hyperlink glyph (Blue)" />
 				</a>
 				<hr class="submenuHR" />
 				<a href="https://plus.google.com/+OliverIsenrich" target="_blank">&nbsp;
-					<img src="Graphics/GooglePlus.png" 
-						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp; &nbsp; &nbsp; &nbsp; Google+
+					<img class="nav_Img" src="Graphics/GooglePlus.png" alt="Google+ Logo (Red)" />
+					<span class="menuItem">Google+</span>
+					<img class="URL_Link" src="Graphics/New_Tab.png" alt="Opens in new tab, URL hyperlink glyph (Blue)" />						 
 				</a>
 				<hr class="submenuHR" />
 				<a href="https://www.quora.com/profile/Oliver-Isenrich" target="_blank">&nbsp;
-					<img src="Graphics/Quora.png" 
-						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp; &nbsp; &nbsp; &nbsp; Quora
+					<img class="nav_Img" src="Graphics/Quora.png" alt="Quora Logo (Red)" />
+					<span class="menuItem">Quora</span>
+					<img class="URL_Link" src="Graphics/New_Tab.png" alt="Opens in new tab, URL hyperlink glyph (Blue)" />						 
 				</a>
 				<hr class="submenuHR" />
 				<a href="https://twitter.com/IsenrichO" target="_blank">&nbsp;
-					<img src="Graphics/Twitter.png" 
-						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp; &nbsp; &nbsp; &nbsp; Twitter
+					<img class="nav_Img" src="Graphics/Twitter.png" alt="Twitter Logo (Blue)" />
+					<span class="menuItem">Twitter</span>			
+					<img class="URL_Link" src="Graphics/New_Tab.png" alt="Opens in new tab, URL hyperlink glyph (Blue)" />						 
 				</a>
 			</div>
 		</div>
-
 	</nav>
+	</div>
 
 </body>
 </html>
