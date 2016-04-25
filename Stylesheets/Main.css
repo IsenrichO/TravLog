@@ -2,11 +2,19 @@
 body {
 	margin: 0px;
 	padding: 0px;
-	background-color: black;
+	background-color: Black;
 	width: 100%;
 	height: 100%;
 	position: absolute;
 }
+	body:focus,
+	button:focus,
+	input:focus,
+	textarea:focus,
+	select:focus {
+		outline: none;
+	}
+
 
 #modalWindow {
 	display: none;
@@ -16,7 +24,7 @@ body {
 	margin: 0px;
 	padding: 0px;
 	background-image: url("../Graphics/Black_Block.png");	
-	z-index: 16;
+	z-index: 1000000;
 	animation: fadeIn 1s ease-in forwards;
 }
 
@@ -24,24 +32,25 @@ body {
 #modalForm {
 	display: block;
 	position: absolute;
-	top: 120%;
-	height: auto;
+	height: 85%;
 	min-height: 50%;
 	max-height: 90%;
 	width: 50%;
-	border-radius: 15% 0% 15% 0%;
+	border-radius: 50px 0 50px 0;
 	box-shadow: -2px -2px 15px 5px White;
 	background-color: LightGray;
 	z-index: 100;
 	left: 25%;
-	
-	overflow-x: hidden;
+	margin-top: 25px;
+	overflow: hidden;
 	animation: slideUp 1.0s 0.1s ease forwards; 
 }
 
-	/* #modalForm * {
-		overflow: hidden;
-	} */
+	#modalForm > div {
+		width: 100%;
+		height: 100%;
+		overflow-y: scroll;
+	}
 
 	#modalForm input[type="button"] {
 		font-family: Roboto;
@@ -56,7 +65,7 @@ body {
 		margin: 2.5% 10%;
 	}
 
-	#modalForm > h1 {
+	#modalForm > div > h1 {
 		font: small-caps 700 54px/54px PT Sans, Helvetica, sans-serif;
 		color: White;
 		text-shadow: 2px 2px 3px #7EFCEF, -1.5px -1.5px 1px DimGray;
@@ -100,13 +109,12 @@ input[type="radio"] {
 	    padding: 0;
 	}
 
-
 input[type="date"] {
-		text-align: center;
-		vertical-align: middle;
-		width: 70%; 
-		margin: auto;
-	}
+	text-align: center;
+	vertical-align: middle;
+	width: 70%; 
+	margin: auto;
+}
 
 	input[type="date"]:before {
 		content: attr(placeholder);
@@ -116,34 +124,28 @@ input[type="date"] {
 #logType {
 	display: block;
 	position: relative;
-	width: 95%;
-	height: 320px;
+	width: 90%;
+	height: 100px;
+	max-height: 320px;
 	margin: 4% auto;
 	vertical-align: middle;
+	overflow: sc;
 }
 
-	#logType > div > div:nth-child(2) {
-		display: inline-block;
-		position: absolute;
-		left: 50%;
-		margin: 0 auto;
-		padding: 0;
-		height: 250px;
-		top: 20px;
-		width: 2px;
-		background: linear-gradient(to bottom, rgba(181, 181, 181, 0.05) 5%, rgba(47, 79, 79, 1) 50%, rgba(181, 181, 181, 0.05) 95%);
+	.logType_Div label {
+		display: inline;
+		font: 700 24px/28px Play, Helvetica, sans-serif;
+		color: DarkSlateGray;
+		position: relative;
+		margin: auto;
+		width: 30%;
+		vertical-align: middle;
 	}
 
+	.logType_Div label:hover {
+		cursor: pointer;
+	}
 
-#logType label {
-	display: inline;
-	font: 700 24px/28px Play, Helvetica, sans-serif;
-	color: DarkSlateGray;
-	position: relative;
-	margin: auto;
-	width: 30%;
-	vertical-align: middle;
-}
 
 #logType > div {
 	display: block;
@@ -174,10 +176,10 @@ input[type="date"] {
 		vertical-align: text-bottom;
 		width: 26%;
 		height: auto;
-		box-shadow: -1px 1px 0.5px rgba(255, 255, 255, 0.75);
+		box-shadow: -1px 1px 0.5px DarkSlateGray;
 	}
 	
-	.logType_Div img {
+	.logType_Div > div img {
 		width: 90%;
 		height: auto;
 	}
@@ -185,26 +187,82 @@ input[type="date"] {
 	.logType_Div > div:first-child {
 		position: relative;
 		width: 100%;
+		height: 32px;
 		margin: auto;
 		display: block;
 		text-align: center;
 		left: 0;
 		top: 0;
 	}
-		.logType_Div:first-child img {
-			width: 99%;
-			height: auto;
+
+	.logType_Div div:first-child {
+		text-align: center;
+		top: 0;	
+	}
+
+	.logType_Div div:first-child .info_Glyph {
+		position: relative;
+		display: inline;
+		width: 18px;
+		height: 18px;
+		padding: 0;
+		margin: auto;
+		top: 8px;
+		text-align: right;
+	}
+
+	.logType_Div div:first-child .info_Glyph:hover {
+		cursor: pointer;
+		content: url("../Graphics/Help_Icon-White.png");
+		border-radius: 50%;
+		box-shadow: -0.5px -0.5px 2px DimGray;
+	}
+
+	.popout_Descrip {
+		width: 90%;
+		height: auto;
+		position: absolute;
+		display: none;
+		left: 0;
+		top: 100%;
+		text-align: justify;
+		color: White;
+		text-align: justify;
+		font: oblique 200 17px/17px Play, Helvetica, sans-serif;
+		background: LightSteelBlue;
+		border: 2px solid DarkSlateGray;
+		z-index: 10000;
+	}
+
+		.popout_Descrip > div {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 10px;
+			box-sizing: border-box;
 		}
 
-		.logType_Div > div:last-child {
-			width: 96%;
-			display: block;
-			position: relative;
-			text-align: justify;
-			color: rgba(255, 255, 255, 0.75);
-			margin: 0 10px auto auto;
-			text-align: justify;
-			font: oblique 200 17px/17px Play, Helvetica, sans-serif;
+		.popout_Descrip > div:before,
+		.popout_Descrip > div:after {
+			position: absolute;
+			content: "";
+			width: 0;
+			height: 0;
+			bottom: 100%;
+			left: 80%;
+			border: 1px solid Black;
+		}
+
+		.popout_Descrip > div:before {
+			border-bottom: 0px solid Black;
+		}
+
+		.popout_Descrip > div:after {
+			border-color: rgba(0, 0, 0, 0);
+			border-bottom-color: Black;
+			border-width: 10px;
+			margin-left: 0;
 		}
 
 
@@ -217,23 +275,14 @@ input[type="date"] {
 		position: relative;
 	}
 
-	.logType_Div div:last-child p {
-		width: 94%;
-		color: rgba(255, 255, 255, 0.75);
-		text-align: justify;
-		font: oblique 300 16px/16px Play, Helvetica, sans-serif;
-		margin: 0;
+	.logType_Div div p.log_Descrip {
 		position: relative;
-		display: inline;
-		float: left;
+		width: 100%;
+		color: #626262;
+		text-align: justify;
+		font: oblique 500 16px/16px Play, Helvetica, sans-serif;
+		margin: 0;
 	}
-
-	.logType_Div div:first-child {
-		text-align: center;
-		top: 0;	
-	}
-
-
 
 
 fieldset {
@@ -250,22 +299,13 @@ fieldset {
 	width: 100%;
 	height: auto;
 	display: block;
-	background: white;
+	background: White;
 	opacity: 0.5;
 	top: 0;
 	left: 0;
 	margin: 0;
 	padding: 0;
 	content: "";
-}
-
-.date_Field {
-	border: 2px dashed Gray;
-	padding: 0;
-	width: 100%;
-	height: auto;
-	margin: 15px 0;
-	background: rgba(255, 255, 255, 0.4);
 }
 
 label[for="select_Country"] {
@@ -296,6 +336,16 @@ label[for="tripDescrip"] {
 	transform: translateY(50%);
 }
 
+label[for="startDate"],
+label[for="endDate"] {
+	width: 90%;
+	display: block;
+	text-align: center;
+	font: 600 20px/18px Play, Helvetica, sans-serif;	
+	margin: 0 auto 5px auto;
+	border-bottom: 1px solid DimGray;
+}
+
 .tripSummary_Span {
 	width: 100%;
 	margin: auto;
@@ -324,17 +374,53 @@ label[for="tripDescrip"] {
 	vertical-align: middle;
 }
 
-#submit_Btn {
+#startEndDates_Field {
 	position: relative;
 	display: block;
-	margin: 10px auto;
-	padding: 10px 5px;
-	width: 80px;
-	height: 28px;
-	font: 700 16px/16px Droid Sans, Helvetica, sans-serif;
-	border-radius: 10px 0 10px 0;
 }
 
+	#startEndDates_Field > div {
+		display: inline-block;
+		width: 48%;
+		margin: auto auto 7.5px auto;
+	}
+
+	#startEndDates_Field > div > span {
+		
+		font: 700 28px/28px Droid Sans, Play, Helvetica, sans-serif; 
+		color: MediumSeaGreen;
+		text-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+		text-align: center; 
+		vertical-align: middle;
+	}
+
+	#startEndDates_Field > div > input {
+		height: 28px;
+		vertical-align: middle;
+	}
+
+
+#datesContainer {
+	height: auto;
+	width: 84%;
+	position: relative;
+	display: inline-block;
+	float: left;
+	margin: auto;
+	padding: 0;
+	text-align: left;
+	vertical-align: middle;
+	overflow: visible;
+}
+
+.date_Field {
+	border: 2px dashed Gray;
+	padding: 0;
+	width: 100%;
+	height: auto;
+	margin: 15px 0;
+	background: rgba(255, 255, 255, 0.4);
+}
 
 .date_Label {
 	font: 600 14px/14px Play, Helvetica, sans-serif;
@@ -360,19 +446,6 @@ label[for="tripDescrip"] {
 	margin: auto;
 	padding: 5px 10px;
 	resize: vertical;
-}
-
-#datesContainer {
-	height: auto;
-	width: 84%;
-	position: relative;
-	display: inline-block;
-	float: left;
-	margin: auto;
-	padding: 0;
-	text-align: left;
-	vertical-align: middle;
-	overflow: visible;
 }
 
 select {
@@ -425,6 +498,17 @@ select {
 		}
 
 
+#submit_Btn {
+	position: relative;
+	display: block;
+	margin: 10px auto;
+	padding: 10px 5px;
+	width: 80px;
+	height: 28px;
+	font: 700 16px/16px Droid Sans, Helvetica, sans-serif;
+	border-radius: 10px 0 10px 0;
+}
+
 #addDate_Div {
 	display: inline-flex;
 	flex-direction: column;
@@ -440,7 +524,7 @@ select {
 	vertical-align: middle;
 	overflow: visible;
 	left: 5%;
-	top: 25px;
+	top: 15px;
 	float: right;
 }
 
@@ -600,19 +684,319 @@ textarea {
 	height: 100%;
 	overflow-x: hidden;
 	position: fixed;
-	z-index: 2;
+	z-index: 21;
 	background-attachment: fixed;
 }
 
-#mapContainer {
+#rightPane {
 	display: inline-block;
 	position: absolute;
-	left: 50%;
 	width: 50%;
-	height: 94%;
+	height: 100%;
+	right: 0;
+	top: 0;
+	overflow: hidden;
+	z-index: 20;
+}
+
+
+
+.pathToolBar_Btns {
+	position: relative; 
+	display: inline-block;
+	width: 75px; 
+	height: 100%; 
+	font: 700 25px/75px Droid Sans, Helvetica, sans-serif;
+	background: Gray;
+	color: White;
+	padding: 0;
+	border: none;
+	box-shadow: 0 0 0 Silver;
+	transition: background 0.5s 0.05s ease, color 0.5s 0.05s ease, box-shadow 0.5s 0.05s ease;
+	/* overflow: hidden; */
+} 
+
+	.pathToolBar_Btns:hover {
+		background: White;
+		color: MediumSeaGreen;
+		box-shadow: 0 0 5px Silver;
+	}
+
+	.pathToolBar_Btns img {
+		position: absolute;
+		display: block;
+		width: 60px;
+		height: auto;
+		left: 7.5px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+
+#path_Toolbar {
+	position: fixed;
+	display: none;
+	bottom: 0;
+	height: 75px;
+	left: 0;
+	z-index: 10000;
+	background: LightGray;
+	/* overflow: hidden; */
+	/* transition: left 1.5s 0.05s ease-in-out; */
+}
+
+	/* #path_Toolbar > * {
+		display: none;
+	} */
+
+	#path_Toolbar.activated {
+		display: block;
+		animation: slideRight 2s 0.1s forwards;
+	}
+
+	/* #path_Toolbar.activated * {
+		display: block;
+		animation: appear 0.5s 2s forwards;
+	} */
+
+	#path_Toolbar.deactivated {
+		animation: disappear 0.5s 2s forwards;
+		/* display: none; */
+	}
+
+
+#color_Palette {
+	display: none;
+	position: absolute;
+	width: 150px;
+	height: 220px;
+	bottom: 90px;
+	left: -37.5px;
+	background: LightGray;
+}
+
+#color_Palette > div {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+	#color_Palette > div:before,
+	#color_Palette > div:after {
+		position: absolute;
+		content: "";
+		height: 0;
+		width: 0;
+		top: 100%;
+		left: 50%;
+		border: 1px solid LightGray;
+	}
+
+	#color_Palette > div:before {
+		border-top: 0px solid LightGray;
+	}
+
+	#color_Palette > div:after {
+		border-color: rgba(0, 0, 0, 0);
+		border-top-color: LightGray;
+		border-width: 12.5px;
+		margin-left: -12.5px;
+	}
+
+	#color_Palette > div > div:nth-child(2),
+	#color_Palette > div > div:nth-child(3) {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 51px;
+	}
+
+	#color_Palette > div > div:nth-child(2) > div:last-child,
+	#color_Palette > div > div:nth-child(3) > div:last-child {
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		align-content: space-between;
+		width: 100%;
+		height: 30px;
+	}
+
+/* #color_Palette input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	background: transparent;
+	height: 7px;
+
+
+	border: 1px solid #bdc3c7;
+	border-radius: 10px;
+	cursor: pointer;
+} */
+
+	/* #color_Palette > div > div:last-child input  */
+	/* #strokeWidth_Inpt */
+	#color_Palette input[type="range"] {
+		-webkit-appearance: none;
+		position: relative;
+		width: 50%;
+		height: 5px;
+		margin: 12.5px auto;
+		border: 1px solid #626262;
+		border-radius: 10px;
+		background: White;
+		cursor: pointer;
+	}
+
+
+	#color_Palette input[type="range"]::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		background: MediumSeaGreen;
+			/* background-color: #ECF0F1; */
+		border: 0px solid #bdc3c7;
+		width: 12.5px;
+		height: 12.5px;
+		border-radius: 10px;
+		box-sizing: content-box;
+		cursor: url(https://ssl.gstatic.com/ui/v1/icons/mail/images/2/openhand.cur), default !important;
+			/* cursor: grab;					//  ALternative Cursor Option:  ew-resize; //  */
+	}
+
+		#color_Palette input[type="range"]::-webkit-slider-thumb:selection {
+			cursor: url(https://ssl.gstatic.com/ui/v1/icons/mail/images/2/closedhand.cur), default !important;		
+				/* cursor: grabbed;				//  ALternative Cursor Option:  ew-resize; //  */	
+		}
+
+
+	#customColor {
+		-webkit-appearance: none; 
+		position: absolute;
+		display: block;
+		height: 20px;
+		width: 20px;
+		top: 50%;
+		left: 5px;
+		transform: translateY(-50%);
+		margin: 0;
+		padding: 0;
+		vertical-align: top;
+		border: none;
+		border-radius: 50%; 
+		box-sizing: content-box; 
+		overflow: hidden; 
+	}
+
+	#customColor::-webkit-color-swatch-wrapper {
+    	padding: 0;
+        border-radius: 50%;
+    }
+
+    #customColor::-webkit-color-swatch {
+    	border: none;
+    }
+
+	#strokeWidth_Lbl,
+	#opacity_Lbl {
+		position: relative;
+		width: auto;
+		margin: auto;
+		text-align: center;
+		font: 600 14px/30px PT Sans, Helvetica, sans-serif;
+		color: MediumSeaGreen;														/*  #626262;  */
+	}
+
+
+.color_Row {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 30px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.color_Cont {
+	position: relative;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+}
+
+#color_Palette h4 {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 20px;
+	margin: 0;
+	padding: 0;
+	/* border-bottom: 1px solid linear-gradient(to left, LightGray 5%, Black 50%, LightGray 95%); */			/*  <-- Invalid: Can't use linear-gradient 	*/
+	border-bottom: 1px solid DimGray;
+	/* background: White; */
+	font: 14px/20px Play, Helvetica, sans-serif;
+	text-shadow: 0 0 1px DimGray;
+	text-align: center;
+}
+
+.color_Div {
+	display: block;
+	position: absolute;
+	width: 20px;
+	left: 5px;
+	height: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	/* border: 1.5px solid Black; */
+}	
+
+	.color_Div:hover {
+		cursor: pointer;
+		/* box-shadow: 0 0 4px 1.5px White; */
+	}
+
+
+#mapContainer {
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
 	padding: 0px;
 	overflow: hidden;
 	z-index: 7;
+}
+
+#coords_Div {
+	/* direction: ltr; */
+    overflow: hidden;
+    text-align: left;
+    position: relative;
+    color: rgb(0, 0, 0);
+    font-family: Roboto, Arial, sans-serif;
+    /* -webkit-user-select: none; */
+    width: 100px;
+    font-size: 11px;
+    padding: 8px;
+    margin: 10px;
+    border-radius: 2px;
+   	box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
+    font-weight: 500;
+    background-color: rgb(255, 255, 255);
+    background-clip: padding-box;
+}
+
+#coord_Lat, #coord_Lng {
+	display: block;
+	text-align: left;
+	position: relative;
+
 }
 
 #mainHeadingHR {
@@ -628,24 +1012,24 @@ textarea {
 		padding: 0px;
 		border: 0px;
 		height: 3px;
-		background: white;
+		background: White;
 	}
 
 	#mainHeadingHR1 {
-		background: linear-gradient(to left, rgba(255, 255, 255, 0), dimgray, rgba(255, 255, 255, 0));
+		background: linear-gradient(to left, rgba(255, 255, 255, 0), DimGray, rgba(255, 255, 255, 0));
 		top: -1.2px;
 		left: -2px;
 	}
 
 	#mainHeadingHR2 {
-		background: linear-gradient(to left, rgba(255, 255, 255, 0), white, rgba(255, 255, 255, 0));
+		background: linear-gradient(to left, rgba(255, 255, 255, 0), White, rgba(255, 255, 255, 0));
 		top: -1px;
 		left: 0px;
 		height: 4px;
 	}
 
 	#mainHeadingHR3 {
-		background: linear-gradient(to left, rgba(255, 255, 255, 0), #7efcef, rgba(255, 255, 255, 0));
+		background: linear-gradient(to left, rgba(255, 255, 255, 0), #7EFCEF, rgba(255, 255, 255, 0));
 		top: 3px;
 		left: 2px;
 		height: 2px;
@@ -655,23 +1039,24 @@ textarea {
 .tripMenuHR {
 	border: 0px;
 	height: 2px;
-	width: 62.5px;
+	width: 75px;
 	position: relative;
 	display: block;
 	margin: 0px;
 	padding: 0px;
-	background: linear-gradient(to left, rgba(255, 255, 255, 0.05) 5%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.05) 95%);
+	background: White;
+	/* background: linear-gradient(to left, rgba(255, 255, 255, 0.05) 5%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.05) 95%); */		
 }
 
 .tripMenuHR2 {
 	border: 0px;
 	height: 2px;
-	width: 62.5px;
+	width: 60px;
 	position: relative;
 	display: block;
 	margin: 0px;
 	padding: 0px;
-	background: Black;
+	background: White;
 }
 
 
@@ -710,13 +1095,13 @@ textarea {
 		display: block;
 		width: 90%;
 		position: relative;
-		/* background: lightgray; */
 		box-shadow: -2px -2px 2px DimGray, 0.2px 0.2px 1px DimGray; 
 		left: 3.5%; 
 		top: 20px;
 		margin: 5% auto;
 		overflow: hidden;
 	}
+
 
 .BannerContainer {
 	background: LightGray;	
@@ -736,20 +1121,21 @@ textarea {
 	position: absolute;
 	display: block;
 	width: auto;
-	z-index: 15;
-	bottom: 0%;
+	height: 60%;
+	z-index: 22;
+	bottom: 20%;
 	left: 0;
-	top: 0;
 	margin-top: 10%;
 	padding: 0px;
-	border-radius: 15% 0% 15% 0%;
+	border-radius: 15% 0 15% 0;
 }
 
 	#btnsBar button:hover {
 		cursor: pointer;
 	}
 
-	#btnsBar div:hover, #btnsBar h4:hover {
+	#btnsBar div:hover, 
+	#btnsBar h5:hover {
 		cursor: default;
 	}
 
@@ -760,7 +1146,6 @@ textarea {
 	font: 700 50px/75px Droid Sans, Helvetica, sans-serif;
 }
 
-
 #toolsNavBar {
 	position: absolute;
 	display: none;
@@ -768,12 +1153,12 @@ textarea {
 	width: 75px;
 	right: 0;
 	left: 0;
-	margin: 0 0 0 0;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	top: 75px;
 	border-radius: 0;
-	border-top: 1px solid Black;
-	overflow: visible;
+	border-top: none;
+	/* overflow: hidden; */
 }
 
 #toolsNavBar > div {
@@ -783,81 +1168,71 @@ textarea {
 	padding: 0;
 	height: auto;
 	width: 75px;
+	height: 65px;
 }
 
-#toolsNavBar > div > div > button {
+#toolsNavBar > div button {
 	display: block;
 	position: relative;
 	width: 62.5px;
-	height: 62.5px;
-	float: right;
-	border-radius: 0px;
+	height: 64px;
+	border-radius: 0;
 	margin: auto;
-	border: 0px;
+	border-bottom: none;
 	background-color: Gray;
-	font: 700 50px/65px Droid Sans, Helvetica, sans-serif;
+	font: 700 50px/64px Droid Sans, Helvetica, sans-serif;
 	vertical-align: middle;
 }
 
 	#toolsNavBar > div > div > button:hover {
-		background-color: Silver;
+		background: White;
 		border-radius: 15px 0 15px 0;
 	}
 
-	#toolsNavBar > div:first-child,
-	#toolsNavBar > div:nth-child(2),
-	#toolsNavBar > div:last-child {
-		display: block;
-		position: relative;
-		width: 100%;
-		margin: 0;
-		padding: 0;
-
-	}
-
 	#toolsNavBar > div > div:nth-child(2) {
-		background: Black;
+		display: inline-block;
+		background: rgba(255, 255, 255, 0);
+		width: 62.5px;
 	}
 
-	#toolsNavBar > div:first-child > div {
-		position: relative;
-		margin: 0;
-		padding: 0;
+		#toolsNavBar > div:last-child > div:nth-child(2) button {
+			height: 64px;
+		}
+
+		#toolsNavBar > hr + div button {
+			height: 65px;
+		}
+
+
+	#toolsNavBar > div > div:first-child {
+		display: inline-block;
+		width: 12.5px;
+		height: 100%;
+		left: 0;
+		float: left;
+		border-right: 2px solid White;
+		box-sizing: border-box;
+		background: MediumSeaGreen;
+		color: White;
+		font: bold 12px Play, Helvetica, sans-serif;
 	}
 
 		#toolsNavBar > div:first-child > div:first-child,
-		#toolsNavBar > div:nth-child(2) > div:first-child,
 		#toolsNavBar > div:last-child > div:first-child {
-			display: inline-block;
-			background: Black;
-			color: White;
-			font: bold 12px Play, Helvetica, sans-serif;
-			float: left;
-			width: 11px;
-			border-right: 1px solid rgba(255, 255, 255, 0);
-			left: 0;
-		}
-
-		#toolsNavBar > div:first-child > div:first-child {
-			height: 127px;
-			border-bottom: 2px solid White;
-		}
-
-		#toolsNavBar > div:nth-child(2) > div:first-child,
-		#toolsNavBar > div:last-child > div:first-child {
-			height: 63px;
+			height: 130px;
 		}
 
 		#toolsNavBar > div:nth-child(2) > div:first-child {
-			border-bottom: 2px solid White;
+			height: 65px;
 		}
 
-		#toolsNavBar > div:last-child > div:nth-child(2) {
-			height: 64.5px;
+		#toolsNavBar > div:last-child > div:first-child {
+			border-bottom: none;
 		}
 
-		#toolsNavBar div h4 {
+		#toolsNavBar div h5 {
 			transform: rotate(-90deg);
+			text-transform: uppercase;
 			text-align: center;
 			width: 100%;
 			height: auto;
@@ -875,17 +1250,43 @@ textarea {
 			width: 62.5px;
 		}
 
-		#toolsNavBar > div:nth-child(2) > div:nth-child(2),
-		#toolsNavBar > div:last-child > div:nth-child(2) {
+		#toolsNavBar > div:first-child > div:nth-child(2) button {
+			height: 64px;
+		}
+
+		#toolsNavBar > div:nth-child(2) > div:nth-child(2) {
 			display: inline-block;
 			float: right;
-			height: 64.5px;
-			width: 62.5px;			
+			height: 65px;
 		}
 
 
-	#toolsNavBar > div:last-child > div:last-child > button,
-	#toolsNavBar > div:last-child > div:nth-child(2) {
+	#toolsNavBar > div:last-child > div:last-child > button:first-child {
+		text-align: center;
+		position: relative;
+	}
+
+	#toolsNavBar > div:last-child > div:last-child > button:first-child img {
+		position: absolute;
+		height: 40px;
+		width: auto;
+		top: 12.5px;
+		left: 50%;
+		transform: translateX(-50%);
+		text-align: center;
+		transition: all 0.5s ease-out;
+	}
+
+		#toolsNavBar > div:last-child > div:last-child > button:first-child:hover img {
+			position: absolute;
+			width: auto;
+			height: 50px;
+			top: 7.5px;
+			margin: 0 auto;
+		}
+
+
+	#toolsNavBar > div:last-child > div:last-child > button:last-child {
 		border-radius: 0 0 15px 0;
 	}
 
@@ -893,28 +1294,37 @@ textarea {
 		border-radius: 15px 0 15px 0;
 	}
 
-	#googs img {
-		border-radius: 50%;
-		height: 40px; 
-		width: auto; 
-		position: relative; 
-		transition: height 0.5s ease-out;
-		display: block;
+#path_Btn.activated {
+	background: MediumSeaGreen;
+}
+
+	#path_Btn.activated img {
+		width: 60px;
 		margin: auto;
 	}
 
-		#googs > a {
-			height: 100%;
-			width: 100%;
-			margin: 0;
-			padding: 0;
-			position: relative;
-		}
 
-		#googs:hover img {
-			height: 50px;
-			box-shadow: 0.1px 0.1px 5px MediumSeaGreen;
-		}
+#googs img {
+	border-radius: 50%;
+	height: 40px; 
+	width: auto; 
+	position: relative; 
+	transition: height 0.5s ease-out;
+	display: block;
+	margin: auto;
+}
+	#googs > a {
+		height: 100%;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		position: relative;
+	}
+
+	#googs:hover img {
+		height: 50px;
+	}	
+	
 
 .glyphTwo {
 	font: 700 50px/62.5px Droid Sans, Helvetica, sans-serif;
@@ -926,7 +1336,7 @@ textarea {
 	}
 
 
-	#tripSummary  img {
+	#tripSummary img {
 		height: 40px; 
 		width: auto; 
 		margin: auto; 
@@ -937,17 +1347,13 @@ textarea {
 
 		#tripSummary:hover img {
 			height: 50px;
-			box-shadow: -0.1px -0.1px 5px 1px MediumSeaGreen;
+			/* box-shadow: -0.1px -0.1px 5px 1px MediumSeaGreen; */
 		}
 
 
-.toolTip {
-	border-bottom: 1px dotted Black;
-	z-index: 11111150;
-}
-
-.toolTip_Txt, .toolTip_Txt2 {
-	visibility: hidden;
+.toolTip_Txt, 
+.toolTip_Txt2,
+.toolTip_Txt3 {
 	background-color: DarkSlateGray;
 	color: White;
 	text-align: center;
@@ -955,31 +1361,72 @@ textarea {
 	position: absolute;
 	border-radius: 10px;
 	font: normal 10px/10px Helvetica, sans-serif;
-	z-index: 11111150;
+	z-index: 1000;
+	overflow: visible;	
+	visibility: hidden;
 }
 
 .toolTip_Txt {
-	left: 115%;
+	left: 110%;
 	top: 12px;
-	width: 125px;
-}	
-
-.toolTip_Txt2 {
-	left: 0;
-	top: 110%;
+	min-width: 100px;
 	width: 100%;
 	height: auto;
-	overflow: visible;
+}	
+
+.toolTip_Txt3 {
+	left: 3px;
+	bottom: 110%;
+	width: 65px;
+	height: auto;
+}
+
+	.toolTip_Txt3:before {
+		content: "";
+		display: block;
+		position: absolute;
+
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-top: 10px solid transparent;
+		bottom: -10px;
+		width: 0;
+		height: 0;
+
+		top: 120px;
+		z-index: 10000;
+
+	}
+
+	#googs .toolTip_Txt {
+		left: 35px;
+		top: -30px;	
+		width: 100%;
+		height: auto;
+	}
+
+	#googs:hover .toolTip_Txt {
+		visibility: visible;
+		overflow: visible;
+	}
+
+
+#modalForm .toolTip_Txt2 {
+	left: 0;
+	bottom: 110%;
+	width: 100%;
+	height: auto;
 }
 
 .toolTip:hover .toolTip_Txt,
-.toolTip:hover .toolTip_Txt2 {
+.toolTip:hover .toolTip_Txt2,
+.toolTip:hover .toolTip_Txt3 {
 	visibility: visible;
 }
 
 
 legend .top {
-	color: white;
+	color: White;
 	font: bold 28px/26px Play, Arial, sans-serif;
 	text-shadow: 1px 1px 1px #00ffe6, -1px -1px 1px dimgray;
 	width: auto;
@@ -1063,7 +1510,8 @@ legend .bottom {
 	color: DimGray;
 }
 
-.btn, .btn2 {
+.btn, 
+.btn2 {
 	background-color: MediumSeaGreen;
 	color: White;
 	box-shadow: 0 0 0 Silver;
@@ -1071,13 +1519,15 @@ legend .bottom {
 	border: none;
 }
 
-	.btn:hover, .btn2:hover {
+	.btn:hover, 
+	.btn2:hover {
 		background-color: White;
 		color: MediumSeaGreen;						/* Teal: Hex Code... #0EB7B7 */
-		box-shadow: -1.5px -1.5px 1px Gray;
+		box-shadow: 0 0 2px Gray;
 	}
 
-	.btn:focus, .btn:active, .btn:visited {
+	.btn:focus, .btn:active, .btn:visited,
+	.btn2:focus, .btn2:active, .btn2:visited {
 		border: none;
 		box-shadow: none;
 	}
@@ -1105,6 +1555,7 @@ legend .bottom {
 		color: MediumSeaGreen;
 	}
 
+
 #right_Collapse {
 	height: auto;
 	width: 0;
@@ -1117,7 +1568,7 @@ legend .bottom {
 	background: rgba(255, 255, 255, 0.95);
 	overflow: hidden;
 	z-index: 2000;
-	animation: rightCollapse 2s 0.1s ease forwards;
+	animation: rightCollapse 2s 0.1s ease-in-out forwards;
 }
 
 	#right_Collapse > div:first-child {
@@ -1130,6 +1581,7 @@ legend .bottom {
 
 	#right_Collapse > .XButton {
 		color: black;
+		animation: fadeIn 1s 3s forwards;
 	}
 
 	/* #right_Collapse > * {
@@ -1137,13 +1589,15 @@ legend .bottom {
 		visibility: hidden;
 	} */
 
+
 #centerExpand_HR {
 	position: relative;
 	visibility: hidden;
 	display: block;
-	width: 94%;
-	height: 2px;
-	background: linear-gradient(to left, rgba(255, 255, 255, 0.05) 5%, rgba(0, 0, 0, 1) 50%, rgba(255, 255, 255, 0.05) 95%);
+	width: 100%;
+	height: 3px;
+	border: none;
+	background: linear-gradient(to left, rgba(255, 255, 255, 0.05) 1%, rgba(0, 0, 0, 1) 50%, rgba(255, 255, 255, 0.05) 99%);
 	margin: 20px auto;
 	animation: expandFromCenter 2s 3s linear forwards;
 }
@@ -1154,10 +1608,10 @@ legend .bottom {
 	text-align: center;
 	position: relative;
 	font: 700 80px/65px Play, Helvetica, sans-serif; 
-	/* font-family: "PT Sans"; */
 	font-variant: small-caps;
 	z-index: 2100;
-	/* animation: fadeIn 2s 4s forwards; */
+	visibility: hidden;
+	animation: fadeIn 2s 3s forwards;
 }
 
 #summarySubtitle {
@@ -1167,10 +1621,11 @@ legend .bottom {
 	position: relative;
 	font: 30px/28px Helvetica, sans-serif;
 	color: silver;
-	animation: fadeIn 2s 4.5s forwards;
+	visibility: hidden;
+	animation: fadeIn 2s 3s forwards;
 }
 
-#summaryTitle_Active {
+/* #summaryTitle_Active {
 	width: 90%;
 	margin: auto;
 	text-align: center;
@@ -1178,10 +1633,9 @@ legend .bottom {
 	font: bold 50px/45px Play, Helvetica, sans-serif;
 	z-index: 2100;
 	animation: fadeIn 3s 1s ease forwards;
-}
+} */
 
 #summaryBody {
-	/* animation: fadeIn 2s 6s forwards; */
 	background: LightGray;
 	width: 100%;
 	display: block;
@@ -1190,6 +1644,8 @@ legend .bottom {
 	min-height: 600px;
 	margin: 2% auto;
 	overflow: hidden;
+	visibility: hidden;
+	animation: fadeIn 1.2s 6s forwards;
 }
 
 	#summaryBody > div:first-child {
@@ -1199,7 +1655,7 @@ legend .bottom {
 		position: relative;
 		margin: auto;
 		display: block;
-		background: white;
+		background: White;
 		overflow: hidden;
 		border-radius: 50px 0 50px 0;
 		box-shadow: -2px -2px 15px 5px DimGray;
@@ -1290,22 +1746,52 @@ legend .bottom {
 
 	#results_Cont > div:last-child {
 		margin: 0;
-		background: LightGray;
 	}
 
+	.result:last-child div {
+		/* visibility: hidden; */
+	}
 
 .result {
-	height: 85%;
 	width: 100%; 
+	height: 100%;
 	display: none;
 	position: relative;
-	top: 15%;
 	left: 0;
 	padding: 0;
 	margin: 0;
 	overflow: hidden;
 	border-radius: 0 0 50px 0;
 }
+	
+	.result > h3 {
+		width: 100%;
+		height: 40px;
+		top: 0;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		background: White;
+		font: 20px/40px PT Sans, Helvetica, sans-serif;
+		color: MediumSeaGreen;
+		border-bottom: 3px solid Black;
+	}
+
+	.result > div {
+		top: 40px;
+		height: 100%;
+		/* overflow: scroll; */
+	}
+
+	.result:last-child > div > div:nth-child(odd) {
+		background: rgba(255, 255, 255, 1.0);
+	}
+
+	.result:last-child > div > div:nth-child(even) {
+		background: rgba(192, 192, 192, 0.25);
+	}
+
+
 
 #selectedFilter {
 	background: White;
@@ -1335,9 +1821,10 @@ legend .bottom {
 		height: 100%;
 		margin: 0;
 		padding: 0;
-		background-color: DodgerBlue; 				/* Beige: rgb(244, 241, 168); */
+		background-color: MediumSeaGreen; 				/* Beige: rgb(244, 241, 168); */
 		color: White;
 	}		
+
 
 #chart {
 	display: block;
@@ -1347,8 +1834,9 @@ legend .bottom {
 	margin: auto 0;
 	padding: 0;
 	clear: both;
+	visibility: hidden;
+	animation: fadeIn 1.2s 7s forwards;
 }
-
 
 #myCanvas {
 	background: Gray url("../Graphics/World_Map_Blue.png") center center/cover no-repeat;
@@ -1358,5 +1846,15 @@ legend .bottom {
 	position: relative;
 	display: block;
 	margin: 0 0 0 200px;
+}
+
+
+
+
+/*	GOOGLE MAPS CUSTOM STYLES 	*/
+
+/* Styling of the LEFT-TOP MapTypesControls <div> container, augmenting width marginally: 	*/
+.gmnoprint.gm-style-mtc > div:first-child {
+	width: 77.5px;
 }
 
