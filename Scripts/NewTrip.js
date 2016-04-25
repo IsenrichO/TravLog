@@ -12,17 +12,23 @@ function addTrip() {
 		descrip = document.getElementById("tripDescrip").value,
 		expander_Msg = document.getElementById("expander_Cnt").value,
 		tripType = radioCheck();	
-	console.log(tripType);
+			console.log(tripType);
 
 
 	// listArr.push("'" + countryName + "'");
 	listArr.push(countryName);
-	console.log(listArr);
+		console.log(listArr);
 
-	//
-	tripCoordinates.push({lat: countryObject[countryName]["coords"]["lat"],
-					lng: countryObject[countryName]["coords"]["lng"]});
-	console.log(tripCoordinates);
+	listArr.sort();
+		console.log(listArr);
+
+
+	/* //
+	tripCoordinates.push({
+		lat: countryObject[countryName]["coords"]["lat"],
+		lng: countryObject[countryName]["coords"]["lng"]
+	});
+		console.log(tripCoordinates); */
 
 	
 	// Invocations of the .createElement() method to trigger production of needed HTML entities for created trips:
@@ -65,7 +71,7 @@ function addTrip() {
 
 
 	// Declare preliminary stylistic scheme for pursuant content:
-	newTrip.setAttribute("style", "background: silver; box-shadow: 2px 2px 2px dimgray; position: relative; left: 7%; top: 10%; width: 90%; height: 100px;");
+	newTrip.setAttribute("style", "background: silver; box-shadow: 2px 2px 2px DimGray; position: relative; left: 7%; top: 10%; width: 90%; height: 100px;");
 	newTrip.className = "trip"; 
 	newTrip.setAttribute("style", "background: rgba(192, 192, 192, 0.25);");
 	
@@ -166,32 +172,30 @@ function addTrip() {
 
 
 function makeDatesArray() {
+	// var tripDates_Len = tripDates_Class.length;
+		// console.log(ls);
+
 	var tripDates = [],
-		ns = document.getElementsByClassName("trip_Dates"),
-		ls = document.getElementsByClassName("trip_Dates").length;
+		tripDates_Class = document.getElementsByClassName("trip_Dates");
+			// console.log(tripDates);
 
-	for (var i = 0; i < ls; i++) {
-		tripDates.push(ns[i].value);
+	for (var i = 0; i < tripDates_Class.length; i++) {
+		tripDates.push(tripDates_Class[i].value);
 	}
-
-	console.log(ls);
-	console.log(tripsObj);
-	console.log(tripDates);
-
 	return tripDates;
 }
 
 
 function addDates() {
 	var tripDates_Arr = makeDatesArray(),
-		datesCont = document.getElementById("datesContainer").getElementsByTagName("TEXTAREA"),
+		datesCont = document.getElementsByClassName("date_Msg"),
 		datesList = document.createElement("UL"),
 		iterator = 0;
-
-	console.log(tripDates_Arr);
+			// console.log(tripDates_Arr);
 
 	datesList.setAttribute("style", "list-style-type: none; width: 100%; height: auto; display: block; position: relative; margin: 10px 0 0 0; padding: 0; left: 0; overflow-x: hidden;");
 	datesList.className = "dates_UL";
+	datesList.id = "dates_Msgs";
 
 	forEach(tripDates_Arr, function(date) {
 		if(date !== null) {
@@ -242,6 +246,10 @@ function addDates() {
 
 			var formattedDate_Str = day + " " + month + " " + year,
 				expander_Msg = datesCont[iterator].value;
+					// console.log(formattedDate_Str);
+					// console.log(expander_Msg);
+					// console.log(datesCont);
+					// console.log(datesCont[0]);
 
 			var thisDate_El = document.createElement("LI"),
 				thisDate_Node = document.createTextNode(formattedDate_Str);
@@ -254,7 +262,7 @@ function addDates() {
 				expander_Node = document.createTextNode(expander_Msg);
 
 			expander.appendChild(expander_Node);
-			expander.setAttribute("style", "display: block; position: relative; width: 95%; height: auto; top: 100%; margin: 10px; padding: 5px; font: italic 14px/12px Helvetica, Arial, sans-serif; color: silver;");
+			expander.setAttribute("style", "display: none; position: relative; width: 95%; height: auto; top: 100%; padding: 10px; word-wrap: break-word; font: italic 14px/14px Open Sans, Helvetica, Arial, sans-serif; color: #626262;");
 
 			thisDate_El.appendChild(expander);
 
@@ -271,16 +279,32 @@ function addDates() {
 
 			iterator++;
 		}
-
 	});
-
 	tripsCont.appendChild(newTrip);
-	
 	return datesList;
 }
 
+
+	var dates_Msgs = document.getElementById("dates_Msgs");
+	for (var k = 0; k < dates_Msgs.children.length; k++) {
+		var dates_Msg = dates_Msgs.children[k];
+		dates_Msg.addEventListener("click", dateExpand);
+	}
+
+
 	if(tripsObj[key]) {
-		alert("Looks like you've already been here!");
+		if(confirm("Looks like you've already been here. If you choose to do so, you may add a second instance of this trip destination as a separate trip log entirely. Otherwise, simply click cancel to abort this action. Do you want to add another trip log for " + countryName + "?")) {
+			key += "2";
+
+			tripsObj[key] = {
+				place: countryName,
+				type: tripType,
+				nickname: "",
+				dates: makeDatesArray()
+			};
+		} else {
+			alert("Got it!");
+		}
 	} else {
 		tripsObj[key] = {
 			place: countryName,
@@ -289,14 +313,15 @@ function addDates() {
 			dates: makeDatesArray()
 		};
 	}
-	console.log(tripsObj);
+		// console.log(tripsObj);
+
 
 	// Array 'daysAbroad_Arr' :
 	daysAbroad_Arr.push(tripsObj[key]["dates"]);
 	forEach(daysAbroad_Arr, function(dates) {
 		return dates.sort();
-	})
-	console.log(daysAbroad_Arr);
+	});
+		console.log(daysAbroad_Arr);
 }	
 
 
