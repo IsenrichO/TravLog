@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html>	
 <head>	
-	<meta charset="UTF-8">
+	<title>Your Travels | TravLog</title>
+	<meta charset="UTF-8" />
 
-	<title>World Travel Log</title>	
+	<link href="../Graphics/Airplane_favicon.ico" rel="icon" type="image/vnd.microsoft.icon" />											<!-- Browser tab icon -->
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />								<!-- Import 'Roboto' font from Google Fonts. -->
-	<link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet" type="text/css" />					<!-- Import 'Allerta Stencil' font from Google Fonts. -->
-	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css" />							<!-- Import 'Lobster' font from Google Fonts. -->
-	<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet" type="text/css"> 								<!-- Import the 'Play' font style from Google Fonts. -->
-	<link href="https://fonts.googleapis.com/css?family=Droid+Sans:700|PT+Sans:700" rel="stylesheet" type="text/css">						<!-- Import the 'Droid Serif: Bold 700" font. -->
-
-	
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />										<!-- Import 'Roboto' font from Google Fonts. -->
+	<link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet" type="text/css" />							<!-- Import 'Allerta Stencil' font from Google Fonts. -->
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css" />									<!-- Import 'Lobster' font from Google Fonts. -->
+	<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet" type="text/css"> 										<!-- Import the 'Play' font style from Google Fonts. -->
+	<link href="https://fonts.googleapis.com/css?family=Droid+Sans:700|PT+Sans:700" rel="stylesheet" type="text/css">					<!-- Import the 'Droid Serif: Bold 700" font. -->
 	
 	<link href="../Stylesheets/Main.css" rel="stylesheet" type="text/css" />
 	<link href="../Stylesheets/Nav-Bar.css" rel="stylesheet" type="text/css" />
 	<link href="../Stylesheets/Keyframes.css" rel="stylesheet" type="text/css" />
-
 
 	<script src="../Scripts/Functions.js" type="text/javascript"></script>
 
@@ -29,8 +27,8 @@
 		<button class="btn XButton" onclick="document.getElementById('right_Collapse').style.display='none'">&times;</button>
 		
 		<header>
-			<h1 id="summaryTitle">Your Personal Travel History</h1>
-			<h2 id="summarySubtitle">Summary</h2>
+			<h1 id="summaryTitle">Your Personal Travel Summary</h1>
+			<h2 id="summarySubtitle">Tabulated Analytics Concerning Your Travels</h2>
 			<hr id="centerExpand_HR" />
 			<br />
 		</header>
@@ -44,76 +42,93 @@
 					<div class="filter_Btn">
 						<h2>Filtered</h2>
 					</div>
-					<div class="filter_Btn">
+					<div class="filter_Btn">			<!-- onclick="sequentialFade()" -->
 						<h2>Results</h2>
 					</div>
 				</div>
 
 				<div id="results_Cont">
-					<div class="result"></div>									<!--  id="allPlaces"  -->
-					<div class="result"></div>									<!--  id="summary_CountriesList"  -->
-					<div class="result"></div>									<!--  id="textual_Analysis"  -->
+					<div class="result">														<!--  id="allPlaces"  -->
+						<h3>Countries Visited & Countries Untoucht: Tabulated List</h3>
+						<div></div>
+					</div>
+					<div class="result">														<!--  id="summary_CountriesList"  -->
+						<h3>Countries Visited: Filtered Tabulation</h3>
+						<div></div>
+					</div>
+					<div class="result">														<!--  id="textual_Analysis"  -->
+						<h3>Some Facts About Your Trips Abroad</h3>
+						<div></div>
+					</div>
 				</div> 
 			</div>
 
 		</div>
 
 		<div id="chart">
-			<canvas id="myCanvas" width="1000px;" height="600px;"></canvas>
+			<canvas id="myCanvas" width="1000px;" height="650px;"></canvas>
 			<br />
 			<br />
 		</div>
 
 	</div>
 
-	<div id="modalWindow">
+	<div id="modalWindow" class="modal">
+	
 		<button class="btn XButton" onclick="toggleDisplay('modalWindow')">&times;</button>	
 		<form id="modalForm" onload="setDefault()">
-
+		<div>
 			<h1>New Trip Record</h1>
 
 			<fieldset id="logType">
 				<legend>
 					<span class="top">&nbsp; What &nbsp;</span>
-					<span class="bottom">&nbsp; Planning or Recording? &nbsp;</span>
+					<span class="bottom">&nbsp; Planning or Logging? &nbsp;</span>
 				</legend>
 
 				<div>
 					<div class="logType_Div">
 						<div>
 							<input type="radio" id="recordType" name="recordType" value="Travel Log" />
-							<label for="recordType">&nbsp; Travel Log &nbsp;</label>	
-						</div>
+							<label for="recordType">&nbsp; Travel Log &nbsp;</label>
 
-						<div style="margin: 15px 25px 20px auto;">
-							<p class="log_Descrip">
+							<img id="logInfo_Glyph" class="info_Glyph" src="../Graphics/Help_Icon-Green.png" alt="Info glyph (Green)" onmouseover="show('popupOne')" onmouseleave="hide('popupOne')" />	
+								<!-- 	onmouseover="toggleDisplay('popupOne')" onclick="expand('logInfo_Glyph')" -->
+						
+							<div id="popupOne" class="popout_Descrip" style="margin: 15px 25px 20px auto;">
+							<div>
 								<figure>
 									<img src="../Graphics/Trip_Log.png" alt="Make a record of a trip taken. Plane-on-paper glyph." />
 									<figcaption>Trip Log</figcaption>
 								</figure>
-								Got cool stories from abroad? Or just want somewhere to write the things you don't want to forget? This button will make the trips you've actually taken visually distinct from those that are still waiting to be crossed off your bucket list. Look for this icon to distinguish your travel records (<i>i.e.</i>, "trip logs") from those still in the works.
-							</p>
+								
+								<p class="log_Descrip">Got cool stories from abroad? Or just want somewhere to write the things you don't want to forget? This button will make the trips you've actually taken visually distinct from those that are still waiting to be crossed off your bucket list. Look for this icon to distinguish your travel records (<i>i.e.</i>, "trip logs") from those still in the works.</p>
+							</div>
+							</div>
 						</div>
 					</div>
 
-					<!-- Inline-block displayed <div> element to serve as vertical separator: -->
-					<div></div>
+					<!-- Inline-block displayed <div> element to serve as vertical separator: 
+					 <div></div> -->
 
 					<div class="logType_Div">
 						<div>
 							<input type="radio" id="itineraryType" name="recordType" value="Travel Itinerary" />
 							<label for="itineraryType">&nbsp; Travel Itinerary &nbsp;</label>	
-						</div>
 
-						<div style="margin: 15px 15px 20px 20px;">
-							<p class="log_Descrip">
+							<img id="itineraryInfo_Glyph" class="info_Glyph" src="../Graphics/Help_Icon-Green.png" alt="Info glyph (Green)"  onmouseover="show('popupTwo')" onmouseleave="hide('popupTwo')" />
+								<!--	onclick="expand('itineraryInfo_Glyph')" -->
+
+							<div id="popupTwo" class="popout_Descrip" style="margin: 15px 15px 20px 20px;">
+							<div>
 								<figure>
 									<img src="../Graphics/Itinerary_Plan.png" alt="Make a plan for a trip to take. Old-fashioned pen & paper planning glyph." />
 									<figcaption>Travel Itinerary</figcaption>
 								</figure>
-								Maybe your not quite the border-hopper you want to be yet. But if you got that wanderlust, there's no reason you can't make a plan for what's to come. Look for this icon to distinguish your travel plans (<i>i.e.</i>, "itineraries") from your already had adventures.
-							</p>
-						</div>
+									
+								<p class="log_Descrip">Maybe you're not quite the border-hopper you want to be yet. But if you got that wanderlust, there's no reason you can't make a plan for what's to come. Look for this icon to distinguish your travel plans (<i>i.e.</i>, "itineraries") from your already had adventures.</p>
+							</div>
+							</div>
 					</div>
 				</div>
 			</fieldset>
@@ -214,6 +229,7 @@
 							<option value="Martinique"> &nbsp; ❱ &nbsp; Martinique</option>
 							<option value="New Caledonia"> &nbsp; ❱ &nbsp; New Caledonia</option>
 							<option value="Réunion"> &nbsp; ❱ &nbsp; Réunion</option>
+							<option value="St. Barthélemy"> &nbsp; ❱ &nbsp; Saint Barthélemy</option>
 						</optgroup>
 
 						<option value="Gabon">Gabon</option> 
@@ -355,6 +371,7 @@
 						<option value="United Arab Emirates">United Arab Emirates (UAE)</option> 
 							
 						<optgroup label="The UK">
+							<option value="Anguilla"> &nbsp; ❱ &nbsp; Anguilla</option>
 							<option value="Bermuda"> &nbsp; ❱ &nbsp; Bermuda</option>
 							<option value="Falkland Islands"> &nbsp; ❱ &nbsp; Falkland Islands (Islas Malvinas)</option>
 							<option value="Isle of Man"> &nbsp; ❱ &nbsp; Isle of Man</option>
@@ -412,11 +429,8 @@
 						</optgroup>
 
 						<option value="Unknown">Unknown (?)</option>
-
 					</select>
-						<!-- <optgroup> element sub-heading bullet icons:	"⁍" , "❱"		-->
-
-
+					<!-- <optgroup> element sub-heading bullet icons:	"⁍" , "❱"		-->
 				</div>
 
 				<div id="summary_Cont">
@@ -439,14 +453,29 @@
 					<span class="top">&nbsp; When &nbsp;</span>
 					<span class="bottom">&nbsp; Remember The Goodtimes &nbsp;</span>
 				</legend>
+	
+				<fieldset id="startEndDates_Field" class="date_Field">
+					<div>
+						<label class= "date_Label" for="startDate" required> &nbsp; Arrival: &nbsp; </label>
+						
+						<span>&#x1F6EC; &nbsp; </span>							<!-- Airplane Arrival Glyph, Hex Character Code: "🛬" -->
+						<input id="startDate" type="date" required />			<!-- class="trip_Dates"	-->
+					</div>						
+					<div>
+						<label class="date_Label" for="endDate" required> &nbsp; Departure: &nbsp; </label>
 
-				<div id="datesContainer">
-					<fieldset class="date_Field" style="margin-top: 25px;">
+						<span>&#x1F6EB; &nbsp; </span>							<!-- Airplane Departure Glyph, Hex Character Code: "🛫" -->
+						<input id="endDate" type="date" required />				<!-- class="trip_Dates"	-->
+					</div>
+				</fieldset>
+	
+				<div id="datesContainer" style="height: 100%; margin: 15px auto auto auto;">
+					<fieldset class="date_Field">
 						<div class="newEntry">
 							<div class="newRow">
-								<label class="date_Label" for="dateInputOne" required>Trip Memory № 1: &nbsp; </label>
+								<label class="date_Label" for="dateInputOne">Trip Memory № 1: &nbsp; </label>
 									<!-- Symbolic No. Representation via innerHTML modification:	N<sup><u>o</u></sup>	-->
-								<input type="date" id="dateInput1" class="trip_Dates" value="2016-03-20" />
+								<input id="dateInput1" class="trip_Dates" type="date" />
 							</div>
 
 							<textarea id="expander_Cnt" class="date_Msg" placeholder="Make note of a memorable event on your trip."></textarea>
@@ -454,10 +483,8 @@
 					</fieldset>
 				</div>			
 		
-
-
 				<div id="addDate_Div">
-					<button type="button" id="eventAdd_Btn" class="btn toolTip" onClick="addNew('datesContainer')" value="New Date">
+					<button type="button" id="eventAdd_Btn" class="btn toolTip" onclick="addNew('datesContainer')" value="New Date">
 						<img src="../Graphics/Calendar_Event.png" alt="Add new calendar event action." />
 						<span class="toolTip_Txt2">Add Date Event</span>
 					</button>
@@ -470,10 +497,11 @@
 			</fieldset>
 
 			<div id="modalBtns">
-				<button type="button" id="submit_Btn" class="btn toolTip" value="ADD" onclick="addTrip(), toggleDisplay('modalWindow')">ADD
+				<button type="button" id="submit_Btn" class="btn toolTip" value="ADD" onclick="addTrip(), toggleDisplay('modalWindow'), clearForm()">ADD
 					<span class="toolTip_Txt" style="top: 2.5px; width: 75px;">Log Trip</span>					
 				</button>
 			</div>
+		</div>
 		</form>
 	</div>
 
@@ -487,57 +515,61 @@
 				<nav id="toolsNavBar">		
 					<div>
 						<div>
-							<h4>Modify</h4>
+							<h5>Amend</h5>						<!-- Modify -->
 						</div>
 						<div>
-							<button class="btn2 toolTip" onclick="toggleDisplay('modalWindow')" value="Add">
+							<button class="btn2 toolTip" onclick="activeCheck(), toggleDisplay('modalWindow')" value="Add">
 								<span class="glyphTwo">&plus;</span>
 								<span class="toolTip_Txt">Add New Trip</span>
 							</button>
 							
 							<hr class="tripMenuHR2" />
 							
-							<button id="delete_Trip" class="btn2 toolTip" onclick="fixList(), removeLast('tripsContainer')" value="Remove">
+							<button id="delete_Trip" class="btn2 toolTip" value="Remove">
 								<span class="glyphTwo">&minus;</span>
 								<span class="toolTip_Txt">Remove Last Trip</span>
-							</button>
-
-							<hr class="tripMenuHR" />
+							</button>							
 						</div>
 					</div>
 
+					<hr class="tripMenuHR" />
+
 					<div>
 						<div>
-							<h4>Eval.</h4>
+							<h5>Eval.</h5>
 						</div>
 						<div>
 							<button id="tripSummary" class="btn2 toolTip" onclick="toggleDisplay('right_Collapse'), generateSummary(), drawBars(), textAnalysis(), busy(), notBusy()" value="Trip Summary">
-								<img src="../Graphics/Bar_Chart.png" alt="Trip summary analtyics generation. Bar chart glyph." />
+								<img src="../Graphics/Bar_Chart.png" alt="Trip summary analtyics generation. Bar chart glyph (Green)" />
 								<span class="toolTip_Txt">Generate Results</span>
 							</button>
-
-							<hr class="tripMenuHR" />
 						</div>
 					</div>
+
+					<hr class="tripMenuHR" />
 
 					<div>
 						<div>
-							<h4>Tools</h4>
+							<h5>Tools</h5>
 						</div>
 						<div>					
+							<button id="path_Btn" class="btn2 toolTip" value="Draw Path" onclick="classToggle('path_Btn'), classToggle('path_Toolbar')">
+								<img src="../Graphics/User Click Pin.png" alt="Render route path via user click interaction, button glyph (White)" />
+								<span class="toolTip_Txt">Draw Path</span>
+							</button>
+
+							<hr class="tripMenuHR2" />
+
 							<button id="googs" class="btn2 toolTip" value="Google">
 								<a href="https://www.google.com/">
-									<img src="../Graphics/Google_Logo.png" alt="Google" />
+									<img src="../Graphics/Google_Logo.png" alt="Google corporate logo redesign, stylized letter G (White bckg.)" />
 									<span class="toolTip_Txt">Search Google</span>
 								</a>
-							</button>				
+							</button>											
 						</div>
 					</div>
-
-
 				</nav>
 			</div>
-		<!-- </button> -->
 	</div>
 
 	<div id="leftPane">
@@ -552,88 +584,389 @@
 		</div>
 
 		<div id="tripsContainer"></div>
+
+		<div id="path_Toolbar">					
+			<button id="fill_Btn" class="pathToolBar_Btns toolTip" value="Fill Path" onclick="classToggle('fill_Btn')">
+			<!-- FILL -->
+				<img src="../Graphics/Polygon Fill, Active.png" alt="" />		<!--	Fill Path Action.png 	-->
+				<span class="toolTip_Txt3">Toggle Fill</span>					<!--	Fill Path 				-->
+			</button>
+
+			<button id="curvePath" class="pathToolBar_Btns toolTip" value="Render Curvature" onclick="classToggle('curvePath')">
+			<!-- Curve -->
+				<img src="../Graphics/Linear Path.png" alt="" />
+				<span class="toolTip_Txt3">Toggle Geodesy</span>				<!--	Render Curvature		-->
+			</button>
+
+			<div style="height: 75px; width: 75px; margin: 0; padding: 0; display: inline-block; position: relative;">
+				<button id="color_DropUp" class="pathToolBar_Btns toolTip" value="Apply Custom Shading" onclick="toggleDisplay('color_Palette'), classToggle('color_Palette')">	
+				<!-- classToggle('color_DropUp')" -->	
+					<img src="../Graphics/Palette Icon.png" alt="Color Palette Menu Icon" />
+					<span class="toolTip_Txt3">Apply Color</span>
+				</button>
+
+				
+				<div id="color_Palette" class="triangleClass">
+				<div>
+
+					<div>
+						<h4 id="colorName">Path Color</h4>
+						
+						<div>
+							<div id="color_row1" class="color_Row">
+								<div class="color_Cont">
+									<span id="colorDodgerBlue" class="color_Div" style="background: rgb(30, 144, 255);"></span>			<!--	Hex Code: #1E90FF	-->
+								</div>
+								<div class="color_Cont">
+									<span id="colorMediumSeaGreen" class="color_Div" style="background: rgb(60, 179, 113);"></span>		<!--	Hex Code: #3CB371	-->
+								</div>
+								<div class="color_Cont">
+									<span id="colorAliceBlue" class="color_Div" style="background: rgb(240, 248, 255);"></span>			<!--	Hex Code: #F0F8FF	-->
+								</div>
+								<div class="color_Cont">
+									<span id="colorSilver" class="color_Div" style="background: rgb(192, 192, 192);"></span>			<!--	Hex Code: #C0C0C0	-->
+								</div>
+							</div>
+							<div id="color_row2" class="color_Row">
+								<div class="color_Cont">
+									<span id="colorGoldenRod" class="color_Div" style="background: rgb(218, 165, 32);"></span>			<!--	Hex Code: #DAA520	-->
+								</div>
+								<div class="color_Cont">
+									<span id="colorMediumTurquoise" class="color_Div" style="background: rgb(72, 209, 204);"></span>	<!--	Hex Code: #48D1CC	-->
+								</div>
+								<div class="color_Cont">
+									<span id="colorFireBrick" class="color_Div" style="background: rgb(178, 34, 34);"></span>			<!--	Hex Code: #B22222	-->
+								</div>
+								<div class="color_Cont">
+									<span id="colorDimGray" class="color_Div" style="background: rgb(105, 105, 105);"></span>			<!--	Hex Code: #696969	-->
+								</div>
+							</div>
+							<div id="color_row3" class="color_Row">
+								<div class="color_Cont">
+									<span id="colorLightSalmon" class="color_Div" style="background: rgb(255, 160, 122);"></span>		<!--	Hex Code: #FFA07A	-->
+								</div>
+								<div class="color_Cont">
+									<span id="colorLightSlateGray" class="color_Div" style="background: rgb(119, 136, 153);"></span>	<!--	Hex Code: #778899	-->
+								</div>
+								<div class="color_Cont">
+									<span id="colorMagenta" class="color_Div" style="background: rgb(255, 0, 255);"></span>				<!--	Hex Code: #FF00FF	-->
+								</div>
+
+								<!--	<div class="color_Cont">
+									<span id="colorBlack" class="color_Div" style="background: rgb(0, 0, 0);"></span>					//		Hex Code: #000000	//
+								</div>			-->
+
+								<div class="color_Cont">
+									<input id="customColor" type="color" defaultValue="#000000" />
+									<!-- <span id="colorLightSlateGray" class="color_Div" style="background: rgb(119, 136, 153);"></span>	//	Hex Code: #778899	-->
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div>
+						<h4 id="colorName">Line Width</h4>
+						
+						<div>
+							<input id="strokeWidth_Inpt" type="range" min="0.00" max="8.00" defaultValue="2.00" step="0.10" oninput="rangeUpdate('strokeWidth_Inpt')" />
+							<label id="strokeWidth_Lbl" for="strokeWidth_Inpt">2.00</label>
+						</div>
+					</div>
+
+					<div>
+						<h4 id="opacityVal">Opacity</h4>
+
+						<div>
+							<input id="opacity_Inpt" type="range" min="0.00" max="1.00" defaultValue="0.50" step="0.05" oninput="rangeUpdate('opacity_Inpt')" />
+							<label id="opacity_Lbl" for="opacity_Inpt">50%</label>
+						</div>
+					</div>
+
+				</div>
+				</div>
+
+			</div>
+
+		</div>
 	</div>
 
 
-	<div id="mapContainer"></div>
+	<div id="rightPane">
+		<!-- <canvas id="mapCanvas"></canvas> -->
+		<div id="mapContainer"></div>
+		<div id="coords_Div">
+			<span id="coord_Lat"></span>
+			<span id="coord_Lng"></span>
+		</div>
+	</div>
 
-
-	<nav id="inter-pageNavBar">
-		<a class="bottomNavTab" style="border-left: none;" href="../index.html" target="_self"><h2 class="navTabText">Home</h2></a>
-
-		<a class="bottomNavTab" href="Change_Log.html" target="_blank"><h2 class="navTabText">Change Log</h2></a>
-
-		<div class="bottomNavTab"><h2 class="navTabText"><span class="dropupGlyph">&nbsp; &nbsp; &#x2630;</span>About . . .</h2>
-			<div class="popup">
-				<a href="Myself.html" target="_blank">&nbsp;
-					<img src="../Graphics/Profile_Picture.jpg" 
-						 style="border-radius: 50%; vertical-align: middle;" height="40px;" width="40px;" alt="Personal Contact Chip" />&nbsp; &nbsp; &nbsp; &nbsp; Myself
-				</a>
-				<hr class="submenuHR" />
-				<a href="Markup/This_Project.html" target="_blank">&nbsp;
-					<img src="../Graphics/Edge-firefox.svg" style="vertical-align: middle;" height="40px;" width="40px;" alt="FireFox Edge Browser Globe Glyph (Black)" />
-					&nbsp; &nbsp; &nbsp; This Project
+	<div id="navBar_Cont">
+		<nav id="inter-pageNavBar">
+			<div class="bottomNavTab">
+				<a href="../index.html" target="_self">
+					<h2 class="navTabText">Home</h2>
 				</a>
 			</div>
-		</div>
 
-		<div class="bottomNavTab"><h2 class="navTabText"><span class="dropupGlyph">&nbsp; &nbsp; &#x2630;</span>Connect</h2>
-			<div class="popup">
-				<a href="https://www.facebook.com/rE.vilO.I.13" target="_blank">&nbsp;
-					<img src="../Graphics/Facebook.jpg" 
-						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp; &nbsp; &nbsp; &nbsp; Facebook
-				</a>
-				<hr class="submenuHR" />
-				<a href="https://github.com/IsenrichO" target="_blank">&nbsp;
-					<img src="../Graphics/octocat.svg" 
-						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp; &nbsp; &nbsp; &nbsp; GitHub
-				</a>
-				<hr class="submenuHR" />
-				<a href="https://plus.google.com/+OliverIsenrich" target="_blank">&nbsp;
-					<img src="../Graphics/GooglePlus.png" 
-						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp; &nbsp; &nbsp; &nbsp; Google+
-				</a>
-				<hr class="submenuHR" />
-				<a href="https://www.quora.com/profile/Oliver-Isenrich" target="_blank">&nbsp;
-					<img src="../Graphics/Quora.png" 
-						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp; &nbsp; &nbsp; &nbsp; Quora
-				</a>
-				<hr class="submenuHR" />
-				<a href="https://twitter.com/IsenrichO" target="_blank">&nbsp;
-					<img src="../Graphics/Twitter.png" 
-						 height="40px" width="40px" style="vertical-align: middle;" />&nbsp; &nbsp; &nbsp; &nbsp; Twitter
+			<div class="bottomNavTab">
+				<a href="Markup/Change_Log.html" target="_blank">
+					<h2 class="navTabText">Change Log</h2>
+					<img class="URL_Link" src="../Graphics/New_Tab.png" alt="Opens in new tab, URL hyperlink glyph (Blue)" style="height: 25px; width: 25px; top: 5px;" />
 				</a>
 			</div>
-		</div>
 
-	</nav>
+			<div class="bottomNavTab">
+				<span class="dropupGlyph navTabText">☰</span>
+				<h2 class="navTabText">About . . .</h2>											<!-- BB Up Arrow Glyph, Hex Code:  &#x21ee; -->
+				<div class="popup">
+					<a href="Markup/Myself.html" target="_blank">
+						<img class="nav_Img" src="../Graphics/Profile_Picture.jpg" alt="Personal Contact Chip" style="border-radius: 50%;" />
+						<span class="menuItem">Myself</span>
+						<img class="URL_Link" src="../Graphics/New_Tab.png" alt="Opens in new tab, URL hyperlink glyph (Blue)" />					
+					</a>
+					<hr class="submenuHR" />
+					<a href="Markup/This_Project.html" target="_blank">
+						<img class="nav_Img" src="../Graphics/Edge-firefox.svg" alt="FireFox Edge Browser Globe Glyph (Black)" />
+						<span class="menuItem">This Project</span>
+						<img class="URL_Link" src="../Graphics/New_Tab.png" alt="Opens in new tab, URL hyperlink glyph (Blue)" />
+					</a>
+				</div>
+			</div>
+
+			<div class="bottomNavTab">
+					<span class="dropupGlyph navTabText">☰</span>
+					<h2 class="navTabText">Connect</h2>
+				<div class="popup">
+					<a href="https://www.facebook.com/rE.vilO.I.13" target="_blank">&nbsp;
+						<img class="nav_Img" src="../Graphics/Facebook.jpg" alt="Facebook Logo (Blue)" />
+						<span class="menuItem">Facebook</span>
+						<img class="URL_Link" src="../Graphics/New_Tab.png" alt="Opens in new tab, URL hyperlink glyph (Blue)" />
+					</a>
+					<hr class="submenuHR" />
+					<a href="https://github.com/IsenrichO" target="_blank">&nbsp;
+						<img class="nav_Img" src="../Graphics/octocat.svg" alt="GitHub Logo (Black)" />
+						<span class="menuItem">GitHub</span>
+						<img class="URL_Link" src="../Graphics/New_Tab.png" alt="Opens in new tab, URL hyperlink glyph (Blue)" />
+					</a>
+					<hr class="submenuHR" />
+					<a href="https://plus.google.com/+OliverIsenrich" target="_blank">&nbsp;
+						<img class="nav_Img" src="../Graphics/GooglePlus.png" alt="Google+ Logo (Red)" />
+						<span class="menuItem">Google+</span>
+						<img class="URL_Link" src="../Graphics/New_Tab.png" alt="Opens in new tab, URL hyperlink glyph (Blue)" />						 
+					</a>
+					<hr class="submenuHR" />
+					<a href="https://www.quora.com/profile/Oliver-Isenrich" target="_blank">&nbsp;
+						<img class="nav_Img" src="../Graphics/Quora.png" alt="Quora Logo (Red)" />
+						<span class="menuItem">Quora</span>
+						<img class="URL_Link" src="../Graphics/New_Tab.png" alt="Opens in new tab, URL hyperlink glyph (Blue)" />						 
+					</a>
+					<hr class="submenuHR" />
+					<a href="https://twitter.com/IsenrichO" target="_blank">&nbsp;
+						<img class="nav_Img" src="../Graphics/Twitter.png" alt="Twitter Logo (Blue)" />
+						<span class="menuItem">Twitter</span>			
+						<img class="URL_Link" src="../Graphics/New_Tab.png" alt="Opens in new tab, URL hyperlink glyph (Blue)" />						 
+					</a>
+				</div>
+			</div>
+		</nav>
+	</div>
+	
 
 	<script>
-	var rP = document.getElementById("right_Collapse");
-	var rr;
+		// Underscore.js 'merge' implementation:
+		function merge(array1, array2, callback) {
+			var output_Arr = [];
+			for (var i = 0; i < array1.length; i++) {
+				output_Arr.push(callback(array1[i], array2[i]));
+			}
+			return output_Arr;
+		}
+		console.log(merge);
 
-	function busy() {
-		rr = setTimeout(function() {
-			document.body.style.cursor = "progress";
-		}, 0001);
-	}
+		var x = merge([1, 2, 3, 4], [5, 6, 7, 8], function(a, b) {  
+			return a + b;
+		});
+		console.log(x);
 
-	function notBusy() {
-		setTimeout(function() {
-			clearTimeout(rr);
-			document.body.style.cursor = "auto";
-		}, 6000);
-	}
+
+
+		// NOTE: You should not use any loops and should instead use your original merge function.
+		var euclid = function(coords1, coords2) {  
+			// Your code below:
+			var diffs = merge(coords1, coords2, function(c, d) {
+				return Math.pow(c - d, 2);
+			});
+			var sum = diffs.reduce(function(e, f) {
+				return e + f;
+			});
+			return Math.sqrt(sum);
+		};
+		console.log(euclid);
+
+		var y = euclid([1.2, 3.67], [2.0, 4.4]);
+		console.log(y);
+			// y should now equal approximately 1.08.
+
+
+
+
+
+		var arrivalDate = document.getElementById("startDate"),
+			departureDate = document.getElementById("endDate"),
+			tripMemsDate_Div = document.getElementById("dateInput1");
+
+		arrivalDate.value = setDateDefault();
+		departureDate.value = setDateDefault();
+		tripMemsDate_Div.value = setDateDefault();
+
+		var rP = document.getElementById("right_Collapse"),
+			rr;
+
+		
+		// Function 'closeModal' :
+		document.onkeydown = function(evt) {
+			var code = evt.keyCode,
+				modalForm_State = document.getElementById("modalWindow").style.display,
+				modalSummary_State = document.getElementById("right_Collapse").style.display;
+
+			if (code == 27 && modalForm_State === "block") {
+				// alert("You have pressed the ESC key!");
+				toggleDisplay("modalWindow");
+			} else if (code == 27 && modalSummary_State === "block") {
+				toggleDisplay("right_Collapse");
+			}
+		};
+
+
+		// Close #color_Palette on outside click event:
+		document.addEventListener("click", function(evt) {
+			if (document.getElementById("color_Palette").classList.contains("activated") && (evt.target.parentNode.id === "leftPane")) {
+				toggleDisplay("color_Palette");
+				classToggle("color_Palette");
+			}
+		}, true);
+
+
+
+		// F
+		var ico = document.getElementById("logInfo_Glyph"),
+			popupOne = document.getElementById("popupOne");
+
+		function show(elemID) {
+			document.getElementById(elemID).style.display = "block";
+		}
+
+		function hide(elemID) {
+			document.getElementById(elemID).style.display = "none";
+		}
+
+
+		function rangeUpdate(elemID) {
+			// var rangeSlider_Inpt = document.getElementById("strokeWidth_Inpt"),
+				// rangeSlider_Lbl = document.getElementById("strokeWidth_Lbl"),
+				// mod_StartState = rangeSlider_Inpt.value + ".00";
+				var rangeSlider_Inpt = document.getElementById(elemID),
+					rangeSlider_Lbl = rangeSlider_Inpt.nextElementSibling;
+
+			rangeSlider_Lbl.innerHTML = (elemID === "opacity_Inpt") ? Math.ceil(parseInt((rangeSlider_Inpt.value) * 100)) + String.fromCharCode(37) : parseFloat(rangeSlider_Inpt.value).toFixed(2);
+				console.log(typeof rangeSlider_Inpt.value);
+		}
+
+
+		// Function 'classToggle' reversibly adds the 'activated' class while also removing the 'deactivated' class (if present). Multiple clicks of its elemID element
+		// parameter continuously toggles between this action and the reverse (adding the 'deactivated' while removing the 'activated' one):
+		function classToggle(elemID) {
+			var btn_Clicked = document.getElementById(elemID);
+
+			if (!(btn_Clicked.hasAttribute("class")) || btn_Clicked.classList.length === 0 || (!btn_Clicked.classList.contains("activated") && !btn_Clicked.classList.contains("deactivated"))) {
+				btn_Clicked.classList.add("activated");
+			} else if (btn_Clicked.classList.contains("deactivated")) {
+				btn_Clicked.classList.remove("deactivated");
+				btn_Clicked.classList.add("activated");
+			} else {
+				btn_Clicked.classList.remove("activated");
+				btn_Clicked.classList.add("deactivated");
+			}
+				console.log(btn_Clicked.classList);
+				console.log(document.getElementById("fill_Btn").classList);
+				console.log(document.getElementById("path_Toolbar").classList);
+		}
+			
+
+
+		// Function 'busy' handles the loading state for the slide-in analytics modal display:
+		function busy() {
+			rr = setTimeout(function() {
+				document.body.style.cursor = "progress";
+			}, 0001);
+		}
+
+
+		// Function 'notBusy' removes the temporary loading state induced by function 'busy' and reverts to the default state:
+		function notBusy() {
+			setTimeout(function() {
+				clearTimeout(rr);
+				document.body.style.cursor = "auto";
+			}, 6000);
+		}
+
+
+		//
+		function displayColorName() {
+			var nameDisplay_Header = document.getElementById("colorName"),
+				parent_Cont = document.getElementById("color_Palette"),
+				colors_Arr = document.getElementsByClassName("color_Div");
+
+			for (var i = 0; i < colors_Arr.length; i++) {
+
+				var color = colors_Arr[i];
+
+				color.addEventListener("click", function(evt) {
+					var title = nameDisplay_Header.innerHTML = evt.target.id.substring(5);
+						console.log(title);
+						console.log(nameDisplay_Header);
+					
+					/* forEach(colors_Arr, function(color) {
+						color.parentNode.setAttribute("style", "border: none;");
+					}); */
+
+
+					evt.target.style.border = "1.5px solid Black";
+					
+					var css3_ColorName = "color: " + title;
+					
+					nameDisplay_Header.setAttribute("style", css3_ColorName);
+					// chosenColor = css3_ColorName;
+						// console.log(chosenColor);
+
+				});
+
+			}
+
+		}
+
+		displayColorName();
+
+
+		function popup() {
+			var dropup_Btn = document.getElementById("color_DropUp");
+
+			dropup_Btn.addEventListener("click", function() {
+
+			});
+
+		}
+
 	</script>
 
+
 	<script src="../Scripts/Maps_API.js"></script>																	 
-
-
 	<script src="../Scripts/Bar_Chart.js" type="text/javascript"></script>
-	
 	<script src="../Scripts/Collections.js" type="text/javascript"></script>	
 	<script src="../Scripts/NewTrip.js" type="text/javascript"></script>
 
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnwZpP42ez8-YrsBydN4tITV3TWFrdqHA&callback=initMap"></script>
+
 </body>
 </html>
