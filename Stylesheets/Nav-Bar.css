@@ -1,58 +1,115 @@
 
-#inter-pageNavBar {
+#navBar_Cont {
 	position: fixed;
-	display: block;
 	width: 100%;
 	height: auto;
-	bottom: 0%;
-	margin: 0%;
-	padding: 0%;
-	left: 0px;
-	background-color: black;
-	z-index: 50;
-	float: left;
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(to top, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.25) 40%, rgba(255, 255, 255, 0.01) 75%);
+	z-index: 51;
+	display: block;
+	visibility: visible;
+	bottom: 0;
 }
 
-#inter-pageNavBar > a, #inter-pageNavBar > div {
-	margin: 0px;
-	padding: 0px;
-	color: white;
+
+
+/*		///////////////////////////////////////////////////		*/
+
+/*		#navBar_Cont is being displayed none (temporarily)		*/
+
+/*		///////////////////////////////////////////////////		*/
+
+
+#navBar_Cont {display: none}
+
+
+
+	#navBar_Cont:hover #inter-pageNavBar {
+		visibility: visible;
+		background-color: Black;
+	}
+
+
+#inter-pageNavBar {
+	position: relative;
+	display: block;
+	visibility: hidden;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	left: 0;
+	background-color: Black;
+	z-index: 50;
+}
+
+#inter-pageNavBar > div {
+	margin: 0;
+	padding: 0;
+	color: White;
 	text-decoration: none;
 	height: 100%;
+	display: inline-block;
 	position: relative;
+}
+
+.bottomNavTab > a {
+	text-decoration: none;
+	width: 100%;
+	
 }
 
 .bottomNavTab {
 	display: inline-block;
 	position: relative;
-	width: 24%;
-	left: 0px;
-	height: 6%;
-	margin: 0%;
-	padding: 0%;
-	border-left: 2px solid white;
-	font-family: "Allerta Stencil";
+	width: 24.5%;
+	left: 0;
+	height: auto;
+	border-left: 2px solid White;
+	background-color: Black;
 	text-transform: uppercase;
 	float: left;
 	text-align: center;
 }
 
-	.bottomNavTab:hover, .bottomNavTab:hover > .navTabText {
-		background-color: #7efcef;
-		color: black;
+	.bottomNavTab:hover, 
+	.bottomNavTab:hover .navTabText {
+		background-color: #7EFCEF;
+		color: Black;
 		height: 100%;
+	}
+
+	.bottomNavTab:hover > .popup {
+		display: block;
+		bottom: 100%;
+	}
+
+	.bottomNavTab:hover > .popup > a:hover {
+		background-color: rgba(192, 192, 192, 0.50);	
+		border-radius: 10px 0 10px 0;
+		width: 99%;
+		left: 0;
+	}
+
+	.bottomNavTab:hover > .popup > a:first-child:hover {
+		border-radius: 30px 0 10px 0;
+	}
+
+	.bottomNavTab:hover > .popup > a:last-child:hover {
+		border-radius: 10px 0 30px 0;
 	}
 
 
 .navTabText {
-	font-family: "Allerta Stencil";
-	font-size: 30px;
+	font: 700 30px Droid Sans, Helvetica, Arial, sans-serif;	
 	text-align: center;
-	color: white;
+	color: White;
 	display: inline;
 	position: relative;
 	width: 100%;
 	height: 100%;
+	vertical-align: middle;
 }
 
 .popup {
@@ -61,10 +118,10 @@
 	width: 100%;
 	height: auto;
 	line-height: 30px;
-	border-radius: 30px 0px 30px 0px;
-	border: 2px solid white;
-	background-color: white;
-	box-shadow: -2px -2px 2px dimgray;
+	border-radius: 30px 0 30px 0;
+	border: 2px solid White;
+	background-color: White;
+	box-shadow: -2px -2px 2px DimGray;
 	z-index: 50;
 }
 
@@ -73,46 +130,72 @@
 	position: relative;
 	left: 5px;
 	right: 10px;
-	color: black;
-	font-family: Roboto;
-	font-size: 30px;
-	text-align: left;
+	color: Black;
+	vertical-align: middle;
 	text-transform: none;
-	font-weight: bolder;
-	padding: 4px;
+	text-align: left;
+	padding: 2px;
 }
 
-.bottomNavTab:hover > .popup {
-	display: block;
-	bottom: 100%;
+	.popup > a:hover > .URL_Link,
+	.bottomNavTab:hover > a > .URL_Link {
+		visibility: visible;
+	}
+
+
+.menuItem {
+	font: bold 30px Play, Helvetica, Arial, sans-serif;
+	position: relative;
+	display: inline;
+	margin-left: 50px;
+	vertical-align: middle;
 }
 
-.bottomNavTab:hover > .popup > a:hover {
-	background-color: silver;
-	border-radius: 25px 0px 25px 0px;
-	width: 98%;
-	left: 0px;
+.URL_Link {
+	visibility: hidden;
+	height: 22.5px;
+	width: 22.5px;
+	vertical-align: middle;
+	position: absolute;
+	display: inline;
+	right: 5%;
+	top: 10.75px;
+}
+
+.nav_Img {
+	height: 40px;
+	width: 40px;
+	vertical-align: middle;
+	text-align: left;
+	display: inline;
+	position: relative;
+	margin-left: 5px;
 }
 
 .submenuHR {
-	border: 0px;
+	border: 0;
 	height: 2px;
 	width: 100%;
 	position: relative;
-	margin: 0px;
-	padding: 0px;
-	background: linear-gradient(to left, white, black, white);
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(to left, White, Black, White);
 }
 
 .popup a, .popup a:active, .popup a:visited, .popup a:focus {
 	text-decoration: none;
-	color: black;
+	color: Black;
 }
 
+
 .dropupGlyph {
-	font-family: Rockwell;
-	float: left;
-	padding: 0px;
-	margin: 0px;
-	font-size: 30px;
+	font: 700 30px Droid Sans, Helvetica, sans-serif;
+	margin-left: 15px;
+	vertical-align: middle;
+	display: inline;
+	width: 100%;
+	text-align: left;
+	left: 0;
+	top: -2px;
+	position: absolute;
 }
